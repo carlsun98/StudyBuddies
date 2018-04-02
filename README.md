@@ -6,4 +6,4 @@ run npm-install to install node dependencies in the src/mobile folder
 
 
 Server:
-server located at 54.187.181.191
+server located at 34.214.169.181
