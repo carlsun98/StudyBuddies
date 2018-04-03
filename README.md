@@ -4,6 +4,19 @@ Mobile:
 Linux/macOS
 run npm-install to install node dependencies in the src/mobile folder
 
+TODO:
+- Create Database
+- Write API:
+  - Decide on Language
+  - Learn SQL
+  - Learn good, secure practices:
+    - sanitize input (check that the input is not a SQL command or something)
+    - set permissions (only certain users can edit things in the database)
+- Learn how to use Maps
+- confirm the navigation flow 
+- color scheme, design scheme, logo
+- build the views
+- connect it up
 
 
 Server:
@@ -11,7 +24,7 @@ server located at 34.214.169.181
 access phpmyadmin at 34.214.169.181/phpmyadmin
 
 
-DataBase Tables
+DataBase Tables: 
 
 Users
 - ID (autogenerate)
@@ -73,7 +86,7 @@ Password Recovery
 - recovery token
 - timestamp
 
-APIs
+APIs: 
 
 Login API
 in: username, password
