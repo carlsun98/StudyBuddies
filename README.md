@@ -5,7 +5,6 @@ Linux/macOS
 run npm-install to install node dependencies in the src/mobile folder
 
 TODO:
-- Create Database
 - Write API:
   - Decide on Language
   - Learn SQL
@@ -18,6 +17,8 @@ TODO:
 - build the views
 - connect it up
 
+DONE:
+- Create Database
 
 Server:
 server located at 34.214.169.181
@@ -26,7 +27,7 @@ access phpmyadmin at 34.214.169.181/phpmyadmin
 
 DataBase Tables: 
 
-Users
+Users (IMPLEMENTED)
 - ID (autogenerate)
 - email 
 - password (hash password to be secure)
@@ -38,7 +39,7 @@ Users
 - Associated School ID
 - Group ID ( = -1 if they’re not in a group)
 
-Schools
+Schools (IMPLEMENTED)
 - ID
 - School Name
 - Email Identifier (eg. princeton.edu)
@@ -46,7 +47,7 @@ Schools
 - lower right bounding box (lat, long)
 - timestamp
 
-Classes
+Classes (IMPLEMENTED)
 - ID
 - Abbreviation 
 - Course Number
@@ -54,13 +55,13 @@ Classes
 - Associated School ID
 - timestamp
 
-User_Classes
+User_Classes (IMPLEMENTED)
 - ID
 - User ID
 - class ID
 - timestamp
 
-Groups
+Groups (IMPLEMENTED)
 - ID
 - Associated Class ID
 - Associated Leader ID
@@ -73,13 +74,13 @@ Groups
 - description
 - Chat ID (—beta)
 
-Sessions
+Sessions (IMPLEMENTED)
 - ID
 - User_ID
 - Token
 - timestamp
 
-Password Recovery
+Password Recovery (IMPLEMENTED)
 - ID
 - User_ID
 - expiration
