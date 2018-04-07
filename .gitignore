@@ -1,3 +1,5 @@
 #server key file
 *.pem
 src/server/*.pem
+*~
+src/server/flask/__pycache__

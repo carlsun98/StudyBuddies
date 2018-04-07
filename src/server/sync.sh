@@ -1,1 +1,0 @@
-rsync -re "ssh -i StudyBuddies333Server.pem" ./www/html/ ubuntu@34.214.169.181:/var/www/html
