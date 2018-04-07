@@ -1,0 +1,3 @@
+#server key file
+*.pem
+src/server/*.pem
