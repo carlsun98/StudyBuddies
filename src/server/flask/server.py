@@ -2,10 +2,10 @@ from flask import Flask, g, jsonify, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 
-from login_api import login_api
-from create_user_api import create_user_api
-from list_user_classes_api import list_user_classes_api
-from list_class_groups_api import list_class_groups_api
+from login import login_api
+from create_user import create_user_api
+from list_user_classes import list_user_classes_api
+from list_class_groups import list_class_groups_api
 
 app = Flask(__name__)
 
