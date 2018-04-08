@@ -15,6 +15,7 @@ import {
   Button,
   ActivityIndicator,
   Image,
+  Picker
 } from 'react-native';
 
 export default class Settings extends Component<{}> {
@@ -24,9 +25,23 @@ export default class Settings extends Component<{}> {
     this.state = {
       classes : ["COS333", "COS 445"],
       notifications: true, /* comes from db */
-      all_courses: ["SOC 250", "ANT 225", "ENG 201", "ENG 362", "COS 333", "COS 445"]
+      all_courses: ["SOC 250", "ANT 225", "ENG 201", "ENG 362", "COS 333", "COS 445"],
+      addedClass: ' '
     }
   }
+  updateClasses = (addedClass) => {
+    this.setState({addedClass: addedClass})
+  }
+
+  _handleAddClassPress() {
+    this.state.classes.push(this.state.addedClass);
+  }
+
+  _handleDelPress(item) {
+    var i = this.state.classes.indexOf(item);
+    this.state.classes.splice(i,1);
+  }
+
   render() {
 
     return (
@@ -50,7 +65,7 @@ export default class Settings extends Component<{}> {
           <Text key={i} style={styles.description}> {item} </Text>
 
           <Button
-            onPress={() => this._handlePress()} 
+            onPress={() => this._handleDelPress(item)} 
             title = "Del">
           </Button> 
 
@@ -61,11 +76,24 @@ export default class Settings extends Component<{}> {
         <Text style={styles.description}>
           Add Courses:
         </Text>
+        
+          <Button
+            onPress={() => this._handleAddClassPress()} 
+            title = "Add the Selected Course To My List">
+          </Button> 
 
-        <Picker
-        selectedValue
-        >
-        </Picker>
+        <View>
+            <Picker 
+            mode = 'dropdown'
+            selectedValue = {this.state.addedClass} 
+            style={{height: -10, width: 100}} 
+            onValueChange = {this.updateClasses}>
+            {this.state.all_courses.map((item, index) => {
+                return (< Picker.Item label={item} value={index} key={index} />);
+            })} 
+            </Picker>
+
+         </View> 
 
     </View>
 
