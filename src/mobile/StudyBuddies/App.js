@@ -1,37 +1,85 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+'use strict';
 import React, { Component } from 'react';
+import { StackNavigator } from 'react-navigation'; 
 import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  NavigatorIOS,
 } from 'react-native';
+import SearchPage from './SearchPage';
+import CreateUser from './CreateUser';
+import AwaitingConfirmation from './AwaitingConfirmation';
+import Settings from './Settings';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+/* const App = StackNavigator({
+  Home: {screen: SearchPage },
+}) */
 
-type Props = {};
-export default class App extends Component<Props> {
+const RootStack = StackNavigator(
+ {
+  SearchPage: {
+    screen: SearchPage,
+  },
+  CreateUser: {
+    screen: CreateUser,
+  },
+  AwaitingConfirmation: {
+    screen: AwaitingConfirmation,
+  },
+  Settings: {
+    screen: Settings,
+  }
+ },
+ {
+  initialRouteName: 'SearchPage',
+ }
+);
+export default class App extends Component <{}> {
+  render() {
+    return <RootStack />;
+  }
+}
+
+/*class CreateUser extends Component <{}> {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+      </View>
+    );
+  }
+} */
+/*export default StackNavigator({
+  Home: {
+    screen: SearchPage,
+  },
+}); */
+
+/*e xport default class App extends Component <{}> {
+  render() {
+    return (
+      <NavigatorIOS
+        style={{flex: 1}}
+        initialRoute={{
+          component: SearchPage,
+          title: 'My Initial Scene',
+        }}
+      />
+    );
+  }
+} */
+
+/* class SearchPage extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text style={styles.description}>
+          Search for houses to buy!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
+        <Text style={styles.description}>
+          Search by place-name or postcode.
         </Text>
       </View>
     );
@@ -39,20 +87,16 @@ export default class App extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
+  description: {
+    marginBottom: 20,
+    fontSize: 18,
+    textAlign: 'center',
+    color: '#656565'
+  },
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    padding: 30,
+    marginTop: 65,
+    alignItems: 'center'
   },
 });
+*/
