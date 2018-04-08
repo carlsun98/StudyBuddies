@@ -1,7 +1,6 @@
 from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
-import random, string
 
 '''
 Create user API @ /create_user
@@ -25,7 +24,7 @@ def create_user():
     class_year = request.form.get("class_year", "0000")
     
     check_existing_users_stmt = "SELECT COUNT(*) FROM users WHERE email=%s"
-    cursor.execute(check_existing_users_stmt, (email))
+    cursor.execute(check_existing_users_stmt, (email,))
     count = cursor.fetchone()[0]
     if count is not 0:
         return error_with_message("user already exists")

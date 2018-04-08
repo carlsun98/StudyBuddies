@@ -4,11 +4,13 @@ from server_response import success_with_data, error_with_message
 
 from login_api import login_api
 from create_user_api import create_user_api
+from list_user_classes_api import list_user_classes_api
 
 app = Flask(__name__)
 
 app.register_blueprint(login_api)
 app.register_blueprint(create_user_api)
+app.register_blueprint(list_user_classes_api)
 
 # test page
 @app.route('/')
