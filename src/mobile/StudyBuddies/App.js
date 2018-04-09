@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   View,
-  NavigatorIOS,
 } from 'react-native';
 import SearchPage from './SearchPage';
 import CreateUser from './CreateUser';
