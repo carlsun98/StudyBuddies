@@ -1,3 +1,11 @@
+/* Main JavaScript file that tracks a RootStack of pages the user
+ * has visited for navigational flow. MUST BE CAREFUL TO NOT RESTACK
+ * PAGES WHEN USER IS GOING IN LOOPS, aka Classes -> Map -> Group Page
+ * -> Classes, as stack will keep rising if done improperly.
+ *
+ * TODO: -update with every new page added
+ *********************************************************************/
+
 'use strict';
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation'; 
@@ -7,19 +15,16 @@ import {
   Text,
   View,
 } from 'react-native';
-import SearchPage from './SearchPage';
+import Login from './Login';
 import CreateUser from './CreateUser';
 import AwaitingConfirmation from './AwaitingConfirmation';
 import Settings from './Settings';
-
-/* const App = StackNavigator({
-  Home: {screen: SearchPage },
-}) */
+import GroupPage from './GroupPage';
 
 const RootStack = StackNavigator(
  {
-  SearchPage: {
-    screen: SearchPage,
+  Login: {
+    screen: Login,
   },
   CreateUser: {
     screen: CreateUser,
@@ -29,73 +34,18 @@ const RootStack = StackNavigator(
   },
   Settings: {
     screen: Settings,
-  }
+  },
+  GroupPage: {
+    screen: GroupPage,
+  },
  },
  {
-  initialRouteName: 'SearchPage',
+  initialRouteName: 'Login',
  }
 );
+
 export default class App extends Component <{}> {
   render() {
     return <RootStack />;
   }
 }
-
-/*class CreateUser extends Component <{}> {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  }
-} */
-/*export default StackNavigator({
-  Home: {
-    screen: SearchPage,
-  },
-}); */
-
-/*e xport default class App extends Component <{}> {
-  render() {
-    return (
-      <NavigatorIOS
-        style={{flex: 1}}
-        initialRoute={{
-          component: SearchPage,
-          title: 'My Initial Scene',
-        }}
-      />
-    );
-  }
-} */
-
-/* class SearchPage extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.description}>
-          Search for houses to buy!
-        </Text>
-        <Text style={styles.description}>
-          Search by place-name or postcode.
-        </Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  description: {
-    marginBottom: 20,
-    fontSize: 18,
-    textAlign: 'center',
-    color: '#656565'
-  },
-  container: {
-    padding: 30,
-    marginTop: 65,
-    alignItems: 'center'
-  },
-});
-*/

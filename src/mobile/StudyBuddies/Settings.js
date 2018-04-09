@@ -11,7 +11,8 @@
 import React, { Component } from 'react';
 
 import {
-    StackNavigator, 
+    StackNavigator,
+    NavigationActions
 } from 'react-navigation';
 
 import {
@@ -50,6 +51,10 @@ export default class Settings extends Component<{}> {
 	this.state.classes.splice(i,1);
     }
 
+    _handleLogoutPress() {
+	this.props.navigation.dispatch(NavigationActions.back());
+    }
+
     render() {
 
 	return (
@@ -57,11 +62,11 @@ export default class Settings extends Component<{}> {
 
 		<Text style={styles.description}>
 		Settings
-            </Text>
+                </Text>
 
 		<Text style={styles.description}>
 		Current Courses:
-            </Text>
+                </Text>
 
 		<View style={styles.inputBoxes}>
 
@@ -72,24 +77,33 @@ export default class Settings extends Component<{}> {
 
 			<Text key={i} style={styles.description}> {item} </Text>
 
+		        <View style={styles.buttons}>
 			<Button
 		    onPress={() => this._handleDelPress(item)} 
 		    title = "Del">
 			</Button> 
-
-		    </View>
+			</View>
+		        </View>
 			
 		))}
 
 		<Text style={styles.description}>
 		Add Courses:
-            </Text>
-		
+                </Text>
+		<View style={styles.buttons}>
 		<Button
             onPress={() => this._handleAddClassPress()} 
             title = "Add the Selected Course To My List">
 		</Button> 
-
+		</View>
+		
+	        <View style={styles.buttons}>
+		<Button
+	    onPress={() => this._handleLogoutPress()}
+	    title = "Logout">
+		</Button>
+	        </View>
+		
 		<View>
 		<Picker 
             mode = 'dropdown'
@@ -134,6 +148,10 @@ const styles = StyleSheet.create({
 	flexDirection: 'column',
 	alignItems: 'center',
 	padding: 10
+    },
+    buttons: {
+	alignItems: 'center',
+	paddingVertical: 15
     },
     searchInput: {
 	height: 36,
