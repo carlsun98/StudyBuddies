@@ -36,6 +36,6 @@ def list_class_groups():
     WHERE user_classes.user_id = %s"""
 
     cursor.execute(class_groups_stmt, (user_id,))
-    classes = cursor.fetchall()
+    groups = cursor.fetchall()
 
-    return success_with_data({"groups" : classes})
+    return success_with_data({"groups" : groups})
