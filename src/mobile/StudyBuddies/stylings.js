@@ -18,11 +18,11 @@ export default StyleSheet.create({
 	flex: 1,
 	backgroundColor: '#98D894'
     },
-    inputBoxes: {
-   	flex: 1,
-	alignItems: 'center',
-	padding: 10
-    },
+    /*inputBoxes: {
+      marginBottom: 20,
+            textAlign: 'center',
+            color: '#1E1E46'
+    },*/
     buttons: {
 	alignItems: 'center',
 	paddingVertical: 5

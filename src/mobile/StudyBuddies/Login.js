@@ -57,6 +57,7 @@ export default class Login extends Component<{}> {
     return (
 
       <View style={styles.container}>
+
       <Text style={styles.description}>
       Welcome to StudyBuddy!
       </Text>
@@ -65,9 +66,9 @@ export default class Login extends Component<{}> {
       Enter your information below:
       </Text>
 
-      <View style={styles.inputBoxes}>
-      <View style={{flexDirection: 'row'}}>
-      <Text>
+      <View style={styles.description}>
+
+      <Text style={styles.description}>
       Email:
       </Text>
 
@@ -76,11 +77,14 @@ export default class Login extends Component<{}> {
       placeholder='     '
       returnKeyType = {"next"}
       onChangeText={(text) => this.setState({username:text})}
+      autoCapitalize='none'
       />
+
       </View>
 
-      <View style={{flexDirection: 'row'}}>
-      <Text>
+      <View style={styles.description}>
+
+      <Text style={styles.description}>
       Password:
       </Text>
 
@@ -89,52 +93,64 @@ export default class Login extends Component<{}> {
       placeholder='     '
       returnKeyType = {"next"}
       onChangeText={(text) => this.setState({password:text})}
+      autoCapitalize='none'
       />
-      </View>
+
+    </View>
 
       <View style={styles.buttons}>
+
       <Button
       color = '#1E1E46'
       onPress={() => this._handleLoginPress()}
       title = "Login">
       </Button>
+
       </View>
 
       <View style={styles.buttons}>
+
       <Button
       color = '#1E1E46'
       onPress={() => this.props.navigation.navigate('CreateUser')}
       title = "Create Account">
       </Button>
+
       </View>
 
       <View style={styles.buttons}>
+
       <Button
       onPress={() => this.props.navigation.navigate('Settings')}
       title = "Settings (for debugging)">
       </Button>
+
       </View>
 
       <View style={styles.buttons}>
+
       <Button
       onPress={() => this.props.navigation.navigate('GroupPage')}
       title = "Group Page (for debugging)">
       </Button>
+
       </View>
 
       <View style={styles.buttons}>
+
       <Button
       onPress={() => this.props.navigation.navigate('ClassPage')}
       title = "Class Page (for debugging)">
       </Button>
+
       </View>
 
       <View style={styles.buttons}>
+
       <Button
       onPress={() => this.props.navigation.navigate('NewGroupA')}
       title = "Create New Group (for debugging)">
       </Button>
-      </View>
 
       </View>
 
