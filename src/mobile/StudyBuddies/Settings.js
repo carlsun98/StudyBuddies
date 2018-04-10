@@ -47,6 +47,11 @@ export default class Settings extends Component<{}> {
     }
 
     _handleDelPress(item) {
+    const newState = this.state.classes.slice();
+    if (newState.indexOf(item) > -1) {
+    	newState.splice(newState.indexOf(item),1);
+    	this.setState({data: newState})
+    }
 	var i = this.state.classes.indexOf(item);
 	var removedItem = this.state.classes.splice(i,1);
 	console.log(removedItem);
@@ -74,7 +79,7 @@ export default class Settings extends Component<{}> {
             { 
 		this.state.classes.map((item, i) => (
 
-			<View style={{flexDirection: 'row'}}>
+			<View style={{flexDirection: 'row'}} key = {i}>
 			<Text key={i} style={styles.description}> {item} </Text>
 
 		        <View style={styles.buttons}>
