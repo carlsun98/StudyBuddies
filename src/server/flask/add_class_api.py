@@ -34,7 +34,6 @@ def add_class():
     user_id = cursor.fetchall()
     if len(user_id) == 0:
         return error_with_message("invalid_session_token")
-    # NOTE: THIS NEEDS DOUBLE CHECKING CUZ I DON'T KNOW IF THIS DOUBLE ARRAY SYNTAX IS RIGHT
     userID = user_id[0][0]
 
     # Check: Check if this user already has the class added
