@@ -24,6 +24,7 @@ import {
 import CreateUser from './CreateUser';
 import Settings from './Settings';
 import GroupPage from './GroupPage';
+import NewGroupA from './NewGroupA';
 import styles from './stylings';
 export default class Login extends Component<{}> {
     constructor(){
@@ -111,6 +112,14 @@ export default class Login extends Component<{}> {
             title = "Class Page (for debugging)">
 		</Button>
 		</View>
+
+		   <View style={styles.buttons}>   
+		<Button 
+            onPress={() => this.props.navigation.navigate('NewGroupA')}
+            title = "Create New Group (for debugging)">
+		</Button>
+		</View>
+
 		</View>
 
 	    </View>

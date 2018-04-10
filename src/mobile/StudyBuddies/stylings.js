@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
     description: {
 	marginBottom: 20,
         fontSize: 18,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     },
     buttons: {
 	alignItems: 'center',
-	paddingVertical: 15
+	paddingVertical: 5
     },
     searchInput: {
 	height: 36,
