@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
+import random, string
 
 '''
 Create user API @ /create_user
@@ -33,5 +34,11 @@ def create_user():
     cursor.execute(create_user_stmt, (email, password, name, class_year))
     if cursor.rowcount is not 1:
         return error_with_message("creating user failed")
+
+    user_id = cursor.lastrowid
+    confirmation_token = ''.join(random.choice(string.ascii_letters +
+                                          string.digits) for _ in range(32))
+    create_confirmation_stmt = "INSERT INTO email_confirmations (user_id, token) VALUES (%d %s)"
+    cursor.execute(create_confirmation_stmt, (user_id, confirmation_token))
     conn.commit()
-    return success_with_data({})
+    return success_with_data({"confirmation_token" : confirmation_token})
