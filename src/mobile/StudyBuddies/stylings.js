@@ -24,7 +24,7 @@ export default StyleSheet.create({
     },
     buttons: {
 	alignItems: 'center',
-	paddingVertical: 15
+	paddingVertical: 5
     },
     searchInput: {
 	height: 36,

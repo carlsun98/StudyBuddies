@@ -21,6 +21,10 @@ import AwaitingConfirmation from './AwaitingConfirmation';
 import Settings from './Settings';
 import GroupPage from './GroupPage';
 import ClassPage from './ClassPage';
+import NewGroupA from './NewGroupA';
+import NewGroupB from './NewGroupB';
+import NewGroupC from './NewGroupC';
+import NewGroupD from './NewGroupD';
 
 const RootStack = StackNavigator(
  {
@@ -41,6 +45,18 @@ const RootStack = StackNavigator(
   },
   ClassPage: {
     screen: ClassPage,
+  },
+    NewGroupA: {
+    screen: NewGroupA,
+  },
+      NewGroupB: {
+    screen: NewGroupB,
+  },
+      NewGroupC: {
+    screen: NewGroupC,
+  },
+        NewGroupD: {
+    screen: NewGroupD,
   },
  },
  {

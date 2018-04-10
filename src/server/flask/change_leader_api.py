@@ -34,4 +34,4 @@ def change_leader():
         return error_with_message("user was not a group leader")
 
     conn.commit()
-    return success_with_data({})+
+    return success_with_data({})
