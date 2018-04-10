@@ -5,7 +5,7 @@ export default StyleSheet.create({
 	marginBottom: 20,
         fontSize: 18,
         textAlign: 'center',
-        color: '#656565'
+        color: '#1E1E46'
     },
     descriptionAsk: {
         marginBottom: 20,
@@ -15,8 +15,8 @@ export default StyleSheet.create({
     },
     container: {
 	padding: 30,
-	marginTop: 65,
-	flex: 1
+	flex: 1,
+	backgroundColor: '#98D894'
     },
     inputBoxes: {
 	alignItems: 'center',
@@ -33,8 +33,8 @@ export default StyleSheet.create({
 	marginLeft: 5,
 	fontSize: 18,
 	borderWidth: 1,
-	borderColor: '#48BBEC',
-	borderRadius: 8,
-	color: '#48BBEC',
+	borderColor: '#1E1E46',
+	borderRadius: 10,
+	color: '#1E1E46',
     },
 });
