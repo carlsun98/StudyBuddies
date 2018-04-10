@@ -18,6 +18,7 @@ import {
     ActivityIndicator,
     Image,
 } from 'react-native';
+import styles from './stylings';
 
 export default class AwaitingConfirmation extends Component<{}> {
 
@@ -32,12 +33,3 @@ export default class AwaitingConfirmation extends Component<{}> {
 	);
     }
 }
-
-const styles = StyleSheet.create({
-    description: {
-	marginBottom: 20,
-	fontSize: 18,
-	textAlign: 'center',
-	color: '#656565'
-    }
-});
