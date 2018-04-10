@@ -1,6 +1,8 @@
-/* First page of app for logging in and creating StudyBuddy account.
+/* Second page of create group flow. Lets user choose location (using
+ * Google Maps).
  * TODO: -styling
- *       -link it to Server
+ *       -include Google Maps
+ *       -link Map to stoing locations in DB
  *******************************************************************/
 
 'use strict';

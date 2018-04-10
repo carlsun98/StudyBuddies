@@ -1,6 +1,7 @@
-/* First page of app for logging in and creating StudyBuddy account.
+/* First page of create group flow. Asks for course user wants to
+ * make the group for.
  * TODO: -styling
- *       -link it to Server
+ *       -link it to school's courses
  *******************************************************************/
 
 'use strict';

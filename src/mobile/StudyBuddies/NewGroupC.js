@@ -1,6 +1,8 @@
-/* First page of app for logging in and creating StudyBuddy account.
+/* Third page of create group flow. Needs to allow user to choose
+ * how long the group will (initially) exist for before being
+ * automatically disbanded. 
  * TODO: -styling
- *       -link it to Server
+ *       -proper setup of time choosing
  *******************************************************************/
 
 'use strict';

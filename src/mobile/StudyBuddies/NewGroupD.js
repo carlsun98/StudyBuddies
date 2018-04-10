@@ -1,6 +1,10 @@
-/* First page of app for logging in and creating StudyBuddy account.
+/* Last page of create group flow. Allows user to choose group purpose
+ * (General Review, Exam Cramming, or Homework) as well as write a
+ * description with any other details they want other users to see
+ * when thinking about joining.
  * TODO: -styling
- *       -link it to Server
+ *       -add purpose options
+ *       -link it to store descriptions
  *******************************************************************/
 
 'use strict';
