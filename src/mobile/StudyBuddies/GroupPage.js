@@ -28,25 +28,27 @@ export default class GroupPage extends Component<{}> {
 	    password: '',
 	}
     }
-    _handlePress() {
-	console.log(this.state.username);
-	console.log(this.state.password);
-	this.props.navigation.navigate('AwaitingConfirmation', {email: this.state.username})
-    }
-
     render() {
 	return (
 		<View style={styles.container}>
 
-		<View style={styles.inputBoxes}>
+		<View style={styles.buttons}>
+		<Text>
+		  Class Abbrv and # Go Here
+		</Text>
+	        </View>
 
-		<Button
-            onPress={() => this._handlePress()} 
-            title = "Active Groups">
-		</Button>
-		
-	    </View>
+	        <View style={styles.buttons}>
+		<Text>
+		  Location Goes Here
+		</Text>
+	        </View>
 
+	        <View style={styles.buttons}>
+		<Text>
+		  Members List/Button to see it goes here
+		</Text>
+	        </View>
 	    </View>
 	);
     }
@@ -71,6 +73,10 @@ const styles = StyleSheet.create({
 	padding: 30,
 	marginTop: 65,
 	flex: 1
+    },
+    buttons: {
+	alignItems: 'center',
+	paddingVertical: 15
     },
     inputBoxes: {
 	alignItems: 'center',

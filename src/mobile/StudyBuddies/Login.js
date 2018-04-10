@@ -23,6 +23,7 @@ import {
 } from 'react-native';
 import CreateUser from './CreateUser';
 import Settings from './Settings';
+import GroupPage from './GroupPage';
 
 export default class Login extends Component<{}> {
     constructor(){
@@ -94,6 +95,20 @@ export default class Login extends Component<{}> {
 		<Button 
             onPress={() => this.props.navigation.navigate('Settings')}
             title = "Settings (for debugging)">
+		</Button>
+		</View>
+
+	        <View style={styles.buttons}>   
+		<Button 
+            onPress={() => this.props.navigation.navigate('GroupPage')}
+            title = "Group Page (for debugging)">
+		</Button>
+		</View>
+
+	        <View style={styles.buttons}>   
+		<Button 
+            onPress={() => this.props.navigation.navigate('ClassPage')}
+            title = "Class Page (for debugging)">
 		</Button>
 		</View>
 		</View>

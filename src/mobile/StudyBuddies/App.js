@@ -20,6 +20,7 @@ import CreateUser from './CreateUser';
 import AwaitingConfirmation from './AwaitingConfirmation';
 import Settings from './Settings';
 import GroupPage from './GroupPage';
+import ClassPage from './ClassPage';
 
 const RootStack = StackNavigator(
  {
@@ -37,6 +38,9 @@ const RootStack = StackNavigator(
   },
   GroupPage: {
     screen: GroupPage,
+  },
+  ClassPage: {
+    screen: ClassPage,
   },
  },
  {
