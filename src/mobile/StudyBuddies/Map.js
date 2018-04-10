@@ -21,10 +21,9 @@ import {
     ActivityIndicator,
     Image,
 } from 'react-native';
-import NewGroupB from './NewGroupB';
 import styles from './stylings';
 
-export default class NewGroupA extends Component<{}> {
+export default class Map extends Component<{}> {
     constructor(){
 	super()
 	this.state = {
@@ -40,27 +39,8 @@ export default class NewGroupA extends Component<{}> {
 	return (
               <View style={styles.container}>
 		<Text style={styles.description}>
-		  You Are Making a New Group!
+		  Map goes here
                 </Text>
-
-		<Text style={styles.description}>
-		  What class do you want to make a group for?
-                </Text>
-
-  	 	<TextInput 
-    	          style={styles.searchInput}
-    	          placeholder='     '
-    	          returnKeyType = {"next"}
- 	          onChangeText={(text) => this.setState({groupClass:text})}
-    		/>
-
-		<View style={styles.buttons}>
-		<Button
-            onPress={() => this._handlePress()}
-	            color = "#1E1E46"
-                    title = "Next Step">
-		  </Button>
-		</View>
 	      </View>
 	);
     }

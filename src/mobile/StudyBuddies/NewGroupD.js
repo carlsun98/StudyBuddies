@@ -50,9 +50,9 @@ render() {
         You Are Making a New Group!
             </Text>
 
-        <View style={styles.inputBoxes}>
+
         <View style={{flexDirection: 'row'}}>
-        <Text>
+            <Text style={styles.description}>
         Purpose of Group:
             </Text>
 
@@ -63,11 +63,9 @@ render() {
         onChangeText={(text) => this.setState({groupCategory:text})}
             />
             </View>
-            </View>
 
-        <View style={styles.inputBoxes}>
         <View style={{flexDirection: 'row'}}>
-        <Text>
+            <Text style={styles.description}>
         Description:
             </Text>
 
@@ -78,12 +76,11 @@ render() {
         onChangeText={(text) => this.setState({groupDesc:text})}
             />
             </View>
-            </View>
-
 
         <View style={styles.buttons}>
         <Button
-            onPress={() => this._handlePress()} 
+        onPress={() => this._handlePress()}
+	color = '#1E1E46'
             title = "Done">
         </Button>
         </View>
@@ -92,42 +89,3 @@ render() {
     );
     }
 }
-
-/*const styles = StyleSheet.create({
-    description: {
-	marginBottom: 20,
-        fontSize: 18,
-        textAlign: 'center',
-        color: '#656565'
-    },
-    descriptionAsk: {
-        marginBottom: 20,
-        fontSize: 18,
-	textAlign: 'left',
-	color: '#656565'
-    },
-    container: {
-	padding: 30,
-	marginTop: 65,
-	flex: 1
-    },
-    inputBoxes: {
-	alignItems: 'center',
-	padding: 10
-    },
-    buttons: {
-	alignItems: 'center',
-	paddingVertical: 15
-    },
-    searchInput: {
-	height: 36,
-	padding: 4,
-	marginRight: 5,
-	marginLeft: 5,
-	fontSize: 18,
-	borderWidth: 1,
-	borderColor: '#48BBEC',
-	borderRadius: 8,
-	color: '#48BBEC',
-    },
-}); */

@@ -35,7 +35,7 @@ export default class Settings extends Component<{}> {
 	    classes : ["COS333", "COS 445"],
 	    notifications: true, /* comes from db */
 	    all_courses: ["SOC 250", "ANT 225", "ENG 201", "ENG 362", "COS 333", "COS 445"],
-	    addedClass: ' '
+	    addedClass: 0
 	}
     }
     updateClasses = (addedClass) => {
@@ -43,7 +43,8 @@ export default class Settings extends Component<{}> {
     }
 
     _handleAddClassPress() {
-	this.state.classes.push(this.state.addedClass);
+	this.state.classes.push(this.state.all_courses[this.state.addedClass]);
+	this.setState({classes: this.state.classes})
     }
 
     _handleDelPress(item) {
