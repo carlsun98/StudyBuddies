@@ -20,7 +20,7 @@ create_user_api = Blueprint('create_user_api', __name__)
 def create_user():
     cursor, conn = connect()
     email = request.form.get("email")
-    passwd = request.form.get("password")
+    password = request.form.get("password")
     name = request.form.get("name", "NO_NAME")
     class_year = request.form.get("class_year", "0000")
     
@@ -30,15 +30,17 @@ def create_user():
     if count is not 0:
         return error_with_message("user already exists")
     
-    create_user_stmt = "INSERT INTO users (email, password, name, class_year) VALUES (%s %s %s %s)"
+    create_user_stmt = "INSERT INTO users (email, password, name, class_year) VALUES (%s, %s, %s, %s)"
     cursor.execute(create_user_stmt, (email, password, name, class_year))
     if cursor.rowcount is not 1:
         return error_with_message("creating user failed")
+    conn.commit()
 
     user_id = cursor.lastrowid
     confirmation_token = ''.join(random.choice(string.ascii_letters +
                                           string.digits) for _ in range(32))
-    create_confirmation_stmt = "INSERT INTO email_confirmations (user_id, token) VALUES (%d %s)"
+    create_confirmation_stmt = "INSERT INTO email_confirmations (user_id, token) VALUES (%s, %s)"
     cursor.execute(create_confirmation_stmt, (user_id, confirmation_token))
     conn.commit()
     return success_with_data({"confirmation_token" : confirmation_token})
+
