@@ -24,7 +24,7 @@ import {
 import CreateUser from './CreateUser';
 import Settings from './Settings';
 import GroupPage from './GroupPage';
-
+import styles from './stylings';
 export default class Login extends Component<{}> {
     constructor(){
 	super()
@@ -118,7 +118,7 @@ export default class Login extends Component<{}> {
     }
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     description: {
 	marginBottom: 20,
         fontSize: 18,
@@ -155,4 +155,4 @@ const styles = StyleSheet.create({
 	borderRadius: 8,
 	color: '#48BBEC',
     },
-});
+}); */
