@@ -48,7 +48,8 @@ export default class Settings extends Component<{}> {
 
     _handleDelPress(item) {
 	var i = this.state.classes.indexOf(item);
-	this.state.classes.splice(i,1);
+	var removedItem = this.state.classes.splice(i,1);
+	console.log(removedItem);
     }
 
     _handleLogoutPress() {
@@ -74,16 +75,15 @@ export default class Settings extends Component<{}> {
 		this.state.classes.map((item, i) => (
 
 			<View style={{flexDirection: 'row'}}>
-
 			<Text key={i} style={styles.description}> {item} </Text>
 
 		        <View style={styles.buttons}>
-			<Button
+			<Button 
 		    onPress={() => this._handleDelPress(item)} 
 		    title = "Del">
 			</Button> 
 			</View>
-		        </View>
+		    </View>
 			
 		))}
 
@@ -105,7 +105,7 @@ export default class Settings extends Component<{}> {
 	        </View>
 		
 		<View>
-		<Picker 
+		 <Picker 
             mode = 'dropdown'
             selectedValue = {this.state.addedClass} 
             style={{height: -10, width: 100}} 
@@ -113,7 +113,7 @@ export default class Settings extends Component<{}> {
 		{this.state.all_courses.map((item, index) => {
                     return (< Picker.Item label={item} value={index} key={index} />);
 		})} 
-            </Picker>
+            </Picker> 
 
             </View> 
 

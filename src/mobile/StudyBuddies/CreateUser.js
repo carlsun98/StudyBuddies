@@ -39,62 +39,67 @@ export default class CreateUser extends Component<{}> {
 
     render() {
 	return (
-	      <View style={styles.container}>
-		<Text style={styles.description}>
-		  Welcome to StudyBuddy! You will be studying in no time!
-                </Text>
+		<View style={styles.container}>
 
 		<Text style={styles.description}>
-        	  First, we need your school email and a password for you. Then we will send you a confirmation
-                  email with a link to click, and you will be all set!
-                </Text>
+		Welcome to StudyBuddy! You will be studying in no time!
+            </Text>
+
+		<Text style={styles.description}>
+        	First, we need your school email and a password for you. Then we will send you a confirmation
+            email with a link to click, and you will be all set!
+            </Text>
+
+		<View style={styles.inputBoxes}>
 
 		<View style={{flexDirection: 'row'}}>
-		  <Text style={styles.description}>
-		    Email:
-                  </Text>
 
-  		  <TextInput 
-    	            style={styles.searchInput}
-                    placeholder = "    "
-    	            returnKeyType = {"next"}
- 	            onChangeText={(text) => this.setState({username:text})}
-    		  />
+		<Text>
+		Email:
+            </Text>
+
+  		<TextInput 
+    	    style={styles.searchInput}
+            placeholder = "    "
+    	    returnKeyType = {"next"}
+ 	    onChangeText={(text) => this.setState({username:text})}
+    		/>
 		</View>
 
 		<View style={{flexDirection: 'row'}}>
-		  <Text style={styles.description}>
-		    Create Password:
-                  </Text>
+		<Text>
+		Create Password:
+            </Text>
 
-  		  <TextInput 
-    	            style={styles.searchInput}
-                    placeholder = "    "
-    	            returnKeyType = {"next"}
- 	            onChangeText={(text) => this.setState({password:text})}
-    		  />
+  		<TextInput 
+    	    style={styles.searchInput}
+            placeholder = "    "
+    	    returnKeyType = {"next"}
+ 	    onChangeText={(text) => this.setState({password:text})}
+    		/>
 		</View>
 
 		<View style={{flexDirection: 'row'}}>
-		  <Text style={styles.description}>
-		    Repeat Password:
-                  </Text>
+		<Text>
+		Repeat Password:
+            </Text>
 
-		  <TextInput 
-                    style={styles.searchInput}
-                    placeholder = "    "
-                    returnKeyType = {"next"}
-                    onChangeText={(text) => this.setState({password:text})}
-		  />
+		<TextInput 
+            style={styles.searchInput}
+            placeholder = "    "
+            returnKeyType = {"next"}
+            onChangeText={(text) => this.setState({password:text})}
+		/>
 		</View>
 
 		<Button
-                  onPress={() => this._handlePress()}
-	          color = '#1E1E46'
-                  title = "Send Me the Email!">
+            onPress={() => this._handlePress()} 
+            title = "Send Me the Email!">
 		</Button>
 		
-	      </View>
+	    </View>
+
+	    </View>
 	);
     }
 }

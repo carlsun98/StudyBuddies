@@ -19,6 +19,7 @@ export default StyleSheet.create({
 	backgroundColor: '#98D894'
     },
     inputBoxes: {
+   	flex: 1,
 	alignItems: 'center',
 	padding: 10
     },
