@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 import random, string
+from verify import verify_required_keys
 
 '''
 Login API @ /login
@@ -12,9 +13,12 @@ Output:
     session token
 '''
 
+REQUIRED_KEYS = ["email", "password"]
+
 login_api = Blueprint('login_api', __name__)
 
 @login_api.route("/login", methods=['POST'])
+@verify_required_keys(REQUIRED_KEYS)
 def login():
     cursor, conn = connect()
     email = request.form.get("email")
@@ -39,8 +43,8 @@ def login():
         "token": session_token,
         "user_info": {
             "id": user_id,
-            "email": results[1],
-            "name": results[2],
-            "class_year": results[3]
+            "email": user[1],
+            "name": user[2],
+            "class_year": user[3]
         }
     })

@@ -32,4 +32,17 @@ def list_user_classes(**kwargs):
     cursor.execute(user_classes_stmt, (user_id,))
     classes = cursor.fetchall()
 
-    return success_with_data({"classes" : classes})
+    resultsDict = []
+    for the_class in classes:
+        id = the_class[0]
+        course_title = the_class[1]
+        course_abbreviation = the_class[2]
+        course_number = the_class[3]
+        result = {
+            "id": id,
+            "course_title": course_title,
+            "course_abbreviation": course_abbreviation,
+            "course_number": course_number
+        }
+        resultsDict.append(result)
+    return success_with_data({"classes" : resultsDict})
