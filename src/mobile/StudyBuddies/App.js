@@ -8,7 +8,7 @@
 
 'use strict';
 import React, { Component } from 'react';
-import { StackNavigator } from 'react-navigation'; 
+import { StackNavigator } from 'react-navigation';
 import {
   Platform,
   StyleSheet,
@@ -25,6 +25,7 @@ import NewGroupA from './NewGroupA';
 import NewGroupB from './NewGroupB';
 import NewGroupC from './NewGroupC';
 import NewGroupD from './NewGroupD';
+import MapPage from './MapPage';
 
 const RootStack = StackNavigator(
  {
@@ -46,17 +47,20 @@ const RootStack = StackNavigator(
   ClassPage: {
     screen: ClassPage,
   },
-    NewGroupA: {
+  NewGroupA: {
     screen: NewGroupA,
   },
-      NewGroupB: {
+  NewGroupB: {
     screen: NewGroupB,
   },
-      NewGroupC: {
+  NewGroupC: {
     screen: NewGroupC,
   },
-        NewGroupD: {
+  NewGroupD: {
     screen: NewGroupD,
+  },
+  MapPage: {
+    screen: MapPage,
   },
  },
  {

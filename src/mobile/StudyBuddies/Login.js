@@ -27,6 +27,7 @@ import Settings from './Settings';
 import GroupPage from './GroupPage';
 import NewGroupA from './NewGroupA';
 import styles from './stylings';
+import MapPage from './MapPage';
 import {dictVars} from './globals.js';
 
 export default class Login extends Component<{}> {
@@ -154,6 +155,15 @@ export default class Login extends Component<{}> {
       <Button
       onPress={() => this.props.navigation.navigate('NewGroupA')}
       title = "Create New Group (for debugging)">
+      </Button>
+
+      </View>
+
+      <View style={styles.buttons}>
+
+      <Button
+      onPress={() => this.props.navigation.navigate('MapPage')}
+      title = "Map (for debugging)">
       </Button>
 
       </View>
