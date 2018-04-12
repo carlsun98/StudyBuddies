@@ -19,7 +19,7 @@ def login():
     cursor, conn = connect()
     email = request.form.get("email")
     passwd = request.form.get("password")
-    login_stmt = "SELECT id FROM users WHERE email=%s AND password=%s"
+    login_stmt = "SELECT id, email, name, class_year FROM users WHERE email=%s AND password=%s"
     cursor.execute(login_stmt, (email, passwd))
     results = cursor.fetchall()
     if len(results) == 0:
@@ -35,4 +35,12 @@ def login():
     if cursor.rowcount is not 1:
         return error_with_message("bad_session_creation")
     conn.commit()
-    return success_with_data({"token": session_token})
+    return success_with_data({
+        "token": session_token,
+        "user_info": {
+            "id": user_id,
+            "email": results[1],
+            "name": results[2],
+            "class_year": results[3]
+        }
+    })

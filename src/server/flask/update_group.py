@@ -21,7 +21,9 @@ Output:
 update_group_api = Blueprint('update_group_api', __name__)
 
 @update_group_api.route("/update_group", methods=['POST'])
-def update_group():
+@auth_required
+def update_group(**kwargs):
+    userID = kwargs["user_id"]
     cursor, conn = connect()
     group_id = request.form.get("group_id")
 
@@ -29,7 +31,7 @@ def update_group():
     cursor.execute(check_group_id_stmt, (group_id,))
     results = cursor.fetchall()
     if len(results) == 0:
-        return error_with_message("group_does_not_exist")
+        return error_with_message("msg_group_does_not_exist")
 
     choose_defaults_stmt = "SELECT end_time, category, description, location_lat, location_lon, location_description FROM groups WHERE id=%s"
     cursor.execute(choose_defaults_stmt, (group_id,))
@@ -48,25 +50,18 @@ def update_group():
     location_lon = request.form.get("location_lon", default_location_lon)
     location_des = request.form.get("location_description", default_location_des)
 
-    choose_user_id_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(choose_user_id_stmt, (session_token,))
-    user_id = cursor.fetchall()
-    if len(user_id) == 0:
-        return error_with_message("invalid_session_token")
-    userID = user_id[0][0]
-
     check_leader_id_stmt = "SELECT COUNT(*) FROM groups WHERE leader_id=%s"
     cursor.execute(check_leader_id_stmt, (userID,))
     results = cursor.fetchall()
     if len(results) == 0:
-        return error_with_message("no_matching_leader_id")
+        return error_with_message("msg_no_matching_leader_id")
     elif len(results) > 1:
-        return error_with_message("multiple_leader_id_matches")
+        return error_with_message("msg_multiple_leader_id_matches")
 
     update_group_stmt = "UPDATE groups SET end_time=%s, category=%s, description=%s, location_lat=%s, location_lon=%s, location_des=%s WHERE id=%s AND leader_id=%s"
     cursor.execute(update_group_stmt, (end_time, category, description, location_lat, location_lon, location_des, group_id, userID))
     if cursor.rowcount is not 1:
-        return error_with_message("updating group failed")
+        return error_with_message("msg_updating_group_failed")
 
     conn.commit()
     return success_with_data({})

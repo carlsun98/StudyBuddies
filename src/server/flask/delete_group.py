@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 import random, string
+from auth import auth_required
 
 '''
 Login API @ /login
@@ -15,16 +16,9 @@ Output:
 delete_group_api = Blueprint('delete_group_api', __name__)
 
 @delete_group_api.route("/delete_group", methods=['POST'])
-def delete_group():
-    cursor, conn = connect()
-    session_token = request.form.get("session_token")
-    find_session_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(find_session_stmt, (session_token))
-    results = cursor.fetchall()
-    if len(results) == 0:
-        return error_with_message("invalid_session")
-
-    user_id = results[0][0]
+@auth_required
+def delete_group(**kwargs):
+    user_id = kwargs["user_id"]
 
     get_group_stmt = "SELECT id FROM groups WHERE leader_id=%d"
     cursor.execute(get_group_stmt, (user_id))

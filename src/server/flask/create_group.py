@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
-import random, string
+from auth import auth_required
 
 '''
 Create group API @ /create_group
@@ -18,13 +18,22 @@ Output:
     success/failure
 '''
 
+REQUIRED_KEYS = ["class_id",
+                 "end_time",
+                 "category",
+                 "description",
+                 "location_lat",
+                 "location_lon",
+                 "location_description"]
+
 create_group_api = Blueprint('create_group_api', __name__)
 
 @create_group_api.route("/create_group", methods=['POST'])
-def create_group():
+@auth_required
+def create_group(**kwargs):
+    userID = kwargs["user_id"]
     cursor, conn = connect()
     class_id = request.form.get("class_id")
-    session_token = request.form.get("session_token")
     end_time = request.form.get("end_time")
     category = request.form.get("category")
     description = request.form.get("description")
@@ -32,14 +41,6 @@ def create_group():
     location_lon = request.form.get("location_lon")
     location_des = request.form.get("location_description")
     chat_id = request.form.get("chat_id")
-
-    # Choose the id associated with the session token
-    choose_user_id_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(choose_user_id_stmt, (session_token,))
-    user_id = cursor.fetchall()
-    if len(user_id) == 0:
-        return error_with_message("invalid_session_token")
-    userID = user_id[0][0]
 
     # Check: Check that user is not in another group
     check_user_group_stmt = "SELECT user_id FROM groups WHERE leader_id=%s"

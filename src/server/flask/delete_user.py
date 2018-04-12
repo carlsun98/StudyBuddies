@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 import random, string
-
+from auth import auth_required
 '''
 Login API @ /login
 Input:
@@ -15,16 +15,9 @@ Output:
 delete_user_api = Blueprint('delete_user_api', __name__)
 
 @delete_user_api.route("/delete_user", methods=['POST'])
-def delete_user():
-    cursor, conn = connect()
-    session_token = request.form.get("session_token")
-    find_session_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(find_session_stmt, (session_token))
-    results = cursor.fetchall()
-    if len(results) == 0:
-        return error_with_message("invalid_session")
-
-    user = results[0][0]
+@auth_required
+def delete_user(**kwargs):
+    user = results["user_id"]
 
     del_user_stmt = "DELETE from users where user_id=%d"
     cursor.execute(del_user_stmt, (user))

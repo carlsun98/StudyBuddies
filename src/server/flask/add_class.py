@@ -2,6 +2,8 @@ from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 import random, string
+from auth import auth_required
+from verify import verify_required_keys
 
 '''Add class API @ /add_class
 Input:
