@@ -3,6 +3,7 @@ from dbconnect import connect
 from server_response import success_with_data, error_with_message
 from verify import verify_required_keys
 import random, string
+import smtplib
 
 '''
 Create user API @ /create_user
@@ -46,4 +47,18 @@ def create_user():
     create_confirmation_stmt = "INSERT INTO email_confirmations (user_id, token) VALUES (%s, %s)"
     cursor.execute(create_confirmation_stmt, (user_id, confirmation_token))
     conn.commit()
+
+    # Send confirmation email
+    FROM = "thestudybuddiesapp@gmail.com"
+    TO = [email]
+    SUBJECT = "Confirm your StudyBuddy Account"
+    MSG = ("Hello " + name +
+    ",\nPlease confirm your account by visiting this link: " +
+    "http://34.214.169.181:5000/confirm_account?confirmation_token="+confirmation_token+"\n"+
+    "\nThank you,\nThe StudyBuddies Team")
+    message = 'Subject: {}\n\n{}'.format(SUBJECT, MSG)
+    server = smtplib.SMTP('localhost')
+    server.sendmail(FROM, TO, message)
+    server.quit()
+    print(message)
     return success_with_data({"confirmation_token" : confirmation_token})
