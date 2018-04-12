@@ -46,10 +46,8 @@ export default class Login extends Component<{}> {
     body: form,
     }).then(response => response.json())
       .then((responseJson) => {
-        console.log(responseJson)
-        console.log(responseJson[1]['token'])
-        dictVars['SESSION_KEY'] = responseJson[1]['token']
-                console.log("TOKEN:")
+        let token = responseJson[1]['token']
+        global.SESSION_TOKEN = token;
       })
       .catch(error =>
         this.setState({
