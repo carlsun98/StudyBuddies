@@ -41,11 +41,15 @@ def classes_list(**kwargs):
     search_results = []
 
     for course in results:
-        if re.search(search_string, course[0]) is not None:
-            search_results.push(course)
-        elif re.search(search_string, course[1]) is not None:
+        if re.search(search_string, course[1]) is not None:
             search_results.push(course)
         elif re.search(search_string, course[2]) is not None:
             search_results.push(course)
+        elif re.search(search_string, course[3]) is not None:
+            search_results.push(course)
+        elif re.search(search_string, course[2] + str(course[3])) is not None:
+            search_results.push(course)
+        elif re.search(search_string, course[2] + " " + str(course[3])) is not None:
+            search.results.push(course)
 
     return success_with_data(search_results)
