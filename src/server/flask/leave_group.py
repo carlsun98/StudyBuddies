@@ -20,18 +20,18 @@ leave_group_api = Blueprint('leave_group_api', __name__)
 def leave_group(**kwargs):
     user_id = kwargs["user_id"]
 
-    get_group_stmt = "SELECT group_id FROM users WHERE id=%d"
-    cursor.execute(get_group_stmt, (user_id))
+    get_group_stmt = "SELECT group_id FROM users WHERE id=%s"
+    cursor.execute(get_group_stmt, (user_id,))
     results = cursor.fetchall()
     if len(results) == 0:
-        return error_with_message("user does not exist")
+        return error_with_message("msg_user_does_not_exist")
     group_id = results[0][0]
 
-    get_leader_stmt = "SELECT leader_id FROM groups WHERE id=%d"
-    cursor.execute(get_leader_stmt, (group_id))
+    get_leader_stmt = "SELECT leader_id FROM groups WHERE id=%s"
+    cursor.execute(get_leader_stmt, (group_id,))
     results = cursor.fetchall()
     if len(results) == 0:
-        return error_with_message("group does not exist")
+        return error_with_message("msg_group_does_not_exist")
 
     leader_id = results[0][0]
 
