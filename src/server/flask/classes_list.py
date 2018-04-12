@@ -1,7 +1,8 @@
 from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
-import random, string
+from auth import auth_required
+from verify import verify_required_keys
 import re
 
 '''
@@ -37,14 +38,14 @@ def classes_list(**kwargs):
     cursor.execute(get_classes_stmt, (school_id,))
     results = cursor.fetchall()
 
-    search_results = [][]
+    search_results = []
 
     for course in results:
         if re.search(search_string, course[0]) is not None:
             search_results.push(course)
-        else if re.search(search_string, course[1]) is not None:
+        elif re.search(search_string, course[1]) is not None:
             search_results.push(course)
-        else if re.search(search_string, course[2]) is not None:
+        elif re.search(search_string, course[2]) is not None:
             search_results.push(course)
 
     return success_with_data(search_results)
