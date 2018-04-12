@@ -27,6 +27,7 @@ import {
     Picker
 } from 'react-native';
 import styles from './stylings';
+import {dictVars} from './globals.js'
 export default class Settings extends Component<{}> {
 
     constructor(){
@@ -43,7 +44,22 @@ export default class Settings extends Component<{}> {
     }
 
     _handleAddClassPress() {
-	this.state.classes.push(this.state.all_courses[this.state.addedClass]);
+	    let form = new FormData();
+    form.append('class_id', this.state.addedClass);
+    form.append('password', this.state.password);
+    fetch('http://34.214.169.181:5000/add_class', {
+    method: 'POST',
+    body: form,
+    }).then(response => response.json())
+      .then((responseJson) => {
+        console.log(responseJson)
+      })
+      .catch(error =>
+        this.setState({
+          isLoading: false,
+          message: 'Something went wrong: ' + error
+        }));
+    this.state.classes.push(this.state.all_courses[this.state.addedClass]);
 	this.setState({classes: this.state.classes})
     }
 
@@ -56,6 +72,7 @@ export default class Settings extends Component<{}> {
 	var i = this.state.classes.indexOf(item);
 	var removedItem = this.state.classes.splice(i,1);
 	console.log(removedItem);
+	console.log(dictVars['SESSION_KEY']);
     }
 
     _handleLogoutPress() {

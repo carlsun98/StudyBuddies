@@ -27,6 +27,8 @@ import Settings from './Settings';
 import GroupPage from './GroupPage';
 import NewGroupA from './NewGroupA';
 import styles from './stylings';
+import {dictVars} from './globals.js';
+
 export default class Login extends Component<{}> {
   constructor(){
     super()
@@ -45,12 +47,16 @@ export default class Login extends Component<{}> {
     }).then(response => response.json())
       .then((responseJson) => {
         console.log(responseJson)
+        console.log("TOKEN:")
+        console.log(responseJson[1]['token'])
+        dictVars['SESSION_KEY'] = responseJson[1]['token']
       })
       .catch(error =>
         this.setState({
           isLoading: false,
           message: 'Something went wrong: ' + error
         }));
+
   }
 
   render() {
@@ -66,7 +72,7 @@ export default class Login extends Component<{}> {
       Enter your information below:
       </Text>
 
-      <View style={styles.description}>
+      <View>
 
       <Text style={styles.description}>
       Email:
@@ -82,7 +88,7 @@ export default class Login extends Component<{}> {
 
       </View>
 
-      <View style={styles.description}>
+      <View>
 
       <Text style={styles.description}>
       Password:

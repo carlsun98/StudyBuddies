@@ -1,5 +1,5 @@
 // App Globals
-module.exports = {
-  SESSION_KEY = ''
-  ACCT_EMAIL = ''
-}
+var dictVars = {}
+module.exports = dictVars
+ // SESSION_KEY = ''
+  // ACCT_EMAIL = ''
