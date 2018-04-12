@@ -28,6 +28,7 @@ import NewGroupD from './NewGroupD';
 import MapPage from './MapPage';
 import { NavigationComponent } from 'react-native-material-bottom-navigation';
 import { TabNavigator } from 'react-navigation'
+
 const TabBarPage = TabNavigator(
   {
     ClassPage: {screen: ClassPage},
@@ -44,18 +45,22 @@ const TabBarPage = TabNavigator(
         rippleColor: 'white',
         tabs: {
           ClassPage: {
+	    label: "Classes",
 	    barBackgroundColor: "#1E1E46",
 	    activeLabelColor: "#98D894",
           },
           MapPage: {
+	    label: "Map",
 	    barBackgroundColor: "#1E1E46",
 	    activeLabelColor: "#98D894",
           },
           GroupPage: {
+	    label: "Current Group",
 	    barBackgroundColor: "#1E1E46",
 	    activeLabelColor: "#98D894",
           },
           Settings: {
+	    label: "Settings",
 	    barBackgroundColor: "#1E146",
 	    activeLabelColor: "#98D894",
           }
