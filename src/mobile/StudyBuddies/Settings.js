@@ -27,7 +27,7 @@ import {
     Picker
 } from 'react-native';
 import styles from './stylings';
-import {dictVars} from './globals.js'
+// import {dictVars} from './globals.js'
 export default class Settings extends Component<{}> {
 
     constructor(){
@@ -72,7 +72,7 @@ export default class Settings extends Component<{}> {
 	var i = this.state.classes.indexOf(item);
 	var removedItem = this.state.classes.splice(i,1);
 	console.log(removedItem);
-	console.log(dictVars['SESSION_KEY']);
+	console.log((require('./globals.js')).vars);
     }
 
     _handleLogoutPress() {
