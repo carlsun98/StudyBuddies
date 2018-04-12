@@ -1,7 +1,8 @@
 from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
-import random, string
+from auth import auth_required
+from verify import verify_required_keys
 
 '''
 Login API @ /login
@@ -12,20 +13,17 @@ Output:
     session token
 '''
 
+REQUIRED_KEYS = ["session_token", "new_leader_id"]
+
 change_leader_api = Blueprint('change_leader_api', __name__)
 
 @change_leader_api.route("/change_leader", methods=['POST'])
-def change_leader():
+@verify_required_keys(REQUIRED_KEYS)
+@auth_required
+def change_leader(**kwargs):
     cursor, conn = connect()
-    session_token = request.form.get("session_token")
     new_leader_id = request.form.get("new_leader_id")
-    find_session_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(find_session_stmt, (session_token))
-    results = cursor.fetchall()
-    if len(results) == 0:
-        return error_with_message("invalid_session")
-
-    user_id = results[0][0]
+    user_id = kwargs["user_id"]
 
     change_leader_stmt = "UPDATE groups SET leader_id=%d where leader_id=%d"
     cursor.execute(change_leader_stmt, (new_leader_id, user_id))
