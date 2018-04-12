@@ -39,6 +39,7 @@ def classes_list(**kwargs):
     results = cursor.fetchall()
 
     search_results = []
+    final_results = []
 
     for course in results:
         if re.search(search_string, course[1]) is not None:
@@ -51,5 +52,14 @@ def classes_list(**kwargs):
             search_results.append(course)
         elif re.search(search_string, course[2] + " " + str(course[3])) is not None:
             search_results.append(course)
+
+    for match in search_results:
+        result = {
+            "id": match[0],
+            "course_title": match[1],
+            "course_abbreviation": match[2],
+            "course_number": match[3]
+        }
+        final_results.append(match)
 
     return success_with_data(search_results)
