@@ -17,6 +17,7 @@ list_class_groups_api = Blueprint('list_class_groups_api', __name__)
 @list_class_groups_api.route("/list_class_groups", methods=['POST'])
 @auth_required
 def list_class_groups(**kwargs):
+    cursor, conn = connect()
     user_id = kwargs["user_id"]
     class_groups_stmt = """SELECT
     groups.id, leader_id, start_time,

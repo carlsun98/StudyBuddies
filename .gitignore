@@ -3,3 +3,4 @@
 src/server/*.pem
 *~
 src/server/flask/__pycache__
+.DS_Store
