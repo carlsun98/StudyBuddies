@@ -10,6 +10,8 @@
     "react": "16.3.0",
     "react-native": "0.54.4",
     "react-native-maps": "^0.21.0",
+    "react-native-material-bottom-navigation": "^0.9.0",
+    "react-native-tabbar-bottom": "^1.0.4",
     "react-navigation": "^1.5.11"
   },
   "devDependencies": {

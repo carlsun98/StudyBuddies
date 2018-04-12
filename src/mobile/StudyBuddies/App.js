@@ -26,8 +26,37 @@ import NewGroupB from './NewGroupB';
 import NewGroupC from './NewGroupC';
 import NewGroupD from './NewGroupD';
 import MapPage from './MapPage';
+import { NavigationComponent } from 'react-native-material-bottom-navigation';
+import { TabNavigator } from 'react-navigation'
+const TabBarPage = TabNavigator(
+  {
+    Settings: { screen: Settings },
+    MapPage: {screen: MapPage }
+  },
+  {
+    tabBarComponent: NavigationComponent,
+    tabBarPosition: 'bottom',
+    tabBarOptions: {
+      bottomNavigationOptions: {
+        labelColor: 'white',
+        backgroundColor: 'red',
+        rippleColor: 'white',
+        tabs: {
+          Settings: {
+            barBackgroundColor: '#37474F',
+            labelColor: 'black'
+          },
+          MapPage: {
+            barBackgroundColor: '#37474F',
+            labelColor: 'black'
+          }
+        }
+      }
+    }
+  }
+)
 
-const RootStack = StackNavigator(
+/*const RootStack = StackNavigator(
  {
   Login: {
     screen: Login,
@@ -66,10 +95,10 @@ const RootStack = StackNavigator(
  {
   initialRouteName: 'Login',
  }
-);
+);*/
 
 export default class App extends Component <{}> {
   render() {
-    return <RootStack />;
+    return <TabBarPage />;
   }
 }
