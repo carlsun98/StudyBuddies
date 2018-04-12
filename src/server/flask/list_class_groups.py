@@ -19,7 +19,10 @@ list_class_groups_api = Blueprint('list_class_groups_api', __name__)
 def list_class_groups(**kwargs):
     user_id = kwargs["user_id"]
     class_groups_stmt = """SELECT
-    groups.*, classes.id, course_title, course_abbreviation, course_number
+    groups.id, leader_id, start_time,
+    end_time, category, groups.description,
+    location_lat, location_lon, location_description,
+    classes.id, course_title, course_abbreviation, course_number
     FROM groups
     LEFT JOIN classes ON
     groups.class_id = classes.id
@@ -28,6 +31,39 @@ def list_class_groups(**kwargs):
     WHERE user_classes.user_id = %s"""
 
     cursor.execute(class_groups_stmt, (user_id,))
-    groups = cursor.fetchall()
+    results = cursor.fetchall()
 
-    return success_with_data({"groups" : groups})
+    resultsDict = []
+    for result in results:
+        group_id = result[0]
+        leader_id = result[1]
+        start_time = result[2]
+        end_time = result[3]
+        category = result[4]
+        group_description = result[5]
+        location_lat = result[6]
+        location_lon = result[7]
+        location_description = result[8]
+        class_id = result[9]
+        course_title = result[10]
+        course_abbreviation = result[11]
+        course_number = result[12]
+
+        result = {
+            "group_id": group_id,
+            "leader_id": leader_id,
+            "start_time": start_time,
+            "end_time": end_time,
+            "category": category,
+            "group_description": group_description,
+            "location_lat": location_lat,
+            "location_lon": location_lon,
+            "location_description": location_description,
+            "class_id": class_id,
+            "course_title": course_title,
+            "course_abbreviation": course_abbreviation,
+            "course_number": course_number
+        }
+        resultsDict.append(result)
+
+    return success_with_data({"groups" : resultsDict})
