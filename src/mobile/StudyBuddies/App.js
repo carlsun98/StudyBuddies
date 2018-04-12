@@ -40,25 +40,24 @@ const TabBarPage = TabNavigator(
     tabBarPosition: 'bottom',
     tabBarOptions: {
       bottomNavigationOptions: {
-        labelColor: 'white',
-        backgroundColor: 'red',
+        labelColor: '#98d894',
         rippleColor: 'white',
         tabs: {
           ClassPage: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    barBackgroundColor: "#1E1E46",
+	    activeLabelColor: "#98D894",
           },
           MapPage: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    barBackgroundColor: "#1E1E46",
+	    activeLabelColor: "#98D894",
           },
           GroupPage: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    barBackgroundColor: "#1E1E46",
+	    activeLabelColor: "#98D894",
           },
           Settings: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    barBackgroundColor: "#1E146",
+	    activeLabelColor: "#98D894",
           }
         }
       }
