@@ -5,12 +5,11 @@ import random, string
 from auth import auth_required
 
 '''
-Login API @ /login
+Leave Group API @ /leave_group
 Input:
-    email
-    password
-Output:
     session token
+Output:
+    success/failure
 '''
 
 leave_group_api = Blueprint('leave_group_api', __name__)

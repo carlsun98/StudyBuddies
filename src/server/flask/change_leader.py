@@ -5,12 +5,12 @@ from auth import auth_required
 from verify import verify_required_keys
 
 '''
-Login API @ /login
+Change Leader API @ /change_leader
 Input:
-    email
-    password
+    Session Token
+    New Leader ID
 Output:
-    session token
+    Success/failure
 '''
 
 REQUIRED_KEYS = ["session_token", "new_leader_id"]

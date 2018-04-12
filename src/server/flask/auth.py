@@ -3,6 +3,13 @@ from dbconnect import connect
 from server_response import success_with_data, error_with_message
 from functools import wraps
 
+'''Auth required
+Input:
+    session token
+Output:
+    success/failure
+'''
+
 def auth_required(f):
 	@wraps(f)
 	def check_auth(*args, **kwargs):

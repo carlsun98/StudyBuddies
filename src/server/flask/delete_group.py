@@ -6,12 +6,11 @@ from auth import auth_required
 from verify import verify_required_keys
 
 '''
-Login API @ /login
+Delete Group API @ /delete_group
 Input:
-    email
-    password
-Output:
     session token
+Output:
+    success/failure
 '''
 
 REQUIRED_KEYS = ["session_token"]
@@ -37,7 +36,7 @@ def delete_group(**kwargs):
         return error_with_message("msg_failed_to_delete_class")
 
     leave_group_stmt = "UPDATE users SET group=-1 where group_id=%s"
-    cursore.execute(leave_group_stmt, (group_id,)
+    cursore.execute(leave_group_stmt, (group_id,))
 
     conn.commit()
     return success_with_data({})

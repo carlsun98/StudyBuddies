@@ -6,12 +6,12 @@ from verify import verify_required_keys
 import re
 
 '''
-Login API @ /login
+Classes List API @ /classes_list
 Input:
-    email
-    password
-Output:
     session token
+    search string
+Output:
+    list of classes
 '''
 
 REQUIRED_KEYS = ["session_token"]

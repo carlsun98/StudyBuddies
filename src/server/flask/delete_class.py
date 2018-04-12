@@ -5,12 +5,13 @@ import random, string
 from auth import auth_required
 from verify import verify_required_keys
 '''
-Login API @ /login
+Delete Class API @ /delete_class
 Input:
-    email
-    password
-Output:
     session token
+    class id
+Output:
+    success/failure
+    deleted class id
 '''
 
 REQUIRED_KEYS = ["session_token", "class_id"]

@@ -4,12 +4,11 @@ from server_response import success_with_data, error_with_message
 import random, string
 from auth import auth_required
 '''
-Login API @ /login
+Delete User API @ /delete_user
 Input:
-    email
-    password
-Output:
     session token
+Output:
+    success/failure
 '''
 
 delete_user_api = Blueprint('delete_user_api', __name__)

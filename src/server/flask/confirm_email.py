@@ -4,6 +4,13 @@ from server_response import success_with_data, error_with_message
 
 confirrm_email_api = Blueprint('confirm_email_api', __name__)
 
+'''Add class API @ /add_class
+Input:
+    confirmation token
+Output:
+    confirmation success/failure message
+'''
+
 @login_api.route("/confirm_email/<confirmation_token>", methods=['GET'])
 def confirm_email(confirmation_token):
     cursor, conn = connect()

@@ -5,6 +5,14 @@ from verify import verify_required_keys
 
 REQUIRED_KEYS = ["recovery_token", "new_password"]
 
+'''Account Recovery API @ /account_recovery
+Input:
+    recovery_token
+    new_password
+Output:
+    success/failure
+'''
+
 account_recovery_api = Blueprint('account_recovery_api', __name__)
 
 @account_recovery_api.route("/account_recovery", methods=['POST'])
