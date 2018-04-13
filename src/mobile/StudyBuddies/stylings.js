@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+// import { get, width, height, totalSize } from 'react-native-dimension';
 
 export default StyleSheet.create({
     description: {
@@ -38,4 +39,13 @@ export default StyleSheet.create({
 	borderRadius: 10,
 	color: '#1E1E46',
     },
+/*    positionInBottom: {
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    bottom: 0,
+    left: Dimensions.get('window').width - 70,
+    backgroundColor: 'red',
+    zIndex: 100,
+},*/
 });
