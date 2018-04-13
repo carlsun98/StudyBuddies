@@ -43,12 +43,15 @@ class ListItemView extends React.PureComponent {
 export default class ClassPage extends Component<{}> {
   constructor(){
     super()
-    let datastore = new DataStore()
+    //let datastore = new DataStore()
     this.state = {
       username: '',
       password: '',
     }
   }
+  static navigationOptions = {
+    title: 'Classes',
+  };
   _handleActiveGroupPress() {
     console.log(this.state.username);
     console.log(this.state.password);

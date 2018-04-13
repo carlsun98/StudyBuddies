@@ -33,6 +33,9 @@ export default class MapPage extends Component < {} > {
       groupClass: '',
     }
   }
+  static navigationOptions = {
+    title: 'Map',
+  };
   _handleNewGroupPress() {
     this.props.navigation.navigate('NewGroupA')
   }

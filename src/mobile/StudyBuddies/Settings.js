@@ -39,6 +39,9 @@ export default class Settings extends Component<{}> {
       addedClass: 0
     }
   }
+  static navigationOptions = {
+    title: 'Settings',
+  };
   updateClasses = (addedClass) => {
     this.setState({addedClass: addedClass})
   }
