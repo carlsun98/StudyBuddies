@@ -35,6 +35,12 @@ export default class MapPage extends Component < {} > {
   }
   static navigationOptions = {
     title: 'Map',
+    tabBarIcon: () => (
+      <Image
+        style={{width: 26, height: 26}}
+        source={require('./assets/tab-icons/map.png')}
+      />
+    )
   };
   _handleNewGroupPress() {
     this.props.navigation.navigate('NewGroupA')

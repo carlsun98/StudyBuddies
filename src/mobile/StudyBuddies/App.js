@@ -67,10 +67,17 @@ const SettingsNavigator = StackNavigator(
 
 const TabBarPage = TabNavigator(
   {
-    ClassPageNavigator: {screen: ClassPageNavigator},
-    MapPageNavigator: {screen: MapPageNavigator },
-    GroupPageNavigator: {screen:  GroupPageNavigator},
-    SettingsNavigator: { screen: SettingsNavigator }
+    ClassPageNavigator: {
+      screen: ClassPageNavigator
+    },
+    MapPageNavigator: {
+      screen: MapPageNavigator
+    },
+    GroupPageNavigator: {
+      screen:  GroupPageNavigator
+    },
+    SettingsNavigator: {
+      screen: SettingsNavigator }
   },
   {
     tabBarComponent: NavigationComponent,
@@ -108,9 +115,6 @@ const TabBarPage = TabNavigator(
 
 export default class App extends Component <{}> {
   render() {
-    // return <RootStack />;
     return <TabBarPage />;
   }
 }
-
-// export TabBarPage

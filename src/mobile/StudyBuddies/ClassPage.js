@@ -51,6 +51,13 @@ export default class ClassPage extends Component<{}> {
   }
   static navigationOptions = {
     title: 'Classes',
+    tabBarIcon: () => (
+      <Image
+        style={{width: 26, height: 26}}
+        source={require('./assets/tab-icons/classes.png')}
+        //style={CommonStyles.tabBarIcon}
+      />
+    )
   };
   _handleActiveGroupPress() {
     console.log(this.state.username);

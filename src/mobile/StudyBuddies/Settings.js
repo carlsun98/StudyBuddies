@@ -41,6 +41,13 @@ export default class Settings extends Component<{}> {
   }
   static navigationOptions = {
     title: 'Settings',
+    tabBarIcon: () => (
+      <Image
+        style={{width: 26, height: 26}}
+        source={require('./assets/tab-icons/settings.png')}
+        //style={CommonStyles.tabBarIcon}
+      />
+    )
   };
   updateClasses = (addedClass) => {
     this.setState({addedClass: addedClass})

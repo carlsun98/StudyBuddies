@@ -51,6 +51,13 @@ export default class GroupPage extends Component<{}> {
   }
   static navigationOptions = {
     title: 'My Study Group',
+    tabBarIcon: () => (
+      <Image
+        style={{width: 26, height: 26}}
+        source={require('./assets/tab-icons/group.jpg')}
+        //style={CommonStyles.tabBarIcon}
+      />
+    )
   };
   _handleChangeGInfoPress() {
     //this.props.navigation.navigate('NewGroupC')
