@@ -28,6 +28,7 @@ import NewGroupD from './NewGroupD';
 import MapPage from './MapPage';
 import { NavigationComponent } from 'react-native-material-bottom-navigation';
 import { TabNavigator } from 'react-navigation'
+
 const TabBarPage = TabNavigator(
   {
     ClassPage: {screen: ClassPage},
@@ -40,25 +41,28 @@ const TabBarPage = TabNavigator(
     tabBarPosition: 'bottom',
     tabBarOptions: {
       bottomNavigationOptions: {
-        labelColor: 'white',
-        backgroundColor: 'red',
+        labelColor: '#98d894',
         rippleColor: 'white',
         tabs: {
           ClassPage: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    label: "Classes",
+	    barBackgroundColor: "#1E1E46",
+	    activeLabelColor: "#98D894",
           },
           MapPage: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    label: "Map",
+	    barBackgroundColor: "#1E1E46",
+	    activeLabelColor: "#98D894",
           },
           GroupPage: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    label: "Current Group",
+	    barBackgroundColor: "#1E1E46",
+	    activeLabelColor: "#98D894",
           },
           Settings: {
-            barBackgroundColor: '#37474F',
-            labelColor: 'black'
+	    label: "Settings",
+	    barBackgroundColor: "#1E146",
+	    activeLabelColor: "#98D894",
           }
         }
       }
@@ -66,7 +70,7 @@ const TabBarPage = TabNavigator(
   }
 )
 
-/*const RootStack = StackNavigator(
+const RootStack = StackNavigator(
  {
   Login: {
     screen: Login,
@@ -105,10 +109,13 @@ const TabBarPage = TabNavigator(
  {
   initialRouteName: 'Login',
  }
-);*/
+);
 
 export default class App extends Component <{}> {
   render() {
-    return <TabBarPage />;
+    return <RootStack />;
+    // return <TabBarPage />;
   }
 }
+
+// export TabBarPage

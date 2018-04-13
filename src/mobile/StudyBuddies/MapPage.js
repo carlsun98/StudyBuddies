@@ -24,6 +24,7 @@ import {
   Image,
 } from 'react-native';
 import styles from './stylings';
+import NewGroupA from './NewGroupA'
 
 export default class MapPage extends Component < {} > {
   constructor() {
@@ -32,8 +33,17 @@ export default class MapPage extends Component < {} > {
       groupClass: '',
     }
   }
+  _handleNewGroupPress() {
+    this.props.navigation.navigate('NewGroupA')
+  }
   render() {
       return (
+        <View style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}>
+
 	<View style={mapStyle.mapCont}>
           <MapView
 	  style={mapStyle.map}
@@ -45,7 +55,19 @@ export default class MapPage extends Component < {} > {
           }}
 	  >
 	  </MapView>
-        </View>    
+        </View>
+
+        <View>
+        <Button
+          stype={styles.positionInBottom}
+          onPress={() => this._handleNewGroupPress()}
+          title = "Create New Group">
+          raised = {true}
+          theme='dark'
+          overrides={true}
+        </Button>
+        </View>
+        </View>
     );
   }
 }
