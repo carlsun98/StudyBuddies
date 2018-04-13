@@ -27,9 +27,39 @@ import CreateUser from './CreateUser';
 import Settings from './Settings';
 import GroupPage from './GroupPage';
 
+class ListItemView extends React.PureComponent {
+  _onPress = () => {
+    this.props.onPressItem(this.props.id);
+  };
+
+  render() {
+    //const textColor = this.props.selected ? "red" : "black";
+    return (
+      <TouchableOpacity onPress={this._onPress}>
+        <View>
+          <View (left side)>
+            <Text>
+              {this.props.title}
+            </Text>
+            <Text>
+              {this.props.subtitle}
+            </Text>
+          </View>
+          <View (right side)>
+            <Text>
+              Remove
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+}
+
 export default class ClassPage extends Component<{}> {
   constructor(){
     super()
+    let datastore = new DataStore()
     this.state = {
       username: '',
       password: '',
