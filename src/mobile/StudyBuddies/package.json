@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "moment": "^2.22.0",
     "react": "16.3.0",
     "react-icons": "^2.2.7",
+    "react-moment": "^0.7.0",
     "react-native": "0.54.4",
     "react-native-dimension": "^1.0.6",
     "react-native-maps": "^0.21.0",
