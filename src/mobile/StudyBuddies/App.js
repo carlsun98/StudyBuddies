@@ -70,7 +70,7 @@ const TabBarPage = TabNavigator(
   }
 )
 
-/*const RootStack = StackNavigator(
+const RootStack = StackNavigator(
  {
   Login: {
     screen: Login,
@@ -109,10 +109,13 @@ const TabBarPage = TabNavigator(
  {
   initialRouteName: 'Login',
  }
-);*/
+);
 
 export default class App extends Component <{}> {
   render() {
-    return <TabBarPage />;
+    return <RootStack />;
+    // return <TabBarPage />;
   }
 }
+
+// export TabBarPage

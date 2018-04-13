@@ -9,9 +9,9 @@
 
 /*
  to do :
- make it navigate to GroupPageC
  figure out how to read and display the time left
  figure out the API for it
+ How do we change the leader?
 */
   import React, { Component } from 'react';
   import {
@@ -57,6 +57,11 @@ var nextTime = now.add(2, 'hours')
       _handleLeaveGPress() {
         this.props.navigation.dispatch(NavigationActions.back());
       }
+      // something should change in the API here
+      _handleDeleteGPress() {
+        this.props.navigation.dispatch(NavigationActions.back());
+      }
+
       render() {
   	return (
   	 <View style={styles.container}>
@@ -66,6 +71,7 @@ var nextTime = now.add(2, 'hours')
     </Text>
 
     <Text style={styles.description}>
+    // Why isn't .diff working?
     You have a total of {nextTime.diff(now, 'hours')} hours and {nextTime.diff(now, 'minutes')} minutes
   	</Text>
 
@@ -93,6 +99,12 @@ var nextTime = now.add(2, 'hours')
         onPress={() => this._handleLeaveGPress()}
         title = "Leave Group">
       </Button>
+
+      <Button
+        onPress={() => this._handleDeleteGPress()}
+        title = "Delete Group">
+      </Button>
+
   	    </View>
         </View>
   	);
