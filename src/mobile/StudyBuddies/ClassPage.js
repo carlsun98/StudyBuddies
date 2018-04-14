@@ -88,6 +88,50 @@ export default class ClassPage extends Component<{}> {
       </Button>
       </View>
       </View>
+      /*  <Text style={styles.description}>
+        Current Courses:
+        </Text>
+
+        <View style={styles.inputBoxes}>
+
+        {
+          this.state.classes.map((item, i) => (
+
+            <View style={{flexDirection: 'row'}} key = {i}>
+            <Text key={i} style={styles.description}> {item} </Text>
+
+            <View style={styles.buttons}>
+            <Button
+            onPress={() => this._handleDelPress(item)}
+            title = "Del">
+            </Button>
+            </View>
+            </View>
+
+          ))}
+
+          <Text style={styles.description}>
+          Add Courses:
+          </Text>
+          <View style={styles.buttons}>
+          <Button
+          onPress={() => this._handleAddClassPress()}
+          title = "Add the Selected Course To My List">
+          </Button>
+          </View> */
+          
+      /*  <View>
+        <Picker
+        mode = 'dropdown'
+        selectedValue = {this.state.addedClass}
+        style={{height: -10, width: 100}}
+        onValueChange = {this.updateClasses}>
+        {this.state.all_courses.map((item, index) => {
+          return (< Picker.Item label={item} value={index} key={index} />);
+        })}
+        </Picker>
+
+        </View>  */
     );
   }
 }

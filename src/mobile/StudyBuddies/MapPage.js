@@ -25,6 +25,7 @@ import {
 } from 'react-native';
 import styles from './stylings';
 import NewGroupA from './NewGroupA'
+import GroupPage from './GroupPage'
 
 export default class MapPage extends Component < {} > {
   constructor() {

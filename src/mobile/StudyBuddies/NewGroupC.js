@@ -22,7 +22,6 @@ import {
     ActivityIndicator,
     Image,
 } from 'react-native';
-import Moment from 'react-moment';
 import moment from 'moment'
 import NewGroupD from './NewGroupD'
 import GroupPage from './GroupPage'
