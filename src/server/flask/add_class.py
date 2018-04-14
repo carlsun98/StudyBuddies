@@ -22,7 +22,7 @@ def add_class():
     session_token = request.form.get("session_token")
 
     #Check: Check if entered class id exists
-    check_class_stmt = "SELECT COUNT(*) FROM classes WHERE id=%d"
+    check_class_stmt = "SELECT COUNT(*) FROM classes WHERE id=%s"
     cursor.execute(check_class_stmt, (class_id,))
     count = cursor.fetchone()[0]
     if count is 0:
