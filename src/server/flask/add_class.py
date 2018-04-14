@@ -18,7 +18,7 @@ add_class_api = Blueprint('add_class_api', __name__)
 @add_class_api.route("/add_class", methods=['POST'])
 def add_class():
     cursor, conn = connect()
-    class_id = request.form.get("class_id")
+    class_id = int(request.form.get("class_id"))
     session_token = request.form.get("session_token")
 
     #Check: Check if entered class id exists
