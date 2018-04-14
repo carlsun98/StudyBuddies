@@ -13,6 +13,7 @@ from delete_class import delete_class_api
 from classes_list import classes_list_api
 from create_group import create_group_api
 from update_group import update_group_api
+from confirm_email import confirm_email_api
 
 app = Flask(__name__)
 
@@ -25,6 +26,7 @@ app.register_blueprint(delete_class_api)
 app.register_blueprint(classes_list_api)
 app.register_blueprint(create_user_api)
 app.register_blueprint(update_group_api)
+app.register_blueprint(confirm_email_api)
 
 # test page
 @app.route('/')
