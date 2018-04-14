@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+    from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 from verify import verify_required_keys
@@ -54,7 +54,7 @@ def create_user():
     SUBJECT = "Confirm your StudyBuddy Account"
     MSG = ("Hello " + name +
     ",\nPlease confirm your account by visiting this link: " +
-    "http://34.214.169.181:5000/confirm_account?confirmation_token="+confirmation_token+"\n"+
+    "http://34.214.169.181:5000/confirm_email?confirmation_token="+confirmation_token+"\n"+
     "\nThank you,\nThe StudyBuddies Team")
     message = 'Subject: {}\n\n{}'.format(SUBJECT, MSG)
     server = smtplib.SMTP('localhost')
