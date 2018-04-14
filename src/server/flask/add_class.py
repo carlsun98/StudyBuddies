@@ -32,21 +32,21 @@ def add_class():
 
     # Choose the id associated with the session token
     choose_user_id_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(choose_user_id_stmt, (session_token))
+    cursor.execute(choose_user_id_stmt, (session_token,))
     user_id = cursor.fetchall()
     if len(user_id) == 0:
         return error_with_message("invalid_session_token")
     userID = user_id[0][0]
 
     # Check: Check if this user already has the class added
-    check_class_list_stmt = "SELECT COUNT(*) FROM user_classes WHERE user_id=%d AND class_id=%d"
+    check_class_list_stmt = "SELECT COUNT(*) FROM user_classes WHERE user_id=%s AND class_id=%s"
     cursor.execute(check_class_list_stmt, (userID, class_id))
     count = cursor.fetchall()
     if len(count) != 0:
         return error_with_message("user_has_this_class")
 
     # Add class to user's classes
-    add_class_stmt = "INSERT INTO user_classes (user_id, class_id) VALUES (%d %d)"
+    add_class_stmt = "INSERT INTO user_classes (user_id, class_id) VALUES (%s %s)"
     cursor.execute(add_class_stmt, (userID, class_id))
     if cursor.rowcount is not 1:
         return error_with_message("adding class failed")
