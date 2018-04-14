@@ -33,10 +33,10 @@ export default class Settings extends Component<{}> {
   constructor(){
     super()
     this.state = {
-      classes : ["COS333", "COS 445"],
-      notifications: true, /* comes from db */
+    /*  classes : ["COS333", "COS 445"],
       all_courses: ["SOC 250", "ANT 225", "ENG 201", "ENG 362", "COS 333", "COS 445"],
-      addedClass: 0
+      addedClass: 0 */
+      notifications: "ON", /* comes from db */
     }
   }
   static navigationOptions = {
@@ -88,67 +88,38 @@ export default class Settings extends Component<{}> {
       this.props.navigation.dispatch(NavigationActions.back());
     }
 
+    _handleChangeNPress() {
+      if(this.state.notifications == "ON")
+        this.setState({notifications: "OFF"})
+      if(this.state.notifications == "OFF")
+        this.setState({notifications: "ON"})
+    }
+
     render() {
 
       return (
         <View style={styles.container}>
 
+        <View>
         <Text style={styles.description}>
         Settings
         </Text>
 
-        <Text style={styles.description}>
-        Current Courses:
-        </Text>
-
-        <View style={styles.inputBoxes}>
-
-        {
-          this.state.classes.map((item, i) => (
-
-            <View style={{flexDirection: 'row'}} key = {i}>
-            <Text key={i} style={styles.description}> {item} </Text>
-
-            <View style={styles.buttons}>
-            <Button
-            onPress={() => this._handleDelPress(item)}
-            title = "Del">
-            </Button>
-            </View>
-            </View>
-
-          ))}
-
           <Text style={styles.description}>
-          Add Courses:
+          Current Notification Settings: {this.state.notifications}
           </Text>
-          <View style={styles.buttons}>
-          <Button
-          onPress={() => this._handleAddClassPress()}
-          title = "Add the Selected Course To My List">
-          </Button>
           </View>
 
           <View style={styles.buttons}>
+          <Button
+          onPress={() => this._handleChangeNPress()}
+          title = "Change notification Settings">
+          </Button>
+
           <Button
           onPress={() => this._handleLogoutPress()}
           title = "Logout">
           </Button>
-          </View>
-
-          <View>
-          <Picker
-          mode = 'dropdown'
-          selectedValue = {this.state.addedClass}
-          style={{height: -10, width: 100}}
-          onValueChange = {this.updateClasses}>
-          {this.state.all_courses.map((item, index) => {
-            return (< Picker.Item label={item} value={index} key={index} />);
-          })}
-          </Picker>
-
-          </View>
-
           </View>
 
           </View>

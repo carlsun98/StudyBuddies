@@ -24,7 +24,7 @@ delete_class_api = Blueprint('delete_class_api', __name__)
 def delete_class(**kwargs):
     user_id = kwargs["user_id"]
     class_id = request.form.get("class_id")
-    del_class_stmt = "DELETE FROM user_classes where user_id=%s, class_id=%s"
+    del_class_stmt = "DELETE FROM user_classes where user_id=%d, class_id=%d"
     cursor.execute(del_class_stmt, (user_id, class_id))
     if cursor.rowcount is not 1:
         return error_with_message("msg_failed_to_delete_class_for_user")

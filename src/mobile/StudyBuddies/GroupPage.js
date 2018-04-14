@@ -79,9 +79,9 @@ export default class GroupPage extends Component<{}> {
           <Text style={styles.description}>
             Class Studied: {this.state.group_class_id}
           </Text>
-
-          <Text style={styles.description}>
+          
           // Why isn't .diff working?
+          <Text style={styles.description}>
             You have a total of {nextTime.diff(now, 'hours')} hours and {nextTime.diff(now, 'minutes')} minutes
           </Text>
 
