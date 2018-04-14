@@ -42,7 +42,7 @@ def add_class():
     check_class_list_stmt = "SELECT COUNT(*) FROM user_classes WHERE user_id=%s AND class_id=%s"
     cursor.execute(check_class_list_stmt, (userID, class_id))
     count = cursor.fetchone()[0]
-    if count != 0:
+    if count is not 0:
         return error_with_message("user_has_this_class")
 
     # Add class to user's classes
