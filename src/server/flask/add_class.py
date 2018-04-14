@@ -23,7 +23,7 @@ def add_class():
 
     #Check: Check if entered class id exists
     check_class_stmt = "SELECT COUNT(*) FROM classes WHERE id=%d"
-    cursor.execute(check_class_stmt, (class_id))
+    cursor.execute(check_class_stmt, (class_id,))
     count = cursor.fetchone()[0]
     if count is 0:
         return error_with_message("invalid_class_id")
