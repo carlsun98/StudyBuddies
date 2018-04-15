@@ -18,31 +18,31 @@ delete_user_api = Blueprint('delete_user_api', __name__)
 def delete_user(**kwargs):
     user = results["user_id"]
 
-    del_user_stmt = "DELETE from users where user_id=%s"
+    del_user_stmt = "DELETE from users where user_id=%d"
     cursor.execute(del_user_stmt, (user))
     if cursor.rowcount is not 1:
         return error_with_message("user does not exist")
 
-    del_user_class_stmt = "DELETE from user_classes where user_id=%s"
+    del_user_class_stmt = "DELETE from user_classes where user_id=%d"
     cursor.execute(del_user_stmt, (user))
 
-    del_user_sess_stmt = "DELETE from sessions where user_id=%s"
+    del_user_sess_stmt = "DELETE from sessions where user_id=%d"
     cursor.execute(del_user_sess_stmt, (user))
 
-    find_group_stmt = "SELECT id FROM groups WHERE leader_id=%s"
+    find_group_stmt = "SELECT id FROM groups WHERE leader_id=%d"
     cursor.execute(find_group_stmt, (user))
     results = cursor.fetchall()
     if len(results) != 0:
         group_id = results[0][0]
-        find_member_stmt = "SELECT id FROM users WHERE group_id=%s"
+        find_member_stmt = "SELECT id FROM users WHERE group_id=%d"
         cursor.execute(find_member_stmt, (group_id))
         results = cursor.fetchall
         if len(results) == 0:
-            del_group_stmt = "DELETE from groups where leader_id=%s"
+            del_group_stmt = "DELETE from groups where leader_id=%d"
             cursor.execute(del_group_stmt, (user))
         else:
             newlead = results[0][0]
-            change_leader_stmt = "UPDATE groups SET leader_id=%s where leader_id=%s"
+            change_leader_stmt = "UPDATE groups SET leader_id=%d where leader_id=%d"
             cursor.execute(change_leader_stmt, (newlead, user))
 
     conn.commit()
