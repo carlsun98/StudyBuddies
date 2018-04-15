@@ -22,6 +22,7 @@ delete_class_api = Blueprint('delete_class_api', __name__)
 @verify_required_keys(REQUIRED_KEYS)
 @auth_required
 def delete_class(**kwargs):
+    cursor, conn = connect()
     user_id = kwargs["user_id"]
     class_id = request.form.get("class_id")
     del_class_stmt = "DELETE FROM user_classes where user_id=%d, class_id=%d"
