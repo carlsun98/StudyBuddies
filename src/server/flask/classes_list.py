@@ -27,14 +27,14 @@ def classes_list(**kwargs):
 
     user_id = kwargs["user_id"]
 
-    get_school_stmt = "SELECT school_id FROM users WHERE id=%d"
+    get_school_stmt = "SELECT school_id FROM users WHERE id=%s"
     cursor.execute(get_school_stmt, (user_id,))
     results = cursor.fetchall()
     if len(results) == 0:
         return error_with_message("msg_nonexistant_school")
     school_id = results[0][0]
 
-    get_classes_stmt = "SELECT id, course_title, course_abbreviation, course_number FROM classes WHERE school_id=%d"
+    get_classes_stmt = "SELECT id, course_title, course_abbreviation, course_number FROM classes WHERE school_id=%s"
     cursor.execute(get_classes_stmt, (school_id,))
     results = cursor.fetchall()
 
