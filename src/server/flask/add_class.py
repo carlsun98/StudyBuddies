@@ -46,7 +46,7 @@ def add_class():
         return error_with_message("user_has_this_class")
 
     # Add class to user's classes
-    add_class_stmt = "INSERT INTO user_classes (user_id, class_id) VALUES (%s %s)"
+    add_class_stmt = "INSERT INTO user_classes (user_id, class_id) VALUES (%s, %s)"
     cursor.execute(add_class_stmt, (userID, class_id))
     if cursor.rowcount is not 1:
         return error_with_message("adding class failed")
