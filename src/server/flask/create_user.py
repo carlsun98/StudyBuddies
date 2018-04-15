@@ -44,7 +44,7 @@ def create_user():
     user_id = cursor.lastrowid
     confirmation_token = ''.join(random.choice(string.ascii_letters +
                                           string.digits) for _ in range(32))
-    create_confirmation_stmt = "INSERT INTO email_confirmations (user_id, token) VALUES (%d, %s)"
+    create_confirmation_stmt = "INSERT INTO email_confirmations (user_id, token) VALUES (%s, %s)"
     cursor.execute(create_confirmation_stmt, (user_id, confirmation_token))
     conn.commit()
 

@@ -21,7 +21,7 @@ def confirm_email(confirmation_token):
         return "Invalid confirmation"
     user_id = result[0][0]
 
-    update_acct_stmt = "UPDATE users SET account_confirmed=1 WHERE id=%d"
+    update_acct_stmt = "UPDATE users SET account_confirmed=1 WHERE id=%s"
     cursor.execute(update_acct_stmt, (user_id,))
     conn.commit()
     return "Thanks for confirming your account. Click here to go back to the app"

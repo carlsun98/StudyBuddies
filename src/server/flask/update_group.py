@@ -59,7 +59,7 @@ def update_group(**kwargs):
     elif len(results) > 1:
         return error_with_message("msg_multiple_leader_id_matches")
 
-    update_group_stmt = "UPDATE groups SET end_time=%s, category=%s, description=%s, location_lat=%f, location_lon=%f, location_des=%s WHERE id=%s AND leader_id=%s"
+    update_group_stmt = "UPDATE groups SET end_time=%s, category=%s, description=%s, location_lat=%s, location_lon=%s, location_des=%s WHERE id=%s AND leader_id=%s"
     cursor.execute(update_group_stmt, (end_time, category, description, location_lat, location_lon, location_des, group_id, userID))
     if cursor.rowcount is not 1:
         return error_with_message("msg_updating_group_failed")

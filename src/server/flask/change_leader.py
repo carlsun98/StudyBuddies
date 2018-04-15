@@ -25,7 +25,7 @@ def change_leader(**kwargs):
     new_leader_id = request.form.get("new_leader_id")
     user_id = kwargs["user_id"]
 
-    change_leader_stmt = "UPDATE groups SET leader_id=%d where leader_id=%d"
+    change_leader_stmt = "UPDATE groups SET leader_id=%s where leader_id=%s"
     cursor.execute(change_leader_stmt, (new_leader_id, user_id))
 
     if cursor.rowcount == 0:
