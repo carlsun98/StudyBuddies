@@ -31,7 +31,7 @@ def update_user():
         return error_with_message("invalid_session_token")
     userID = user_id[0][0]
 
-    check_user_id_stmt = "SELECT id FROM users WHERE id=%d"
+    check_user_id_stmt = "SELECT id FROM users WHERE id=%s"
     cursor.execute(check_user_id_stmt, (userID,))
     results = cursor.fetchall()
     if len(results) == 0:
@@ -55,7 +55,7 @@ def update_user():
     name = request.form.get("name", default_name)
     class_year = request.form.get("class_year", default_class_year)
 
-    update_user_stmt = "UPDATE users SET push_notifications_enabled=%s, Apple_APN_Key=%s, Android_APN_Key=%s, group_id=%d, name=%s, class_year=%s WHERE id=%d"
+    update_user_stmt = "UPDATE users SET push_notifications_enabled=%s, Apple_APN_Key=%s, Android_APN_Key=%s, group_id=%s, name=%s, class_year=%s WHERE id=%s"
     cursor.execute(update_user_stmt, (push_notif_enable, Apple_APN_Key, Android_APN_Key, group_id, name, class_year, userID))
     if cursor.rowcount is not 1:
         return error_with_message("updating user failed")
