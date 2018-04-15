@@ -10,10 +10,12 @@ Input:
 Output:
     success/failure
 '''
+REQUIRED_KEYS = ["session_token", "password"]
 
 delete_user_api = Blueprint('delete_user_api', __name__)
 
 @delete_user_api.route("/delete_user", methods=['POST'])
+@verify_required_keys(REQUIRED_KEYS)
 @auth_required
 def delete_user(**kwargs):
     user = results["user_id"]
