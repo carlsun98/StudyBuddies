@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationItem.title = "Login"
+        navigationItem.title = "Welcome to StudyBuddy"
     }
     
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue) { }
@@ -31,24 +31,28 @@ class LoginViewController: UIViewController {
        
         Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
             if (response.count == 0) {
-                let alertController = UIAlertController(title: "Network Error", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
             let success = response[0]["success"] as! Int
+            let message = response[0]["message"] as! String
             if (success == 1) {
                 UserDefaults.standard.set(response[1]["token"], forKey: "session_token");
                 self.dismiss(animated: true, completion: nil)
             } else {
-                let alertController = UIAlertController(title: "Invalid login", message: "Check your credentials", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
         }) { (_:Any, error:Error) in
-            
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     

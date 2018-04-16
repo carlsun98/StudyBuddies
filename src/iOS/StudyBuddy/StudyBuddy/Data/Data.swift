@@ -9,7 +9,7 @@
 import Foundation
 
 final class Data {
+    public var sessionToken: String = ""
     static let sharedInstance = Data()
-    
     private init() {}
 }

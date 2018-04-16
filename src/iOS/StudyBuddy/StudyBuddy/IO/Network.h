@@ -17,12 +17,12 @@ static unsigned int port = 5000;
 static NSString *kLoginApi = @"login";
 static NSString *kCreateUserApi = @"create_user";
 static NSString *kUpdateUserApi = @"update_user";
-
+static NSString *kUserClasses = @"list_user_classes";
 NS_ASSUME_NONNULL_END
 
 @interface Network : NSObject
 
-+(void)sendRequestToURL:(NSString* _Nonnull)url parameters:(NSDictionary* _Nullable)parameters
++(void)sendRequestToURL:(NSString* _Nonnull)url parameters:(NSDictionary* _Nonnull)parameters
                 success:(void(^_Nullable)(NSURLSessionDataTask* _Nonnull task, NSArray<NSDictionary*> * _Nonnull responseObject))success
                 failure:(void(^_Nullable)(NSURLSessionDataTask* _Nullable task, NSError * _Nonnull error))failure;
 

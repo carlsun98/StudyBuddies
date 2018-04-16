@@ -25,7 +25,7 @@ class CreateUserViewController: UIViewController {
         let parameters = ["email": email, "password": password, "name": name, "class_year": class_year]
         Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
             if (response.count == 0) {
-                let alertController = UIAlertController(title: "Network Error", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
@@ -40,24 +40,38 @@ class CreateUserViewController: UIViewController {
             let success = response[0]["success"] as! Int
             if (success == 1) {
                 let alertController = UIAlertController(title: "Creating Your Account", message: "A confirmation email has been sent to you. Please follow the link in the email!", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default)
+                let okAction = UIAlertAction(title: "Cancel", style: .default)
+                if let gmailUrl = URL(string: "googlegmail://") {
+                    if UIApplication.shared.canOpenURL(gmailUrl) {
+                        let openEmailAction = UIAlertAction(title: "Open Gmail", style: .default, handler: { (action) in
+                            UIApplication.shared.open(gmailUrl, options: [:], completionHandler: nil)
+                            }
+                        )
+                        alertController.addAction(openEmailAction)
+                    }
+                }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
-                
-            } else {
-                let alertController = UIAlertController(title: "Invalid Input", message: "Check your credentials", preferredStyle: UIAlertControllerStyle.alert)
+                self.navigationController?.popViewController(animated: true)
+            }
+            else {
+                let alertController = UIAlertController(title: "Something went wrong", message: "Maybe you already have an account?", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
         }) { (_:Any, error:Error) in
-            
+            let alertController = UIAlertController(title: "Oh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Create User"
+        navigationItem.title = "Welcome to StudyBuddy"
         // Do any additional setup after loading the view.
     }
 

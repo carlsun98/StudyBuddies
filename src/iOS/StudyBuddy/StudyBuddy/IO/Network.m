@@ -7,7 +7,6 @@
 //
 
 #import "Network.h"
-
 @implementation Network
 
 +(AFHTTPSessionManager*)sharedManager {
@@ -33,6 +32,7 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (success)
             success(task, responseObject);
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

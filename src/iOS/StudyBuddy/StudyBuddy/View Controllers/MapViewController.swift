@@ -27,7 +27,6 @@ class MapViewController: UIViewController {
         marker.map = mapView
         
         view.insertSubview(mapView, at: 0)
-        self.navigationController?.tabBarController?.performSegue(withIdentifier: "kShowLoginSegue", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

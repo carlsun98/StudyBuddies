@@ -26,6 +26,9 @@
 		1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1120843E750000487A /* PasswordResetViewController.swift */; };
 		1FA97F1420843E890000487A /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1320843E890000487A /* ClassDetailViewController.swift */; };
 		1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */; };
+		1FA97F1B20847DF90000487A /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */; };
+		1FA97F1D20847E550000487A /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FA97F1C20847E540000487A /* group.png */; };
+		1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1E208491AD0000487A /* InitialViewController.swift */; };
 		1FCA94C72084029700463B8C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA94C62084029600463B8C /* launchscreen.png */; };
 		1FCA94CB2084129C00463B8C /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C92084129C00463B8C /* Network.m */; };
 		1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA94D12084176300463B8C /* AFNetworking.framework */; };
@@ -80,6 +83,9 @@
 		1FA97F1120843E750000487A /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		1FA97F1320843E890000487A /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 		1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupThirdViewController.swift; sourceTree = "<group>"; };
+		1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
+		1FA97F1C20847E540000487A /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		1FA97F1E208491AD0000487A /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		1FCA94C62084029600463B8C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
 		1FCA94C92084129C00463B8C /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		1FCA94CA2084129C00463B8C /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 		1F49E9592083CDD5009A6D02 /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				1FA97F1920847BC90000487A /* Cells */,
 				1FA97EFC20843E330000487A /* View Controllers */,
 				1FCA94E2208439B700463B8C /* Models */,
 				1FCA94D32084283100463B8C /* Data */,
@@ -196,13 +203,23 @@
 				1FA97F1120843E750000487A /* PasswordResetViewController.swift */,
 				1FA97F1320843E890000487A /* ClassDetailViewController.swift */,
 				1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */,
+				1FA97F1E208491AD0000487A /* InitialViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1FA97F1920847BC90000487A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1FCA94C52084029600463B8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1FA97F1C20847E540000487A /* group.png */,
 				1FCA94C62084029600463B8C /* launchscreen.png */,
 			);
 			path = Images;
@@ -364,6 +381,7 @@
 				1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */,
 				1F49E9622083CDD6009A6D02 /* Assets.xcassets in Resources */,
 				1FCA94C72084029700463B8C /* launchscreen.png in Resources */,
+				1FA97F1D20847E550000487A /* group.png in Resources */,
 				1F49E9602083CDD5009A6D02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +477,9 @@
 				1FCA94E8208439B700463B8C /* User.swift in Sources */,
 				1FA97F0E20843E4F0000487A /* CreateGroupFirstViewController.swift in Sources */,
 				1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */,
+				1FA97F1B20847DF90000487A /* ClassTableViewCell.swift in Sources */,
 				1FA97F1420843E890000487A /* ClassDetailViewController.swift in Sources */,
+				1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */,
 				1FA97F0420843E330000487A /* ViewController.swift in Sources */,
 				1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */,
 				1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */,

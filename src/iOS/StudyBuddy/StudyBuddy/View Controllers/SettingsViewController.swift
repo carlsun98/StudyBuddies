@@ -12,10 +12,6 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var notificationSwitch: UISwitch!
     
-    @IBAction func logoutButton(_ sender: Any) {
-            performSegue(withIdentifier: "prepareForUnwind", sender: self)
-    }
-    
     @IBAction func notificationChange(_ sender: Any) {
         var push_notifications_enabled = 0
         if notificationSwitch.isOn {
@@ -47,6 +43,24 @@ class SettingsViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UITableView Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 0) {
+            if (indexPath.row == 0) {
+                
+            } else if (indexPath.row == 1) {
+                
+            }
+        } else if (indexPath.section == 1) {
+            
+        } else if (indexPath.section == 2) {
+            UserDefaults.standard.set("", forKey: "session_token")
+            Data.sharedInstance.sessionToken = ""
+            self.navigationController?.tabBarController?.performSegue(withIdentifier: "kShowLoginSegue", sender: nil)
+        }
     }
     
 
