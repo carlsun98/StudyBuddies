@@ -8,16 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E95A2083CDD5009A6D02 /* AppDelegate.swift */; };
-		1F49E95D2083CDD5009A6D02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E95C2083CDD5009A6D02 /* ViewController.swift */; };
 		1F49E9602083CDD5009A6D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F49E95E2083CDD5009A6D02 /* Main.storyboard */; };
 		1F49E9622083CDD6009A6D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F49E9612083CDD6009A6D02 /* Assets.xcassets */; };
 		1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */; };
 		1F49E9702083CDD6009A6D02 /* StudyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E96F2083CDD6009A6D02 /* StudyBuddyTests.swift */; };
 		1F49E97B2083CDD6009A6D02 /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */; };
-		1FCA94C42084018E00463B8C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C32084018E00463B8C /* MapViewController.swift */; };
+		1FA97F0420843E330000487A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFD20843E330000487A /* ViewController.swift */; };
+		1FA97F0520843E330000487A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFE20843E330000487A /* MapViewController.swift */; };
+		1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFF20843E330000487A /* CreateUserViewController.swift */; };
+		1FA97F0720843E330000487A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0020843E330000487A /* LoginViewController.swift */; };
+		1FA97F0820843E330000487A /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0120843E330000487A /* ClassListViewController.swift */; };
+		1FA97F0920843E330000487A /* GroupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0220843E330000487A /* GroupPageViewController.swift */; };
+		1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0320843E330000487A /* SettingsViewController.swift */; };
+		1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0B20843E470000487A /* GroupViewController.swift */; };
+		1FA97F0E20843E4F0000487A /* CreateGroupFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */; };
+		1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */; };
+		1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1120843E750000487A /* PasswordResetViewController.swift */; };
+		1FA97F1420843E890000487A /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1320843E890000487A /* ClassDetailViewController.swift */; };
+		1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */; };
 		1FCA94C72084029700463B8C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA94C62084029600463B8C /* launchscreen.png */; };
 		1FCA94CB2084129C00463B8C /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C92084129C00463B8C /* Network.m */; };
-		1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94CC208414C200463B8C /* LoginViewController.swift */; };
 		1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA94D12084176300463B8C /* AFNetworking.framework */; };
 		1FCA94D82084291E00463B8C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94D72084291E00463B8C /* Data.swift */; };
 		1FCA94E7208439B700463B8C /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E3208439B700463B8C /* School.swift */; };
@@ -25,10 +35,6 @@
 		1FCA94E9208439B700463B8C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E5208439B700463B8C /* Course.swift */; };
 		1FCA94EA208439B700463B8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E6208439B700463B8C /* Group.swift */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
-		CD936D8F20842C9300B4DD9A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */; };
-		CD936D9120843A4300B4DD9A /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D9020843A4300B4DD9A /* ClassListViewController.swift */; };
-		CD936D9320843A6500B4DD9A /* GroupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D9220843A6500B4DD9A /* GroupPageViewController.swift */; };
-		CD936D9520843A7000B4DD9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D9420843A7000B4DD9A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +57,6 @@
 /* Begin PBXFileReference section */
 		1F49E9572083CDD5009A6D02 /* StudyBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F49E95A2083CDD5009A6D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F49E95C2083CDD5009A6D02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F49E95F2083CDD5009A6D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F49E9612083CDD6009A6D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F49E9642083CDD6009A6D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,11 +67,22 @@
 		1F49E9762083CDD6009A6D02 /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
 		1F49E97C2083CDD6009A6D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FCA94C32084018E00463B8C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1FA97EFD20843E330000487A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1FA97EFE20843E330000487A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1FA97EFF20843E330000487A /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		1FA97F0020843E330000487A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1FA97F0120843E330000487A /* ClassListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
+		1FA97F0220843E330000487A /* GroupPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageViewController.swift; sourceTree = "<group>"; };
+		1FA97F0320843E330000487A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1FA97F0B20843E470000487A /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupFirstViewController.swift; sourceTree = "<group>"; };
+		1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupSecondViewController.swift; sourceTree = "<group>"; };
+		1FA97F1120843E750000487A /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		1FA97F1320843E890000487A /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupThirdViewController.swift; sourceTree = "<group>"; };
 		1FCA94C62084029600463B8C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
 		1FCA94C92084129C00463B8C /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		1FCA94CA2084129C00463B8C /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		1FCA94CC208414C200463B8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1FCA94CE2084154D00463B8C /* StudyBuddy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyBuddy-Bridging-Header.h"; sourceTree = "<group>"; };
 		1FCA94D12084176300463B8C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCA94D72084291E00463B8C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -77,10 +93,6 @@
 		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
-		CD936D9020843A4300B4DD9A /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
-		CD936D9220843A6500B4DD9A /* GroupPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageViewController.swift; sourceTree = "<group>"; };
-		CD936D9420843A7000B4DD9A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,22 +147,16 @@
 		1F49E9592083CDD5009A6D02 /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				1FA97EFC20843E330000487A /* View Controllers */,
 				1FCA94E2208439B700463B8C /* Models */,
 				1FCA94D32084283100463B8C /* Data */,
 				1FCA94C82084129C00463B8C /* IO */,
 				1F49E95A2083CDD5009A6D02 /* AppDelegate.swift */,
-				1F49E95C2083CDD5009A6D02 /* ViewController.swift */,
 				1F49E95E2083CDD5009A6D02 /* Main.storyboard */,
-				CD936D9220843A6500B4DD9A /* GroupPageViewController.swift */,
-				CD936D9420843A7000B4DD9A /* SettingsViewController.swift */,
-				CD936D9020843A4300B4DD9A /* ClassListViewController.swift */,
 				1F49E9612083CDD6009A6D02 /* Assets.xcassets */,
 				1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */,
 				1FCA94C52084029600463B8C /* Images */,
 				1F49E9662083CDD6009A6D02 /* Info.plist */,
-				1FCA94C32084018E00463B8C /* MapViewController.swift */,
-				1FCA94CC208414C200463B8C /* LoginViewController.swift */,
-				CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */,
 				1FCA94CE2084154D00463B8C /* StudyBuddy-Bridging-Header.h */,
 			);
 			path = StudyBuddy;
@@ -172,6 +178,26 @@
 				1F49E97C2083CDD6009A6D02 /* Info.plist */,
 			);
 			path = StudyBuddyUITests;
+			sourceTree = "<group>";
+		};
+		1FA97EFC20843E330000487A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FA97EFD20843E330000487A /* ViewController.swift */,
+				1FA97EFE20843E330000487A /* MapViewController.swift */,
+				1FA97EFF20843E330000487A /* CreateUserViewController.swift */,
+				1FA97F0020843E330000487A /* LoginViewController.swift */,
+				1FA97F0120843E330000487A /* ClassListViewController.swift */,
+				1FA97F0220843E330000487A /* GroupPageViewController.swift */,
+				1FA97F0320843E330000487A /* SettingsViewController.swift */,
+				1FA97F0B20843E470000487A /* GroupViewController.swift */,
+				1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */,
+				1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */,
+				1FA97F1120843E750000487A /* PasswordResetViewController.swift */,
+				1FA97F1320843E890000487A /* ClassDetailViewController.swift */,
+				1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		1FCA94C52084029600463B8C /* Images */ = {
@@ -423,19 +449,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCA94EA208439B700463B8C /* Group.swift in Sources */,
+				1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */,
+				1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */,
+				1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */,
 				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
-				1F49E95D2083CDD5009A6D02 /* ViewController.swift in Sources */,
 				1FCA94E9208439B700463B8C /* Course.swift in Sources */,
-				1FCA94C42084018E00463B8C /* MapViewController.swift in Sources */,
-				CD936D8F20842C9300B4DD9A /* CreateUserViewController.swift in Sources */,
 				1FCA94CB2084129C00463B8C /* Network.m in Sources */,
+				1FA97F0520843E330000487A /* MapViewController.swift in Sources */,
 				1FCA94E8208439B700463B8C /* User.swift in Sources */,
-				1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */,
-				CD936D9520843A7000B4DD9A /* SettingsViewController.swift in Sources */,
-				CD936D9120843A4300B4DD9A /* ClassListViewController.swift in Sources */,
+				1FA97F0E20843E4F0000487A /* CreateGroupFirstViewController.swift in Sources */,
 				1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */,
-				CD936D9320843A6500B4DD9A /* GroupPageViewController.swift in Sources */,
+				1FA97F1420843E890000487A /* ClassDetailViewController.swift in Sources */,
+				1FA97F0420843E330000487A /* ViewController.swift in Sources */,
+				1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */,
+				1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */,
+				1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */,
+				1FA97F0820843E330000487A /* ClassListViewController.swift in Sources */,
 				1FCA94E7208439B700463B8C /* School.swift in Sources */,
+				1FA97F0920843E330000487A /* GroupPageViewController.swift in Sources */,
+				1FA97F0720843E330000487A /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

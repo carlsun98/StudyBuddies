@@ -1,14 +1,14 @@
 //
-//  SettingsViewController.swift
+//  CreateGroupSecondViewController.swift
 //  StudyBuddy
 //
-//  Created by Malika Oak on 4/15/18.
+//  Created by Ajay Penmatcha on 4/15/18.
 //  Copyright © 2018 StudyBuddies LLC. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class CreateGroupSecondViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
