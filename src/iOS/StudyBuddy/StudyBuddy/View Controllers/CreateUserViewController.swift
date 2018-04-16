@@ -39,7 +39,11 @@ class CreateUserViewController: UIViewController {
             }
             let success = response[0]["success"] as! Int
             if (success == 1) {
-                self.performSegue(withIdentifier: "sendEmailSegue", sender: self)
+                let alertController = UIAlertController(title: "Creating Your Account", message: "A confirmation email has been sent to you. Please follow the link in the email!", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
             } else {
                 let alertController = UIAlertController(title: "Invalid Input", message: "Check your credentials", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
