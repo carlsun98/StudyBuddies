@@ -26,6 +26,9 @@
 		1FCA94EA208439B700463B8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E6208439B700463B8C /* Group.swift */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
 		CD936D8F20842C9300B4DD9A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */; };
+		CD936D9120843A4300B4DD9A /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D9020843A4300B4DD9A /* ClassListViewController.swift */; };
+		CD936D9320843A6500B4DD9A /* GroupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D9220843A6500B4DD9A /* GroupPageViewController.swift */; };
+		CD936D9520843A7000B4DD9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D9420843A7000B4DD9A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		CD936D9020843A4300B4DD9A /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
+		CD936D9220843A6500B4DD9A /* GroupPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageViewController.swift; sourceTree = "<group>"; };
+		CD936D9420843A7000B4DD9A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,9 @@
 				1F49E95A2083CDD5009A6D02 /* AppDelegate.swift */,
 				1F49E95C2083CDD5009A6D02 /* ViewController.swift */,
 				1F49E95E2083CDD5009A6D02 /* Main.storyboard */,
+				CD936D9220843A6500B4DD9A /* GroupPageViewController.swift */,
+				CD936D9420843A7000B4DD9A /* SettingsViewController.swift */,
+				CD936D9020843A4300B4DD9A /* ClassListViewController.swift */,
 				1F49E9612083CDD6009A6D02 /* Assets.xcassets */,
 				1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */,
 				1FCA94C52084029600463B8C /* Images */,
@@ -422,7 +431,10 @@
 				1FCA94CB2084129C00463B8C /* Network.m in Sources */,
 				1FCA94E8208439B700463B8C /* User.swift in Sources */,
 				1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */,
+				CD936D9520843A7000B4DD9A /* SettingsViewController.swift in Sources */,
+				CD936D9120843A4300B4DD9A /* ClassListViewController.swift in Sources */,
 				1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */,
+				CD936D9320843A6500B4DD9A /* GroupPageViewController.swift in Sources */,
 				1FCA94E7208439B700463B8C /* School.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
