@@ -29,6 +29,7 @@
 		1FA97F1B20847DF90000487A /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */; };
 		1FA97F1D20847E550000487A /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FA97F1C20847E540000487A /* group.png */; };
 		1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1E208491AD0000487A /* InitialViewController.swift */; };
+		1FA97F2120849A3D0000487A /* ClassSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */; };
 		1FCA94C72084029700463B8C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA94C62084029600463B8C /* launchscreen.png */; };
 		1FCA94CB2084129C00463B8C /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C92084129C00463B8C /* Network.m */; };
 		1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA94D12084176300463B8C /* AFNetworking.framework */; };
@@ -86,6 +87,7 @@
 		1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		1FA97F1C20847E540000487A /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
 		1FA97F1E208491AD0000487A /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSearchTableViewController.swift; sourceTree = "<group>"; };
 		1FCA94C62084029600463B8C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
 		1FCA94C92084129C00463B8C /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		1FCA94CA2084129C00463B8C /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				1FA97F1320843E890000487A /* ClassDetailViewController.swift */,
 				1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */,
 				1FA97F1E208491AD0000487A /* InitialViewController.swift */,
+				1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */,
 				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
 				1FCA94E9208439B700463B8C /* Course.swift in Sources */,
+				1FA97F2120849A3D0000487A /* ClassSearchTableViewController.swift in Sources */,
 				1FCA94CB2084129C00463B8C /* Network.m in Sources */,
 				1FA97F0520843E330000487A /* MapViewController.swift in Sources */,
 				1FCA94E8208439B700463B8C /* User.swift in Sources */,

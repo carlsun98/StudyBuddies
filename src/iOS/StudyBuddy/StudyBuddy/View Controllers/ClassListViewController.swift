@@ -26,7 +26,8 @@ class ClassListViewController: UITableViewController {
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
-                print(response[1]) 
+                //let coursesData = response[1] as Array
+                
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)

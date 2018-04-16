@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGroupSecondViewController: UITableViewController {
+class CreateGroupSecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
