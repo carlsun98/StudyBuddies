@@ -19,12 +19,16 @@ class LoginViewController: UIViewController {
         navigationItem.title = "Login"
     }
     
+    @IBAction func prepareForUnwind(segue:UIStoryboardSegue) { }
 
+    
+    
     @IBAction func loginPressed(_ sender: Any) {
         let username = usernameTF.text
         let password = passwordTF.text
         let urlAPI = Network.getUrlForAPI(kLoginApi)
         let parameters = ["email": username, "password": password]
+       
         Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
             if (response.count == 0) {
                 let alertController = UIAlertController(title: "Network Error", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)

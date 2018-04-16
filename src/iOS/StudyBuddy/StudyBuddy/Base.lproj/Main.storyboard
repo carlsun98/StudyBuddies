@@ -464,13 +464,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Preferred Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQS-0x-4ar">
-                                <rect key="frame" x="95" y="86" width="185" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulf-HK-gMX">
                                 <rect key="frame" x="83" y="164" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -478,6 +471,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Preferred Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQS-0x-4ar">
+                                <rect key="frame" x="95" y="109" width="185" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hJR-n8-E8z"/>
@@ -499,6 +499,9 @@
                             <rect key="frame" x="0.0" y="294.5" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Logout"/>
+                            <connections>
+                                <action selector="logoutButton:" destination="uFc-NK-zw9" eventType="touchUpInside" id="tUl-gg-kp1"/>
+                            </connections>
                         </button>
                         <sections>
                             <tableViewSection headerTitle="Account Information" id="sSI-TM-Db1">
@@ -564,6 +567,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3B-GF-EsB">
                                                     <rect key="frame" x="311" y="11" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="notificationChange:" destination="uFc-NK-zw9" eventType="valueChanged" id="4Qe-yl-Rpo"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -577,10 +583,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="heb-TC-yWa"/>
+                    <connections>
+                        <outlet property="notificationSwitch" destination="t3B-GF-EsB" id="ZUL-8d-HTe"/>
+                        <segue destination="uHH-SI-ZUf" kind="unwind" identifier="prepareForUnwind" unwindAction="prepareForUnwindWithSegue:" id="uXN-V2-AQv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGN-OT-sm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uHH-SI-ZUf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3660" y="2328"/>
+            <point key="canvasLocation" x="3724" y="2312"/>
         </scene>
         <!--Password Reset View Controller-->
         <scene sceneID="XTj-aB-kEx">
