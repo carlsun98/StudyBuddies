@@ -14,6 +14,13 @@
 		1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */; };
 		1F49E9702083CDD6009A6D02 /* StudyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E96F2083CDD6009A6D02 /* StudyBuddyTests.swift */; };
 		1F49E97B2083CDD6009A6D02 /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */; };
+		1FCA94C42084018E00463B8C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C32084018E00463B8C /* MapViewController.swift */; };
+		1FCA94C72084029700463B8C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA94C62084029600463B8C /* launchscreen.png */; };
+		1FCA94CB2084129C00463B8C /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C92084129C00463B8C /* Network.m */; };
+		1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94CC208414C200463B8C /* LoginViewController.swift */; };
+		1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA94D12084176300463B8C /* AFNetworking.framework */; };
+		1FCA94D82084291E00463B8C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94D72084291E00463B8C /* Data.swift */; };
+		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,17 @@
 		1F49E9762083CDD6009A6D02 /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
 		1F49E97C2083CDD6009A6D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FCA94C32084018E00463B8C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1FCA94C62084029600463B8C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
+		1FCA94C92084129C00463B8C /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		1FCA94CA2084129C00463B8C /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		1FCA94CC208414C200463B8C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1FCA94CE2084154D00463B8C /* StudyBuddy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyBuddy-Bridging-Header.h"; sourceTree = "<group>"; };
+		1FCA94D12084176300463B8C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FCA94D72084291E00463B8C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
+		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */,
+				7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +101,8 @@
 				1F49E96E2083CDD6009A6D02 /* StudyBuddyTests */,
 				1F49E9792083CDD6009A6D02 /* StudyBuddyUITests */,
 				1F49E9582083CDD5009A6D02 /* Products */,
+				9487DFDC42ED8E0587DC93A3 /* Pods */,
+				5D08835BC6117E3EE4954D3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +119,18 @@
 		1F49E9592083CDD5009A6D02 /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				1FCA94D32084283100463B8C /* Data */,
+				1FCA94C82084129C00463B8C /* IO */,
 				1F49E95A2083CDD5009A6D02 /* AppDelegate.swift */,
 				1F49E95C2083CDD5009A6D02 /* ViewController.swift */,
 				1F49E95E2083CDD5009A6D02 /* Main.storyboard */,
 				1F49E9612083CDD6009A6D02 /* Assets.xcassets */,
 				1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */,
+				1FCA94C52084029600463B8C /* Images */,
 				1F49E9662083CDD6009A6D02 /* Info.plist */,
+				1FCA94C32084018E00463B8C /* MapViewController.swift */,
+				1FCA94CC208414C200463B8C /* LoginViewController.swift */,
+				1FCA94CE2084154D00463B8C /* StudyBuddy-Bridging-Header.h */,
 			);
 			path = StudyBuddy;
 			sourceTree = "<group>";
@@ -125,6 +153,49 @@
 			path = StudyBuddyUITests;
 			sourceTree = "<group>";
 		};
+		1FCA94C52084029600463B8C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA94C62084029600463B8C /* launchscreen.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1FCA94C82084129C00463B8C /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA94C92084129C00463B8C /* Network.m */,
+				1FCA94CA2084129C00463B8C /* Network.h */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		1FCA94D32084283100463B8C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA94D72084291E00463B8C /* Data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5D08835BC6117E3EE4954D3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA94D12084176300463B8C /* AFNetworking.framework */,
+				5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9487DFDC42ED8E0587DC93A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */,
+				21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F49E97F2083CDD6009A6D02 /* Build configuration list for PBXNativeTarget "StudyBuddy" */;
 			buildPhases = (
+				46401AAB6455B6E48AD9647D /* [CP] Check Pods Manifest.lock */,
 				1F49E9532083CDD5009A6D02 /* Sources */,
 				1F49E9542083CDD5009A6D02 /* Frameworks */,
 				1F49E9552083CDD5009A6D02 /* Resources */,
+				1BEFFD05E57DA81D53F8E711 /* [CP] Embed Pods Frameworks */,
+				5E84612920E6D199D9111133 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +305,7 @@
 			files = (
 				1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */,
 				1F49E9622083CDD6009A6D02 /* Assets.xcassets in Resources */,
+				1FCA94C72084029700463B8C /* launchscreen.png in Resources */,
 				1F49E9602083CDD5009A6D02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,12 +326,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BEFFD05E57DA81D53F8E711 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46401AAB6455B6E48AD9647D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E84612920E6D199D9111133 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F49E9532083CDD5009A6D02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
 				1F49E95D2083CDD5009A6D02 /* ViewController.swift in Sources */,
+				1FCA94C42084018E00463B8C /* MapViewController.swift in Sources */,
+				1FCA94CB2084129C00463B8C /* Network.m in Sources */,
+				1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */,
 				1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +566,7 @@
 		};
 		1F49E9802083CDD6009A6D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +578,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddy/StudyBuddy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,6 +586,7 @@
 		};
 		1F49E9812083CDD6009A6D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +598,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddy/StudyBuddy-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
