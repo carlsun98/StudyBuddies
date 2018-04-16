@@ -15,6 +15,7 @@ static NSString *kProtocol = @"http";
 static unsigned int port = 5000;
 
 static NSString *kLoginApi = @"login";
+static NSString *kCreateUserApi = @"create_user";
 NS_ASSUME_NONNULL_END
 
 @interface Network : NSObject

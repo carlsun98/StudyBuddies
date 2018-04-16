@@ -20,11 +20,8 @@
 		1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94CC208414C200463B8C /* LoginViewController.swift */; };
 		1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA94D12084176300463B8C /* AFNetworking.framework */; };
 		1FCA94D82084291E00463B8C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94D72084291E00463B8C /* Data.swift */; };
-		1FCA94DB20842AC900463B8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94DA20842AC900463B8C /* Group.swift */; };
-		1FCA94DD20842D0E00463B8C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94DC20842D0E00463B8C /* Course.swift */; };
-		1FCA94DF20842E4800463B8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94DE20842E4800463B8C /* User.swift */; };
-		1FCA94E120842FB500463B8C /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E020842FB500463B8C /* School.swift */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
+		CD936D8F20842C9300B4DD9A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +63,10 @@
 		1FCA94CE2084154D00463B8C /* StudyBuddy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyBuddy-Bridging-Header.h"; sourceTree = "<group>"; };
 		1FCA94D12084176300463B8C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCA94D72084291E00463B8C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		1FCA94DA20842AC900463B8C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		1FCA94DC20842D0E00463B8C /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		1FCA94DE20842E4800463B8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1FCA94E020842FB500463B8C /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +99,6 @@
 		1F49E94E2083CDD5009A6D02 = {
 			isa = PBXGroup;
 			children = (
-				1FCA94D920842AB100463B8C /* Models */,
 				1F49E9592083CDD5009A6D02 /* StudyBuddy */,
 				1F49E96E2083CDD6009A6D02 /* StudyBuddyTests */,
 				1F49E9792083CDD6009A6D02 /* StudyBuddyUITests */,
@@ -139,6 +132,7 @@
 				1F49E9662083CDD6009A6D02 /* Info.plist */,
 				1FCA94C32084018E00463B8C /* MapViewController.swift */,
 				1FCA94CC208414C200463B8C /* LoginViewController.swift */,
+				CD936D8E20842C9300B4DD9A /* CreateUserViewController.swift */,
 				1FCA94CE2084154D00463B8C /* StudyBuddy-Bridging-Header.h */,
 			);
 			path = StudyBuddy;
@@ -185,18 +179,6 @@
 				1FCA94D72084291E00463B8C /* Data.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		1FCA94D920842AB100463B8C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1FCA94DA20842AC900463B8C /* Group.swift */,
-				1FCA94DC20842D0E00463B8C /* Course.swift */,
-				1FCA94DE20842E4800463B8C /* User.swift */,
-				1FCA94E020842FB500463B8C /* School.swift */,
-			);
-			name = Models;
-			path = StudyBuddy/Models;
 			sourceTree = "<group>";
 		};
 		5D08835BC6117E3EE4954D3C /* Frameworks */ = {
@@ -411,13 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FCA94DD20842D0E00463B8C /* Course.swift in Sources */,
-				1FCA94DB20842AC900463B8C /* Group.swift in Sources */,
 				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
-				1FCA94E120842FB500463B8C /* School.swift in Sources */,
 				1F49E95D2083CDD5009A6D02 /* ViewController.swift in Sources */,
 				1FCA94C42084018E00463B8C /* MapViewController.swift in Sources */,
-				1FCA94DF20842E4800463B8C /* User.swift in Sources */,
+				CD936D8F20842C9300B4DD9A /* CreateUserViewController.swift in Sources */,
 				1FCA94CB2084129C00463B8C /* Network.m in Sources */,
 				1FCA94CD208414C200463B8C /* LoginViewController.swift in Sources */,
 				1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */,
