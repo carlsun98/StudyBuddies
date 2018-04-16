@@ -13,6 +13,7 @@
 		1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */; };
 		1F49E9702083CDD6009A6D02 /* StudyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E96F2083CDD6009A6D02 /* StudyBuddyTests.swift */; };
 		1F49E97B2083CDD6009A6D02 /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */; };
+		1F8C32232085210100B85024 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C32222085210100B85024 /* Network.swift */; };
 		1FA97F0420843E330000487A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFD20843E330000487A /* ViewController.swift */; };
 		1FA97F0520843E330000487A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFE20843E330000487A /* MapViewController.swift */; };
 		1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFF20843E330000487A /* CreateUserViewController.swift */; };
@@ -71,6 +72,7 @@
 		1F49E9762083CDD6009A6D02 /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
 		1F49E97C2083CDD6009A6D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F8C32222085210100B85024 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1FA97EFD20843E330000487A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FA97EFE20843E330000487A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1FA97EFF20843E330000487A /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				1FCA94C92084129C00463B8C /* Network.m */,
+				1F8C32222085210100B85024 /* Network.swift */,
 				1FCA94CA2084129C00463B8C /* Network.h */,
 			);
 			path = IO;
@@ -471,6 +474,7 @@
 			files = (
 				1FCA94EA208439B700463B8C /* Group.swift in Sources */,
 				1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */,
+				1F8C32232085210100B85024 /* Network.swift in Sources */,
 				1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */,
 				1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */,
 				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
