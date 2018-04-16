@@ -41,12 +41,13 @@ def update_user():
 
     choose_defaults_stmt = "SELECT push_notifications_enabled, Apple_APN_Key, Android_APN_Key, group_id, name, class_year FROM users WHERE id=%s"
     cursor.execute(choose_defaults_stmt, (userID,))
-    default_push = cursor.fetchone()[0]
-    default_apple = cursor.fetchone()[1]
-    default_android = cursor.fetchone()[2]
-    default_group_id = cursor.fetchone()[3]
-    default_name = cursor.fetchone()[4]
-    default_class_year = cursor.fetchone()[5]
+    result = cursor.fetchone()
+    default_push = result[0]
+    default_apple = result[1]
+    default_android = result[2]
+    default_group_id = result[3]
+    default_name = result[4]
+    default_class_year = result[5]
 
     push_notif_enable = request.form.get("push_notifications_enabled", default_push)
     Apple_APN_Key = request.form.get("Apple_APN_Key", default_apple)
