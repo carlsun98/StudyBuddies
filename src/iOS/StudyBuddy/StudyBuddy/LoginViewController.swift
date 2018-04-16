@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
             }
             let success = response[0]["success"] as! Int
             if (success == 1) {
+                UserDefaults.standard.set(response[1]["token"], forKey: "session_token");
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Invalid login", message: "Check your credentials", preferredStyle: UIAlertControllerStyle.alert)
