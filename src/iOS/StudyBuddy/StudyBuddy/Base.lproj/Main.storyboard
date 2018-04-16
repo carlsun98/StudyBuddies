@@ -495,10 +495,10 @@
             </objects>
             <point key="canvasLocation" x="1096.8" y="1816.6416791604199"/>
         </scene>
-        <!--View Controller-->
+        <!--Create User View Controller-->
         <scene sceneID="tbQ-hy-BJu">
             <objects>
-                <viewController id="pJJ-xQ-u5q" sceneMemberID="viewController">
+                <viewController id="pJJ-xQ-u5q" customClass="CreateUserViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Mi-Iz-UfU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -543,17 +543,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send me the email!"/>
                                 <connections>
-                                    <segue destination="MQi-7A-Iyx" kind="show" id="jN2-n1-kH6"/>
+                                    <action selector="sendEmail:" destination="pJJ-xQ-u5q" eventType="touchUpInside" id="Idd-87-F8Q"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="t2G-ut-Xll"/>
                     </view>
+                    <connections>
+                        <outlet property="confPasswordTF" destination="ct0-lc-AMv" id="cUh-Nx-Lh3"/>
+                        <outlet property="nameTF" destination="I8m-dQ-v4Z" id="8uw-I3-8WD"/>
+                        <outlet property="passwordTF" destination="Are-Vw-ugR" id="B9s-Rs-0VH"/>
+                        <outlet property="usernameTF" destination="RpN-Fp-YeP" id="NTe-sA-c6u"/>
+                        <outlet property="yearTF" destination="7lc-sI-h2C" id="k5J-O5-mSR"/>
+                        <segue destination="MQi-7A-Iyx" kind="show" identifier="sendEmailSegue" id="BfA-yh-52k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGD-Ui-Z6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064.8000000000002" y="2103.5982008995502"/>
+            <point key="canvasLocation" x="2065" y="2130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BWs-En-bv2">
