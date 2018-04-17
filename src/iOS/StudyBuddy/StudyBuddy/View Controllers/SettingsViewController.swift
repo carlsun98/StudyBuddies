@@ -18,7 +18,7 @@ class SettingsViewController: UITableViewController {
             push_notifications_enabled = 1
         }
         let token = UserDefaults.standard.string(forKey: "session_token");
-        let parameters = ["push_notifications_enabled": push_notifications_enabled, "session_token": token] as [String : Any]
+        let parameters = ["push_notifications_enabled": push_notifications_enabled, "session_token": token!] as [String : Any]
         let urlAPI = Network.getUrlForAPI(kUpdateUserApi)
         
         Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
