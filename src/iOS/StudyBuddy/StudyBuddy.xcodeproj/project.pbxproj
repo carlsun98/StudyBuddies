@@ -23,6 +23,11 @@
 		1F8C322F2085760A00B85024 /* LocationDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C322E2085760A00B85024 /* LocationDescriptionTableViewCell.swift */; };
 		1F8C3231208577CF00B85024 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C3230208577CF00B85024 /* ChangeNameViewController.swift */; };
 		1F97E1572085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97E1562085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift */; };
+		1F97E15E2085B5F400E569B7 /* group.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F97E1592085B5F300E569B7 /* group.jpg */; };
+		1F97E15F2085B5F400E569B7 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F97E15A2085B5F300E569B7 /* settings.png */; };
+		1F97E1602085B5F400E569B7 /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F97E15B2085B5F300E569B7 /* group.png */; };
+		1F97E1612085B5F400E569B7 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F97E15C2085B5F300E569B7 /* map.png */; };
+		1F97E1622085B5F400E569B7 /* classes.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F97E15D2085B5F300E569B7 /* classes.png */; };
 		1FA97F0420843E330000487A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFD20843E330000487A /* ViewController.swift */; };
 		1FA97F0520843E330000487A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFE20843E330000487A /* MapViewController.swift */; };
 		1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFF20843E330000487A /* CreateUserViewController.swift */; };
@@ -91,6 +96,11 @@
 		1F8C322E2085760A00B85024 /* LocationDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C3230208577CF00B85024 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
 		1F97E1562085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupThirdVCTableViewController.swift; sourceTree = "<group>"; };
+		1F97E1592085B5F300E569B7 /* group.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = group.jpg; sourceTree = "<group>"; };
+		1F97E15A2085B5F300E569B7 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		1F97E15B2085B5F300E569B7 /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
+		1F97E15C2085B5F300E569B7 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		1F97E15D2085B5F300E569B7 /* classes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classes.png; sourceTree = "<group>"; };
 		1FA97EFD20843E330000487A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FA97EFE20843E330000487A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1FA97EFF20843E330000487A /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +219,18 @@
 			path = StudyBuddyUITests;
 			sourceTree = "<group>";
 		};
+		1F97E1582085B5F300E569B7 /* tab-icons */ = {
+			isa = PBXGroup;
+			children = (
+				1F97E1592085B5F300E569B7 /* group.jpg */,
+				1F97E15A2085B5F300E569B7 /* settings.png */,
+				1F97E15B2085B5F300E569B7 /* group.png */,
+				1F97E15C2085B5F300E569B7 /* map.png */,
+				1F97E15D2085B5F300E569B7 /* classes.png */,
+			);
+			path = "tab-icons";
+			sourceTree = "<group>";
+		};
 		1FA97EFC20843E330000487A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +273,7 @@
 		1FCA94C52084029600463B8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1F97E1582085B5F300E569B7 /* tab-icons */,
 				1FA97F1C20847E540000487A /* group.png */,
 				1FCA94C62084029600463B8C /* launchscreen.png */,
 			);
@@ -411,9 +434,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F97E1622085B5F400E569B7 /* classes.png in Resources */,
+				1F97E1612085B5F400E569B7 /* map.png in Resources */,
 				1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */,
+				1F97E1602085B5F400E569B7 /* group.png in Resources */,
+				1F97E15F2085B5F400E569B7 /* settings.png in Resources */,
 				1F49E9622083CDD6009A6D02 /* Assets.xcassets in Resources */,
 				1FCA94C72084029700463B8C /* launchscreen.png in Resources */,
+				1F97E15E2085B5F400E569B7 /* group.jpg in Resources */,
 				1FA97F1D20847E550000487A /* group.png in Resources */,
 				1F49E9602083CDD5009A6D02 /* Main.storyboard in Resources */,
 			);

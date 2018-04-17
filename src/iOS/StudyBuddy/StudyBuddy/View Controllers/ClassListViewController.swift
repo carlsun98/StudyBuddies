@@ -14,6 +14,7 @@ class ClassListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Classes"
         let apiUrl = Network.getUrlForAPI(kUserClasses)
         Network.sendRequest(toURL: apiUrl!, parameters: ["session_token": Data.sharedInstance.sessionToken], success: { (_:Any, response:Array<Dictionary>) in
             if (response.count == 0) {

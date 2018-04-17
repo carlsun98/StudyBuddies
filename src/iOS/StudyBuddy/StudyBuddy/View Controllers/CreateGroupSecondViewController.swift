@@ -16,7 +16,7 @@ class CreateGroupSecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Create Study Group"
         // Do any additional setup after loading the view.
     }
 

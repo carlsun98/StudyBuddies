@@ -16,10 +16,13 @@ class CreateGroupThirdVCTableViewController: UITableViewController, GMSMapViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let mapFrame = CGRect(x: 0, y: 0, width: mapContainerView.frame.width, height: mapContainerView.frame.height)
         let camera = GMSCameraPosition.camera(withLatitude: 40.3440, longitude: -74.6514, zoom: 15.0)
-        let mapView = GMSMapView.map(withFrame: mapContainerView.frame, camera: camera)
-        mapView.frame = mapContainerView.frame
-        mapView.autoresizesSubviews = true
+        let mapView = GMSMapView.map(withFrame: mapFrame, camera: camera)
         mapView.delegate = self
         // Creates a marker in the center of the map.
         let marker = GMSMarker()

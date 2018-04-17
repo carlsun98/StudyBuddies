@@ -38,6 +38,7 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationItem.title = "Settings"
     }
 
     override func didReceiveMemoryWarning() {

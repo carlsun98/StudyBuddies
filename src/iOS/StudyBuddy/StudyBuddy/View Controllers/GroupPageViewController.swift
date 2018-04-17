@@ -48,7 +48,7 @@ class GroupPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "My Group"
         // Do any additional setup after loading the view.
     }
 
