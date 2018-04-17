@@ -11,6 +11,7 @@ import UIKit
 class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let group = Group()
+    var checkedRow = -1
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,10 +24,22 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
         let abbr = Data.sharedInstance.classes[indexPath.row].abbrv
         let num = Data.sharedInstance.classes[indexPath.row].number
         cell.courseTitle.text = abbr + " " + num
+        if (checkedRow == indexPath.row) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Choose Class for Study Group"
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        checkedRow = indexPath.row
+        tableView.reloadData()
+    }
     
     @IBAction func nextPressed(_ sender: Any) {
         performSegue(withIdentifier: "NextCreateGroupSegue", sender: self)

@@ -8,14 +8,39 @@
 
 import UIKit
 
-class CreateGroupSecondViewController: UIViewController {
+class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let categories = ["Homework", "Exam Prep", "General Studying"]
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return categories.count
+        }
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "durationCell") as! DurationSelectionTableViewCell
+            return cell
+            
+        } else if (indexPath.section == 1) {
+            
+        } else {
+            
+        }
     }
 
     @IBAction func nextPressed(_ sender: Any) {
