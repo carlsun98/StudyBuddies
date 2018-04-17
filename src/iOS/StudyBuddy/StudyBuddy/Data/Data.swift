@@ -12,6 +12,7 @@ final class Data {
     public var sessionToken: String = ""
     static let sharedInstance = Data()
     public var classes: Array<Course> = []
+    public var currentGroup = Group()
     
     public func fetchClasses(succeed: @escaping successCallback, failure: @escaping failureCallback) {
         let url = Network2.sharedInstance.getURLForAPI(kUserClasses)

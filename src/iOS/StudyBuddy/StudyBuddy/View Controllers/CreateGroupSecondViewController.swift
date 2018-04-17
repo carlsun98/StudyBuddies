@@ -11,7 +11,8 @@ import UIKit
 class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let categories = ["Homework", "Exam Prep", "General Studying"]
-    var duration: Int
+    var duration: Int = 30
+    var selectedCategory = -1
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -48,14 +49,32 @@ class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "durationCell") as! DurationSelectionTableViewCell
-            
+            if (duration >= 60) {
+                cell.durationLabel.text = "\(duration / 60)h \(duration % 60)m"
+            } else {
+                cell.durationLabel.text = "\(duration) mins"
+            }
+            cell.stepperControl.value = Double(duration)
+            cell.stepperControl.stepValue = 5.0
+            cell.stepperControl.addTarget(self, action: #selector(stepperValueChanged(sender:)), for: .valueChanged)
             return cell
             
         } else if (indexPath.section == 1) {
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategorySelectionTableViewCell
+            cell.categoryLabel.text = categories[indexPath.row]
+            if selectedCategory == indexPath.row {
+                cell.accessoryType = .checkmark
+            }
+            return cell
         } else {
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "studyDescriptionDetailCell") as! StudyDescriptionTableViewCell
+            return cell
         }
+    }
+    
+    @objc func stepperValueChanged(sender: UIStepper) {
+        duration = Int(sender.value)
+        tableView.reloadData()
     }
 
     @IBAction func nextPressed(_ sender: Any) {
