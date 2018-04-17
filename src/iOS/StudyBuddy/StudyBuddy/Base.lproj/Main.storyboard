@@ -1152,7 +1152,7 @@
                                             <outlet property="stepperControl" destination="C2n-Yb-z0r" id="LoG-kO-qst"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="60" id="jRM-vw-6GF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="60" id="jRM-vw-6GF" customClass="CategorySelectionTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="119.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jRM-vw-6GF" id="WcB-xe-Y5s">
@@ -1173,8 +1173,11 @@
                                                 <constraint firstItem="Wxg-LL-7TP" firstAttribute="leading" secondItem="WcB-xe-Y5s" secondAttribute="leadingMargin" constant="1" id="lS5-Jl-x6e"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="Wxg-LL-7TP" id="qDn-m3-2Qb"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studyPlanDetailCell" rowHeight="114" id="kIc-u4-Afi" customClass="StudyDescriptionTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studyDescriptionDetailCell" rowHeight="114" id="kIc-u4-Afi" customClass="StudyDescriptionTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="179.5" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kIc-u4-Afi" id="A4x-fA-feB">
