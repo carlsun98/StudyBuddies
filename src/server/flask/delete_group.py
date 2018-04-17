@@ -36,7 +36,7 @@ def delete_group(**kwargs):
     if cursor.rowcount is not 1:
         return error_with_message("msg_failed_to_delete_class")
 
-    leave_group_stmt = "UPDATE users SET group=%s WHERE group_id=%s"
+    leave_group_stmt = "UPDATE users SET group_id=%s WHERE group_id=%s"
     cursor.execute(leave_group_stmt, (-1, group_id))
 
     conn.commit()

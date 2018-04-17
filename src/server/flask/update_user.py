@@ -23,6 +23,7 @@ update_user_api = Blueprint('update_user_api', __name__)
 def update_user():
     cursor, conn = connect()
     session_token = request.form.get("session_token")
+    old_password = request.form.get("old_password")
 
     choose_user_id_stmt = "SELECT user_id FROM sessions WHERE token=%s"
     cursor.execute(choose_user_id_stmt, (session_token,))
@@ -38,6 +39,12 @@ def update_user():
         return error_with_message("user_does_not_exist")
     elif len(results) > 1:
         return error_with_message("more_than_one_user")
+
+    check_password_stmt = "SELECT id FROM users WHERE id=%s AND password=%s"
+    cursor.execute(check_user_id_stmt, (userID,))
+    results = cursor.fetchall()
+    if len(results) == 0:
+        return error_with_message("incorrect password")
 
     choose_defaults_stmt = "SELECT push_notifications_enabled, Apple_APN_Key, Android_APN_Key, group_id, name, class_year, password FROM users WHERE id=%s"
     cursor.execute(choose_defaults_stmt, (userID,))
