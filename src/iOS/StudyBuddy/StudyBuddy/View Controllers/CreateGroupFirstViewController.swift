@@ -12,6 +12,8 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
     
     let group = Group()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }

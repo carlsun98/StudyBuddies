@@ -166,6 +166,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="XU8-2F-7sz" id="7tn-ML-sN4"/>
                         <segue destination="ysy-rq-Nrb" kind="show" identifier="NextGroupScreenSegue" id="Zje-pX-V3i"/>
                     </connections>
                 </viewController>
@@ -247,6 +248,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GvC-7m-eCa"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rQe-YS-yyr" id="GRB-Pp-qM5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7C-Uj-Vlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1206,6 +1210,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QLm-nf-o4G"/>
                     <connections>
+                        <outlet property="tableView" destination="pIw-ts-qNG" id="3Xx-mH-ZiX"/>
                         <segue destination="KEP-Qs-poe" kind="show" identifier="NextGroupScreenSegue" id="NVP-XJ-Wdl"/>
                     </connections>
                 </viewController>
