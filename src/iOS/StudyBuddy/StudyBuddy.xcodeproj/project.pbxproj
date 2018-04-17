@@ -13,6 +13,7 @@
 		1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F49E9632083CDD6009A6D02 /* LaunchScreen.storyboard */; };
 		1F49E9702083CDD6009A6D02 /* StudyBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E96F2083CDD6009A6D02 /* StudyBuddyTests.swift */; };
 		1F49E97B2083CDD6009A6D02 /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */; };
+		1F7B26182085A09F0074417B /* CreateGroupSecondVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B26172085A09F0074417B /* CreateGroupSecondVCTableViewController.swift */; };
 		1F8C32232085210100B85024 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C32222085210100B85024 /* Network.swift */; };
 		1F8C32252085758300B85024 /* ClassSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C32242085758300B85024 /* ClassSelectionTableViewCell.swift */; };
 		1F8C3227208575A100B85024 /* DurationSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C3226208575A100B85024 /* DurationSelectionTableViewCell.swift */; };
@@ -21,6 +22,7 @@
 		1F8C322D208575EB00B85024 /* MapSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C322C208575EB00B85024 /* MapSelectionTableViewCell.swift */; };
 		1F8C322F2085760A00B85024 /* LocationDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C322E2085760A00B85024 /* LocationDescriptionTableViewCell.swift */; };
 		1F8C3231208577CF00B85024 /* ChangeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C3230208577CF00B85024 /* ChangeNameViewController.swift */; };
+		1F97E1572085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97E1562085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift */; };
 		1FA97F0420843E330000487A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFD20843E330000487A /* ViewController.swift */; };
 		1FA97F0520843E330000487A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFE20843E330000487A /* MapViewController.swift */; };
 		1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFF20843E330000487A /* CreateUserViewController.swift */; };
@@ -79,6 +81,7 @@
 		1F49E9762083CDD6009A6D02 /* StudyBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyBuddyUITests.swift; sourceTree = "<group>"; };
 		1F49E97C2083CDD6009A6D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F7B26172085A09F0074417B /* CreateGroupSecondVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupSecondVCTableViewController.swift; sourceTree = "<group>"; };
 		1F8C32222085210100B85024 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1F8C32242085758300B85024 /* ClassSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C3226208575A100B85024 /* DurationSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		1F8C322C208575EB00B85024 /* MapSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C322E2085760A00B85024 /* LocationDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C3230208577CF00B85024 /* ChangeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameViewController.swift; sourceTree = "<group>"; };
+		1F97E1562085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupThirdVCTableViewController.swift; sourceTree = "<group>"; };
 		1FA97EFD20843E330000487A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FA97EFE20843E330000487A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1FA97EFF20843E330000487A /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				1FA97F1E208491AD0000487A /* InitialViewController.swift */,
 				1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */,
 				1F8C3230208577CF00B85024 /* ChangeNameViewController.swift */,
+				1F7B26172085A09F0074417B /* CreateGroupSecondVCTableViewController.swift */,
+				1F97E1562085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -497,8 +503,10 @@
 				1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */,
 				1F8C322B208575D400B85024 /* StudyDescriptionTableViewCell.swift in Sources */,
 				1F8C32232085210100B85024 /* Network.swift in Sources */,
+				1F7B26182085A09F0074417B /* CreateGroupSecondVCTableViewController.swift in Sources */,
 				1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */,
 				1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */,
+				1F97E1572085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift in Sources */,
 				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
 				1F8C322D208575EB00B85024 /* MapSelectionTableViewCell.swift in Sources */,
 				1F8C3227208575A100B85024 /* DurationSelectionTableViewCell.swift in Sources */,
