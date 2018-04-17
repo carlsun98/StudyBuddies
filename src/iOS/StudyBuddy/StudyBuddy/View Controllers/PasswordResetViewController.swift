@@ -9,8 +9,10 @@
 import UIKit
 
 class PasswordResetViewController: UIViewController {
-    
+    var txt = ""
 
+    @IBOutlet weak var confirmMessage: UILabel!
+    
     @IBOutlet weak var oldPasswordTF: UITextField!
     
     @IBOutlet weak var newPasswordTF: UITextField!
@@ -41,6 +43,7 @@ class PasswordResetViewController: UIViewController {
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
+                self.txt = "Password Changed"
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
@@ -61,11 +64,16 @@ class PasswordResetViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        showText()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showText(){
+        self.confirmMessage.text = txt
     }
     
 

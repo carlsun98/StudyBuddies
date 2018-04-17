@@ -10,9 +10,13 @@ import UIKit
 
 class ChangeNameViewController: UIViewController {
 
+    var txt = ""
+
     @IBOutlet weak var newNameTF: UITextField!
     
     @IBOutlet weak var oldPasswordTF: UITextField!
+    
+    @IBOutlet weak var confirmMessage: UILabel!
     
     @IBAction func submitChanges(_ sender: Any) {
         let old_password = oldPasswordTF.text
@@ -32,6 +36,8 @@ class ChangeNameViewController: UIViewController {
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
+                self.txt = "Name Changed"
+                self.showText()
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
@@ -49,8 +55,12 @@ class ChangeNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        showText()
+    }
+    
+    func showText(){
+        self.confirmMessage.text = txt
     }
 
     override func didReceiveMemoryWarning() {
