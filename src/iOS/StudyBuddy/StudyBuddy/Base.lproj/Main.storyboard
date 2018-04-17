@@ -140,6 +140,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="iIf-Wd-aRb" eventType="touchUpInside" id="jh1-v6-v3r"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,7 +166,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="ysy-rq-Nrb" kind="show" id="Zje-pX-V3i"/>
+                        <segue destination="ysy-rq-Nrb" kind="show" identifier="NextGroupScreenSegue" id="Zje-pX-V3i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oh1-mx-Be9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,6 +239,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="KEP-Qs-poe" eventType="touchUpInside" id="hKi-fN-RBP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1044,6 +1050,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextPressed:" destination="ysy-rq-Nrb" eventType="touchUpInside" id="O0X-6x-Pqb"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-ts-qNG">
                                 <rect key="frame" x="0.0" y="64" width="375" height="539"/>
@@ -1149,7 +1158,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QLm-nf-o4G"/>
                     <connections>
-                        <segue destination="KEP-Qs-poe" kind="show" id="NVP-XJ-Wdl"/>
+                        <segue destination="KEP-Qs-poe" kind="show" identifier="NextGroupScreenSegue" id="NVP-XJ-Wdl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQq-0e-j1C" userLabel="First Responder" sceneMemberID="firstResponder"/>

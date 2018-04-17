@@ -17,7 +17,9 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
         return UITableViewCell()
     }
     
-
+    @IBAction func nextPressed(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
