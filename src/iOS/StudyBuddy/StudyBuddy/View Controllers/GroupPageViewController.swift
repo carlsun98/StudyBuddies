@@ -50,22 +50,17 @@ class GroupPageViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "My Group"
         // Do any additional setup after loading the view.
+        self.showText()
+    }
+    
+    func showText(){
+        self.classNameLabel.text = "Subject: " + Group().course.abbrv + Group().course.number
+        self.locationLabel.text = "Location: " + String(Group().location_lat) + " " + String(Group().location_lon)
+        self.noMemLabel.text = "Number of Members: " + String(Group().size)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
