@@ -29,6 +29,10 @@ final class Network2 {
             failure(error)
         }
     }
+    func getURLForAPI(_ api: String) -> URL {
+        let str = "\(kProtocol)://\(kBaseURL):\(port)/\(api)"
+        return URL(string: str)!
+    }
 }
 
 

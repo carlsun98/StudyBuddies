@@ -61,7 +61,7 @@ class CreateUserViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }) { (_:Any, error:Error) in
-            let alertController = UIAlertController(title: "Oh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)

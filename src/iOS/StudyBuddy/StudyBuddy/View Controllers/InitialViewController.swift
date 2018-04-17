@@ -16,6 +16,7 @@ class InitialViewController: UITabBarController {
         if (storedToken != nil && storedToken == "") {
             self.performSegue(withIdentifier: "kShowLoginSegue", sender: nil)
         } else {
+            
             Data.sharedInstance.sessionToken = storedToken!
         }
         // Do any additional setup after loading the view.
