@@ -11,6 +11,7 @@ import UIKit
 class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let categories = ["Homework", "Exam Prep", "General Studying"]
+    var duration: Int
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,9 +32,23 @@ class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UI
         return 3
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Select Duration"
+        case 1:
+            return "Select Category"
+        case 2:
+            return "Enter Description"
+        default:
+            return ""
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "durationCell") as! DurationSelectionTableViewCell
+            
             return cell
             
         } else if (indexPath.section == 1) {
