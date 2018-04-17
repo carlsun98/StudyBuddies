@@ -39,7 +39,7 @@ def update_user():
     elif len(results) > 1:
         return error_with_message("more_than_one_user")
 
-    choose_defaults_stmt = "SELECT push_notifications_enabled, Apple_APN_Key, Android_APN_Key, group_id, name, class_year FROM users WHERE id=%s"
+    choose_defaults_stmt = "SELECT push_notifications_enabled, Apple_APN_Key, Android_APN_Key, group_id, name, class_year, password FROM users WHERE id=%s"
     cursor.execute(choose_defaults_stmt, (userID,))
     result = cursor.fetchone()
     default_push = result[0]
@@ -48,6 +48,7 @@ def update_user():
     default_group_id = result[3]
     default_name = result[4]
     default_class_year = result[5]
+    default_password = result[6]
 
     push_notif_enable = request.form.get("push_notifications_enabled", default_push)
     Apple_APN_Key = request.form.get("Apple_APN_Key", default_apple)
@@ -55,9 +56,10 @@ def update_user():
     group_id = request.form.get("group_id", default_group_id)
     name = request.form.get("name", default_name)
     class_year = request.form.get("class_year", default_class_year)
+    password = request.form.get("password", default_Password)
 
-    update_user_stmt = "UPDATE users SET push_notifications_enabled=%s, Apple_APN_Key=%s, Android_APN_Key=%s, group_id=%s, name=%s, class_year=%s WHERE id=%s"
-    cursor.execute(update_user_stmt, (push_notif_enable, Apple_APN_Key, Android_APN_Key, group_id, name, class_year, userID))
+    update_user_stmt = "UPDATE users SET push_notifications_enabled=%s, Apple_APN_Key=%s, Android_APN_Key=%s, group_id=%s, name=%s, class_year=%s, password=%s WHERE id=%s"
+    cursor.execute(update_user_stmt, (push_notif_enable, Apple_APN_Key, Android_APN_Key, group_id, name, class_year, password, userID))
     if cursor.rowcount is not 1:
         return error_with_message("updating user failed")
 
