@@ -42,7 +42,7 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
     }
     
     @IBAction func nextPressed(_ sender: Any) {
-        performSegue(withIdentifier: "NextCreateGroupSegue", sender: self)
+        performSegue(withIdentifier: "NextGroupScreenSegue", sender: self)
     }
     
     override func viewDidLoad() {

@@ -64,6 +64,8 @@ class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UI
             cell.categoryLabel.text = categories[indexPath.row]
             if selectedCategory == indexPath.row {
                 cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
             }
             return cell
         } else {
@@ -78,6 +80,7 @@ class CreateGroupSecondViewController: UIViewController, UITableViewDelegate, UI
     }
 
     @IBAction func nextPressed(_ sender: Any) {
+        performSegue(withIdentifier: "NextGroupScreenSegue", sender: self)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
