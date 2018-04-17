@@ -303,12 +303,20 @@
                                 <state key="normal" title="Leave Group">
                                     <color key="titleColor" red="1" green="0.023286350454939653" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="leaveGroup:" destination="Qg2-xn-hDs" eventType="touchUpInside" id="bjM-Db-MEK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tVV-hV-RiM"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZgV-BR-QNE"/>
+                    <connections>
+                        <outlet property="classNameLabel" destination="5xu-8M-Wfl" id="Kdr-sU-mdx"/>
+                        <outlet property="locationLabel" destination="9UF-ta-YiJ" id="812-UP-Gc7"/>
+                        <outlet property="noMemLabel" destination="AXu-mv-nLG" id="BfM-0Z-Xk0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2x-rX-R57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

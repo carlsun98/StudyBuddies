@@ -18,6 +18,7 @@ static NSString *kLoginApi = @"login";
 static NSString *kCreateUserApi = @"create_user";
 static NSString *kUpdateUserApi = @"update_user";
 static NSString *kUserClasses = @"list_user_classes";
+static NSString *kLeaveGroupApi = @"leave_group";
 NS_ASSUME_NONNULL_END
 
 @interface Network : NSObject
