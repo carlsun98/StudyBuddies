@@ -13,13 +13,13 @@ class InitialViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let storedToken = UserDefaults.standard.string(forKey: "session_token")
-        if (storedToken != nil && storedToken == "") {
+        if (storedToken == nil || storedToken == "") {
             self.performSegue(withIdentifier: "kShowLoginSegue", sender: nil)
         } else {
-            
             Data.sharedInstance.sessionToken = storedToken!
         }
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,23 +20,27 @@ PODS:
   - GoogleMaps/Base (2.6.0)
   - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
+  - MBProgressHUD (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Alamofire (~> 4.7)
   - GoogleMaps
+  - MBProgressHUD (~> 1.1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Alamofire
     - GoogleMaps
+    - MBProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
 
-PODFILE CHECKSUM: 3398276a7edaf04c48fdff68ee38af9a8231b554
+PODFILE CHECKSUM: c153f8d11abd52b585f70530b61b2bb93ad9b6c6
 
 COCOAPODS: 1.5.0

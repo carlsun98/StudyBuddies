@@ -11,6 +11,7 @@ import Foundation
 
 class Course {
     
+    var groups: 
     var abbrv: String
     var number: String
     var title: String
