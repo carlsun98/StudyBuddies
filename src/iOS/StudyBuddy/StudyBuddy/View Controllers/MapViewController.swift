@@ -20,13 +20,6 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: 40.3440, longitude: -74.6514, zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
-        
         view.insertSubview(mapView, at: 0)
     }
 
