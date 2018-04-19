@@ -22,14 +22,39 @@ class CreateGroupSecondVCTableViewController: UITableViewController {
     public var duration = 30
     public var groupDescription = ""
     
+    public func getGroupDescription() -> String {
+        return descriptionTextView.text
+    }
+    
+    public func getDuration() -> Int {
+        return Int(stepperControl.value)
+    }
+    
+    public func getSelectedCategoryIndex() -> Int {
+        return selectedCategory
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        descriptionTextView.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
 
     @IBAction func stepperPressed(_ sender: Any) {

@@ -60,6 +60,6 @@ def classes_list(**kwargs):
             "course_abbreviation": match[2],
             "course_number": match[3]
         }
-        final_results.append(match)
+        final_results.append(result)
 
-    return success_with_data(search_results)
+    return success_with_data(final_results)

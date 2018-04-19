@@ -10,13 +10,37 @@ import UIKit
 
 class CourseListViewController: UITableViewController {
     
+    var editButton: UIBarButtonItem? = nil
+    var doneButton: UIBarButtonItem? = nil
+    var addCell: UITableViewCell? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Classes"
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(dataLoaded), name: .dataLoaded, object: nil)
         // Do any additional setup after loading the view.
+        editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonClick))
+        doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClick))
+        self.navigationItem.rightBarButtonItem = editButton
+        addCell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        addCell?.textLabel?.text = "Add Course"
     }
-
+    
+    @objc func doneButtonClick() {
+        tableView.setEditing(false, animated: true)
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    @objc func editButtonClick() {
+        tableView.setEditing(true, animated: true)
+        self.navigationItem.rightBarButtonItem = doneButton
+        let addPath = IndexPath(row: 0, section: 0)
+        //tableView.insertRows(at: [addPath], with: .top)
+    }
+    
+    @objc func dataLoaded() {
+        tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -25,12 +49,15 @@ class CourseListViewController: UITableViewController {
     // MARK: - Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Data.sharedInstance.courses.count
+        return Data.sharedInstance.courses.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) {
+            return addCell!
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseTableViewCell
-        let course = Data.sharedInstance.courses[indexPath.row]
+        let course = Data.sharedInstance.courses[indexPath.row - 1]
         let abbr = course.abbrv
         let num = course.number
         cell.mainLabel.text = abbr + " " + num
@@ -38,6 +65,12 @@ class CourseListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if (indexPath.row > 0) {
+            return true
+        }
+        return false
+    }
     // MARK: - Delegate
 
     /*

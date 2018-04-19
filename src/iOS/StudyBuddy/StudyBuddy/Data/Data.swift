@@ -8,6 +8,10 @@
 
 import Foundation
 
+extension Notification.Name {
+    static let dataLoaded = Notification.Name("dataLoaded")
+}
+
 final class Data {
     public var sessionToken: String = ""
     static let sharedInstance = Data()
@@ -49,6 +53,7 @@ final class Data {
                     newCourse.groups = groups
                     self.courses.append(newCourse)
                 }
+                NotificationCenter.default.post(name: .dataLoaded, object: nil)
                 succeed(self.courses)
             } else {
                 let errorMessage = data[0]["message"] as! String
