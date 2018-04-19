@@ -10,54 +10,7 @@ import UIKit
 
 class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
     var searchResults: Array<Course> = []
-    func updateSearchResults(for searchController: UISearchController) {
-        print("HELLO")
-        let token = Data.sharedInstance.sessionToken
-        let urlAPI = Network.getUrlForAPI(kClassesListApi)
-        let searchText = searchController.searchBar.text
-        if ((searchText?.count)! < 3) {
-            searchResults = []
-            tableView.reloadData()
-            return
-        }
-        let parameters = ["session_token": token, "search_string": searchText]
-        Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
-            if (response.count == 0) {
-                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-                return
-            }
-            let success = response[0]["success"] as! Int
-            let message = response[0]["message"] as! String
-            if (success == 1) {
-                let courseData = response[1]["classes"] as! Array<Dictionary<String, Any>>
-                var courses: Array<Course> = []
-                for course in courseData {
-                    let newCourse = Course()
-                    newCourse.abbrv = course["course_abbreviation"] as! String
-                    newCourse.number = course["course_number"] as! String
-                    newCourse.title = course["course_title"] as! String
-                    newCourse.id = course["id"] as! Int
-                    courses.append(newCourse)
-                }
-                self.searchResults = courses
-                self.tableView.reloadData()
-            } else {
-                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }) { (_:Any, error:Error) in
-            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
+    let searchController = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -68,7 +21,6 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
@@ -93,6 +45,55 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
         let num = searchResults[indexPath.row].number
         cell.courseTitle.text = abbr + " " + num
         return cell
+    }
+    
+    // MARK: - UISearchResultsUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        print("HELLO")
+        let token = Data.sharedInstance.sessionToken
+        let urlAPI = Network.getUrlForAPI(kClassesListApi)
+        let searchText = searchController.searchBar.text
+        if ((searchText?.count)! < 3) {
+            searchResults = []
+            tableView.reloadData()
+            return
+        }
+        let parameters = ["session_token": token, "search_string": searchText]
+        Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
+            if (response.count == 0) {
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            let success = response[0]["success"] as! Int
+            let message = response[0]["message"] as! String
+            if (success == 1) {
+                let courseData = response[1] as! Array<Dictionary<String, Any>>
+                var courses: Array<Course> = []
+                for course in courseData {
+                    let newCourse = Course()
+                    newCourse.abbrv = course["course_abbreviation"] as! String
+                    newCourse.number = course["course_number"] as! String
+                    newCourse.title = course["course_title"] as! String
+                    newCourse.id = course["id"] as! Int
+                    courses.append(newCourse)
+                }
+                self.searchResults = courses
+                self.tableView.reloadData()
+            } else {
+                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }) { (_:Any, error:Error) in
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     /*
