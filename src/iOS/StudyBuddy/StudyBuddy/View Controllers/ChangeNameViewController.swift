@@ -55,8 +55,24 @@ class ChangeNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        newNameTF.inputAccessoryView = toolBar
+        oldPasswordTF.inputAccessoryView = toolBar
+        
         showText()
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
     
     func showText(){

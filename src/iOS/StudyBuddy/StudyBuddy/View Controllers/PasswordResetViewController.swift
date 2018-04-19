@@ -63,8 +63,24 @@ class PasswordResetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        oldPasswordTF.inputAccessoryView = toolBar
+        newPasswordTF.inputAccessoryView = toolBar
+        confirmPasswordTF.inputAccessoryView = toolBar
+        
         showText()
+    }
+    
+    @objc func doneClicked() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
