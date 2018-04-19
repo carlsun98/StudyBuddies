@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import QuartzCore
 
 class GroupPageViewController: UIViewController {
 
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var noMemLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     
     @IBAction func leaveGroup(_ sender: Any) {
-        let token = UserDefaults.standard.string(forKey: "session_token");
+        let token = Data.sharedInstance.sessionToken
         let parameters = ["session_token": token]
         let urlAPI = Network.getUrlForAPI(kLeaveGroupApi)
         
@@ -54,9 +56,11 @@ class GroupPageViewController: UIViewController {
     }
     
     func showText(){
-        self.classNameLabel.text = "Subject: " + Group().course.abbrv + Group().course.number
-        self.locationLabel.text = "Location: " + String(Group().location_lat) + " " + String(Group().location_lon)
-        self.noMemLabel.text = "Number of Members: " + String(Group().size)
+        let userGroup = Data.sharedInstance.currentGroup
+        self.classNameLabel.text = "Subject: " + userGroup.course.abbrv + userGroup.course.number
+        self.locationLabel.text = "Location: " + String(userGroup.location_lat) + ", " + String(userGroup.location_lon)
+        self.noMemLabel.text = "Number of Members: " + String(userGroup.size)
+        self.endTimeLabel.text = "End Time: " + String(Calendar.current.component(.hour, from: userGroup.endtime)) + ":" + String(Calendar.current.component(.minute, from: userGroup.endtime))
     }
 
     override func didReceiveMemoryWarning() {
