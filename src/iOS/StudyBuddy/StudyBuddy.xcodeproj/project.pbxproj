@@ -54,6 +54,18 @@
 		1FCA94E9208439B700463B8C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E5208439B700463B8C /* Course.swift */; };
 		1FCA94EA208439B700463B8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E6208439B700463B8C /* Group.swift */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
+		CD4CD7D52088163F00F1BEFC /* signs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D12088163B00F1BEFC /* signs@3x.png */; };
+		CD4CD7D62088163F00F1BEFC /* school@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D22088163D00F1BEFC /* school@3x.png */; };
+		CD4CD7D72088163F00F1BEFC /* people@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D32088163E00F1BEFC /* people@3x.png */; };
+		CD4CD7D82088163F00F1BEFC /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D42088163F00F1BEFC /* settings@3x.png */; };
+		CD4CD7DD2088165000F1BEFC /* school@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D92088164C00F1BEFC /* school@2x.png */; };
+		CD4CD7DE2088165000F1BEFC /* people@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7DA2088164E00F1BEFC /* people@2x.png */; };
+		CD4CD7DF2088165000F1BEFC /* signs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7DB2088164F00F1BEFC /* signs@2x.png */; };
+		CD4CD7E02088165000F1BEFC /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7DC2088165000F1BEFC /* settings@2x.png */; };
+		CD4CD7E52088165C00F1BEFC /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7E12088165900F1BEFC /* school.png */; };
+		CD4CD7E62088165C00F1BEFC /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7E22088165A00F1BEFC /* people.png */; };
+		CD4CD7E72088165C00F1BEFC /* signs.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7E32088165B00F1BEFC /* signs.png */; };
+		CD4CD7E82088165C00F1BEFC /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7E42088165C00F1BEFC /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +143,18 @@
 		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4CD7D12088163B00F1BEFC /* signs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signs@3x.png"; sourceTree = "<group>"; };
+		CD4CD7D22088163D00F1BEFC /* school@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school@3x.png"; sourceTree = "<group>"; };
+		CD4CD7D32088163E00F1BEFC /* people@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "people@3x.png"; sourceTree = "<group>"; };
+		CD4CD7D42088163F00F1BEFC /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
+		CD4CD7D92088164C00F1BEFC /* school@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school@2x.png"; sourceTree = "<group>"; };
+		CD4CD7DA2088164E00F1BEFC /* people@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "people@2x.png"; sourceTree = "<group>"; };
+		CD4CD7DB2088164F00F1BEFC /* signs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signs@2x.png"; sourceTree = "<group>"; };
+		CD4CD7DC2088165000F1BEFC /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		CD4CD7E12088165900F1BEFC /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
+		CD4CD7E22088165A00F1BEFC /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
+		CD4CD7E32088165B00F1BEFC /* signs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signs.png; sourceTree = "<group>"; };
+		CD4CD7E42088165C00F1BEFC /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +187,18 @@
 		1F49E94E2083CDD5009A6D02 = {
 			isa = PBXGroup;
 			children = (
+				CD4CD7D32088163E00F1BEFC /* people@3x.png */,
+				CD4CD7D22088163D00F1BEFC /* school@3x.png */,
+				CD4CD7D42088163F00F1BEFC /* settings@3x.png */,
+				CD4CD7D12088163B00F1BEFC /* signs@3x.png */,
+				CD4CD7DA2088164E00F1BEFC /* people@2x.png */,
+				CD4CD7D92088164C00F1BEFC /* school@2x.png */,
+				CD4CD7DC2088165000F1BEFC /* settings@2x.png */,
+				CD4CD7DB2088164F00F1BEFC /* signs@2x.png */,
+				CD4CD7E22088165A00F1BEFC /* people.png */,
+				CD4CD7E12088165900F1BEFC /* school.png */,
+				CD4CD7E42088165C00F1BEFC /* settings.png */,
+				CD4CD7E32088165B00F1BEFC /* signs.png */,
 				1F49E9592083CDD5009A6D02 /* StudyBuddy */,
 				1F49E96E2083CDD6009A6D02 /* StudyBuddyTests */,
 				1F49E9792083CDD6009A6D02 /* StudyBuddyUITests */,
@@ -434,16 +470,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4CD7DD2088165000F1BEFC /* school@2x.png in Resources */,
+				CD4CD7E02088165000F1BEFC /* settings@2x.png in Resources */,
 				1F97E1622085B5F400E569B7 /* classes.png in Resources */,
 				1F97E1612085B5F400E569B7 /* map.png in Resources */,
 				1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */,
+				CD4CD7D62088163F00F1BEFC /* school@3x.png in Resources */,
 				1F97E1602085B5F400E569B7 /* group.png in Resources */,
+				CD4CD7DF2088165000F1BEFC /* signs@2x.png in Resources */,
 				1F97E15F2085B5F400E569B7 /* settings.png in Resources */,
+				CD4CD7D52088163F00F1BEFC /* signs@3x.png in Resources */,
+				CD4CD7D72088163F00F1BEFC /* people@3x.png in Resources */,
+				CD4CD7D82088163F00F1BEFC /* settings@3x.png in Resources */,
 				1F49E9622083CDD6009A6D02 /* Assets.xcassets in Resources */,
 				1FCA94C72084029700463B8C /* launchscreen.png in Resources */,
+				CD4CD7E82088165C00F1BEFC /* settings.png in Resources */,
+				CD4CD7E62088165C00F1BEFC /* people.png in Resources */,
 				1F97E15E2085B5F400E569B7 /* group.jpg in Resources */,
 				1FA97F1D20847E550000487A /* group.png in Resources */,
+				CD4CD7E52088165C00F1BEFC /* school.png in Resources */,
 				1F49E9602083CDD5009A6D02 /* Main.storyboard in Resources */,
+				CD4CD7E72088165C00F1BEFC /* signs.png in Resources */,
+				CD4CD7DE2088165000F1BEFC /* people@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,7 +786,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 485F2J949F;
 				INFOPLIST_FILE = StudyBuddy/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddy/StudyBuddy-Bridging-Header.h";
@@ -755,7 +806,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 485F2J949F;
 				INFOPLIST_FILE = StudyBuddy/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StudyBuddy/StudyBuddy-Bridging-Header.h";
@@ -772,7 +826,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 485F2J949F;
 				INFOPLIST_FILE = StudyBuddyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -789,7 +847,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 485F2J949F;
 				INFOPLIST_FILE = StudyBuddyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -805,7 +867,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 485F2J949F;
 				INFOPLIST_FILE = StudyBuddyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -821,7 +887,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 485F2J949F;
 				INFOPLIST_FILE = StudyBuddyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = AAMCK.StudyBuddyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
