@@ -11,13 +11,14 @@ import Foundation
 
 class Course {
     
-    var groups: 
+    var groups: Array<Group>
     var abbrv: String
     var number: String
     var title: String
     var id: Int
     
     init () {
+        groups = []
         abbrv = ""
         number = ""
         title = ""

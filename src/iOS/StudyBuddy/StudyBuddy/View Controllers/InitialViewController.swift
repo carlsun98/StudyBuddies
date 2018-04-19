@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MBProgressHUD
 class InitialViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -19,7 +19,24 @@ class InitialViewController: UITabBarController {
             Data.sharedInstance.sessionToken = storedToken!
         }
         // Do any additional setup after loading the view.
+        let loadingNotification = MBProgressHUD.showAdded(to: view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.indeterminate
+        loadingNotification.label.text = "Loading"
         
+        Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
+            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+        }, error: { (message: String) in
+            if (message == "msg_invalid_token") {
+                self.performSegue(withIdentifier: "kShowLoginSegue", sender: nil)
+                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+            }
+        }) { (error: Error) in
+            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

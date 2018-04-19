@@ -56,6 +56,11 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
         print("SESSION_TOKEN" + Data.sharedInstance.sessionToken)
         Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
             self.tableView.reloadData()
+        }, error: { (errorMessage: String) in
+            let alertController = UIAlertController(title: "Uh oh :(", message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }) { (error: Error) in
             let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)

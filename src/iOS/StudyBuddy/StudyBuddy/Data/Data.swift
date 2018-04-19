@@ -15,7 +15,7 @@ final class Data {
     public var school: School = School()
     public var currentGroup = Group()
     
-    public func fetchClasses(succeed: @escaping successCallback, failure: @escaping failureCallback) {
+    public func fetchClasses(succeed: @escaping successCallback, error: @escaping errorCallback, failure: @escaping failureCallback) {
         let url = Network2.sharedInstance.getURLForAPI(kUserClasses)
         Network2.sharedInstance.sendRequestToURL(url: url, parameters: ["session_token": sessionToken], success: { (response: Any?) in
             let data = response as! Array<Dictionary<String, Any>>
@@ -32,6 +32,9 @@ final class Data {
                     self.classes.append(newCourse)
                 }
                 succeed(self.classes)
+            } else {
+                let errorMessage = data[0]["message"] as! String
+                error(errorMessage)
             }
         }) { (error: Error) in
             failure(error)
