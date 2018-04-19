@@ -50,6 +50,7 @@
                                 </state>
                                 <connections>
                                     <action selector="joinGroupButton:" destination="Zlt-Te-Bsw" eventType="touchUpInside" id="lQA-U4-HIO"/>
+                                    <segue destination="Qg2-xn-hDs" kind="presentation" id="33D-lX-DRs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -571,7 +572,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name: ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xu-8M-Wfl">
-                                <rect key="frame" x="27" y="213" width="321" height="25"/>
+                                <rect key="frame" x="27" y="169" width="321" height="25"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Emo-sX-QEL"/>
@@ -586,7 +587,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location: ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UF-ta-YiJ">
-                                <rect key="frame" x="27" y="258" width="321" height="25"/>
+                                <rect key="frame" x="27" y="214" width="321" height="25"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="qMO-5z-uJL"/>
@@ -596,7 +597,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Members: ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXu-mv-nLG">
-                                <rect key="frame" x="27" y="303" width="321" height="25"/>
+                                <rect key="frame" x="27" y="259" width="321" height="25"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="IsO-Mk-EeP"/>
@@ -607,14 +608,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gad-Op-ddf">
-                                <rect key="frame" x="27" y="413" width="321" height="25"/>
+                                <rect key="frame" x="27" y="369" width="321" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="u7i-o2-ji1"/>
                                 </constraints>
                                 <state key="normal" title="See Group in Map"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8J-3w-Lsw">
-                                <rect key="frame" x="27" y="453" width="321" height="25"/>
+                                <rect key="frame" x="27" y="409" width="321" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Q3o-cu-orb"/>
                                 </constraints>
@@ -626,7 +627,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time: ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsC-Vw-OXF">
-                                <rect key="frame" x="27" y="348" width="321" height="25"/>
+                                <rect key="frame" x="27" y="304" width="321" height="25"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="IYe-1N-lOc"/>
@@ -1517,4 +1518,7 @@
         <image name="settings.png" width="25" height="25"/>
         <image name="signs.png" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="33D-lX-DRs"/>
+    </inferredMetricsTieBreakers>
 </document>
