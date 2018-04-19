@@ -18,7 +18,9 @@ class CreateGroupSecondVCTableViewController: UITableViewController {
     @IBOutlet weak var stepperControl: UIStepper!
     @IBOutlet weak var durationLabel: UILabel!
     
-    var selectedCategory = -1
+    public var selectedCategory = -1
+    public var duration = 30
+    public var groupDescription = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

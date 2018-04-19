@@ -42,6 +42,14 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
     }
     
     @IBAction func nextPressed(_ sender: Any) {
+        if (checkedRow == -1) {
+            let alertController = UIAlertController(title: "Please select a course", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        group.course = Data.sharedInstance.courses[checkedRow]
         performSegue(withIdentifier: "NextGroupScreenSegue", sender: self)
     }
     
