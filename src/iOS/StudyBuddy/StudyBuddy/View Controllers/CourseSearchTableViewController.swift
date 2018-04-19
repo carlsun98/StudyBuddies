@@ -15,7 +15,7 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Add Course"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,6 +25,8 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
+        tableView.setEditing(true, animated: false)
+        tableView.allowsSelectionDuringEditing = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,19 +43,70 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseSelectionTableViewCell
-        let abbr = searchResults[indexPath.row].abbrv
-        let num = searchResults[indexPath.row].number
+        let course = searchResults[indexPath.row]
+        let abbr = course.abbrv
+        let num = course.number
         cell.courseTitle.text = abbr + " " + num
+        if (!Data.sharedInstance.courses.contains(where: {$0.id == course.id})) {
+            cell.courseTitle.text = abbr + " " + num + " (Added)"
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.insert
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        addCourse(searchResults[indexPath.row])
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        addCourse(searchResults[indexPath.row])
+    }
+    
+    func addCourse(_ course: Course) {
+        let token = Data.sharedInstance.sessionToken
+        let urlAPI = Network.getUrlForAPI(kAddClassApi)
+        let classID = "\(course.id)"
+        let parameters = ["session_token": token, "class_id": classID]
+        Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
+            if (response.count == 0) {
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            let success = response[0]["success"] as! Int
+            let message = response[0]["message"] as! String
+            if (success == 1) {
+                Data.sharedInstance.courses.append(course)
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.presentingViewController?.present(alertController, animated: true, completion: nil)
+                return
+            }
+        }) { (_:Any, error:Error) in
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
-        print("HELLO")
         let token = Data.sharedInstance.sessionToken
         let urlAPI = Network.getUrlForAPI(kClassesListApi)
         let searchText = searchController.searchBar.text
-        if ((searchText?.count)! < 3) {
+        if ((searchText?.count)! < 1) {
             searchResults = []
             tableView.reloadData()
             return
@@ -70,7 +123,7 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
-                let courseData = response[1] as! Array<Dictionary<String, Any>>
+                let courseData = response[1]["classes"] as! Array<Dictionary<String, Any>>
                 var courses: Array<Course> = []
                 for course in courseData {
                     let newCourse = Course()

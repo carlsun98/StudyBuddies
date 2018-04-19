@@ -44,14 +44,14 @@ def create_group(**kwargs):
     location_des = request.form.get("location_description")
 
     # Check: Check that user is not in another group
-    check_user_group_stmt = "SELECT user_id FROM groups WHERE leader_id=%s"
-    cursor.execute(check_user_group_stmt, (userID,))
-    results = cursor.fetchall()
-    if len(results) != 0:
-        return error_with_message("msg_user_already_in_group")
+    # check_user_group_stmt = "SELECT user_id FROM groups WHERE leader_id=%s"
+    # cursor.execute(check_user_group_stmt, (userID,))
+    # results = cursor.fetchall()
+    # if len(results) != 0:
+    #    return error_with_message("msg_user_already_in_group")
 
-    create_group_stmt = "INSERT INTO groups (class_id, leader_id, end_time, category, description, location_lat, location_lon, location_description) VALUES (%s %s %s %s %s %s %s %s)"
-    cursor.execute(create_group_stmt, (class_id, userID, end_time, category, description, location_lat, location_lon, location_des))
+    create_group_stmt = "INSERT INTO groups (class_id, leader_id, category, description, location_lat, location_lon, location_description) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(create_group_stmt, (class_id, userID, category, description, location_lat, location_lon, location_des))
     if cursor.rowcount is not 1:
         return error_with_message("msg_creating_group_failed")
     group_id = cursor.lastrowid

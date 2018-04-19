@@ -37,7 +37,30 @@ class CreateGroupThirdViewController: UIViewController {
         group?.endtime = Date(timeInterval: Double(duration!) * 60.0, since: (group?.starttime)!)
         group?.size = 1
         
-        /*let parameters = ["class_id": "\(group?.course.id)", "end_time": group?.endtime, "category": group?.category, "description": group?.description, "location_lat": "\(group?.location_lat)", "location_lon": "\(group?.location_lon)", "location_description": group?.locationDescription]*/
+        let parameters = ["session_token": Data.sharedInstance.sessionToken, "class_id": "\(group!.course.id)", "end_time": "", "category": group!.category, "description": group!.description, "location_lat": "\(group!.location_lat)", "location_lon": "\(group!.location_lon)", "location_description": group!.locationDescription]
+        let apiUrl = Network2.sharedInstance.getURLForAPI(kCreateGroupApi)
+        Network2.sharedInstance.sendRequestToURL(url: apiUrl, parameters: parameters, success: { (response: Any?) in
+            let data = response as! Array<Dictionary<String, Any>>
+            if (data.count == 0) {
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            let success = data[0]["success"] as! Int
+            let message = data[0]["message"] as! String
+            if (success == 1) {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }) { (error: Error) in
+            
+        }
         dismiss(animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
@@ -46,14 +69,19 @@ class CreateGroupThirdViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "EmbedChildViewControllerSegue" {
+            if let destination = segue.destination as? CreateGroupThirdVCTableViewController {
+                self.childViewController = destination
+            }
+        }
     }
-    */
 
 }
