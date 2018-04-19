@@ -15,7 +15,7 @@
 		1F49E97B2083CDD6009A6D02 /* StudyBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49E97A2083CDD6009A6D02 /* StudyBuddyUITests.swift */; };
 		1F7B26182085A09F0074417B /* CreateGroupSecondVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B26172085A09F0074417B /* CreateGroupSecondVCTableViewController.swift */; };
 		1F8C32232085210100B85024 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C32222085210100B85024 /* Network.swift */; };
-		1F8C32252085758300B85024 /* ClassSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C32242085758300B85024 /* ClassSelectionTableViewCell.swift */; };
+		1F8C32252085758300B85024 /* CourseSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C32242085758300B85024 /* CourseSelectionTableViewCell.swift */; };
 		1F8C3227208575A100B85024 /* DurationSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C3226208575A100B85024 /* DurationSelectionTableViewCell.swift */; };
 		1F8C3229208575B900B85024 /* CategorySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C3228208575B900B85024 /* CategorySelectionTableViewCell.swift */; };
 		1F8C322B208575D400B85024 /* StudyDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C322A208575D400B85024 /* StudyDescriptionTableViewCell.swift */; };
@@ -32,19 +32,19 @@
 		1FA97F0520843E330000487A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFE20843E330000487A /* MapViewController.swift */; };
 		1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EFF20843E330000487A /* CreateUserViewController.swift */; };
 		1FA97F0720843E330000487A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0020843E330000487A /* LoginViewController.swift */; };
-		1FA97F0820843E330000487A /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0120843E330000487A /* ClassListViewController.swift */; };
+		1FA97F0820843E330000487A /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0120843E330000487A /* CourseListViewController.swift */; };
 		1FA97F0920843E330000487A /* GroupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0220843E330000487A /* GroupPageViewController.swift */; };
 		1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0320843E330000487A /* SettingsViewController.swift */; };
 		1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0B20843E470000487A /* GroupViewController.swift */; };
 		1FA97F0E20843E4F0000487A /* CreateGroupFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */; };
 		1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */; };
 		1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1120843E750000487A /* PasswordResetViewController.swift */; };
-		1FA97F1420843E890000487A /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1320843E890000487A /* ClassDetailViewController.swift */; };
+		1FA97F1420843E890000487A /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1320843E890000487A /* CourseDetailViewController.swift */; };
 		1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */; };
-		1FA97F1B20847DF90000487A /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */; };
+		1FA97F1B20847DF90000487A /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1A20847DF90000487A /* CourseTableViewCell.swift */; };
 		1FA97F1D20847E550000487A /* group.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FA97F1C20847E540000487A /* group.png */; };
 		1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1E208491AD0000487A /* InitialViewController.swift */; };
-		1FA97F2120849A3D0000487A /* ClassSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */; };
+		1FA97F2120849A3D0000487A /* CourseSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F2020849A3D0000487A /* CourseSearchTableViewController.swift */; };
 		1FCA94C72084029700463B8C /* launchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA94C62084029600463B8C /* launchscreen.png */; };
 		1FCA94CB2084129C00463B8C /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94C92084129C00463B8C /* Network.m */; };
 		1FCA94D22084176300463B8C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA94D12084176300463B8C /* AFNetworking.framework */; };
@@ -101,7 +101,7 @@
 		1F49E97C2083CDD6009A6D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F7B26172085A09F0074417B /* CreateGroupSecondVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupSecondVCTableViewController.swift; sourceTree = "<group>"; };
 		1F8C32222085210100B85024 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		1F8C32242085758300B85024 /* ClassSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		1F8C32242085758300B85024 /* CourseSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C3226208575A100B85024 /* DurationSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C3228208575B900B85024 /* CategorySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionTableViewCell.swift; sourceTree = "<group>"; };
 		1F8C322A208575D400B85024 /* StudyDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,19 +118,19 @@
 		1FA97EFE20843E330000487A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1FA97EFF20843E330000487A /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		1FA97F0020843E330000487A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1FA97F0120843E330000487A /* ClassListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
+		1FA97F0120843E330000487A /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		1FA97F0220843E330000487A /* GroupPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageViewController.swift; sourceTree = "<group>"; };
 		1FA97F0320843E330000487A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1FA97F0B20843E470000487A /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupFirstViewController.swift; sourceTree = "<group>"; };
 		1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupSecondViewController.swift; sourceTree = "<group>"; };
 		1FA97F1120843E750000487A /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
-		1FA97F1320843E890000487A /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		1FA97F1320843E890000487A /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupThirdViewController.swift; sourceTree = "<group>"; };
-		1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
+		1FA97F1A20847DF90000487A /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		1FA97F1C20847E540000487A /* group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group.png; sourceTree = "<group>"; };
 		1FA97F1E208491AD0000487A /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
-		1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassSearchTableViewController.swift; sourceTree = "<group>"; };
+		1FA97F2020849A3D0000487A /* CourseSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSearchTableViewController.swift; sourceTree = "<group>"; };
 		1FCA94C62084029600463B8C /* launchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreen.png; sourceTree = "<group>"; };
 		1FCA94C92084129C00463B8C /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		1FCA94CA2084129C00463B8C /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
@@ -277,17 +277,17 @@
 				1FA97EFE20843E330000487A /* MapViewController.swift */,
 				1FA97EFF20843E330000487A /* CreateUserViewController.swift */,
 				1FA97F0020843E330000487A /* LoginViewController.swift */,
-				1FA97F0120843E330000487A /* ClassListViewController.swift */,
+				1FA97F0120843E330000487A /* CourseListViewController.swift */,
 				1FA97F0220843E330000487A /* GroupPageViewController.swift */,
 				1FA97F0320843E330000487A /* SettingsViewController.swift */,
 				1FA97F0B20843E470000487A /* GroupViewController.swift */,
 				1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */,
 				1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */,
 				1FA97F1120843E750000487A /* PasswordResetViewController.swift */,
-				1FA97F1320843E890000487A /* ClassDetailViewController.swift */,
+				1FA97F1320843E890000487A /* CourseDetailViewController.swift */,
 				1FA97F1520843F480000487A /* CreateGroupThirdViewController.swift */,
 				1FA97F1E208491AD0000487A /* InitialViewController.swift */,
-				1FA97F2020849A3D0000487A /* ClassSearchTableViewController.swift */,
+				1FA97F2020849A3D0000487A /* CourseSearchTableViewController.swift */,
 				1F8C3230208577CF00B85024 /* ChangeNameViewController.swift */,
 				1F7B26172085A09F0074417B /* CreateGroupSecondVCTableViewController.swift */,
 				1F97E1562085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift */,
@@ -298,8 +298,8 @@
 		1FA97F1920847BC90000487A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1FA97F1A20847DF90000487A /* ClassTableViewCell.swift */,
-				1F8C32242085758300B85024 /* ClassSelectionTableViewCell.swift */,
+				1FA97F1A20847DF90000487A /* CourseTableViewCell.swift */,
+				1F8C32242085758300B85024 /* CourseSelectionTableViewCell.swift */,
 				1F8C3226208575A100B85024 /* DurationSelectionTableViewCell.swift */,
 				1F8C322E2085760A00B85024 /* LocationDescriptionTableViewCell.swift */,
 				1F8C322C208575EB00B85024 /* MapSelectionTableViewCell.swift */,
@@ -593,24 +593,24 @@
 				1F8C322D208575EB00B85024 /* MapSelectionTableViewCell.swift in Sources */,
 				1F8C3227208575A100B85024 /* DurationSelectionTableViewCell.swift in Sources */,
 				1FCA94E9208439B700463B8C /* Course.swift in Sources */,
-				1FA97F2120849A3D0000487A /* ClassSearchTableViewController.swift in Sources */,
+				1FA97F2120849A3D0000487A /* CourseSearchTableViewController.swift in Sources */,
 				1FCA94CB2084129C00463B8C /* Network.m in Sources */,
 				1FA97F0520843E330000487A /* MapViewController.swift in Sources */,
 				1FCA94E8208439B700463B8C /* User.swift in Sources */,
 				1F8C3229208575B900B85024 /* CategorySelectionTableViewCell.swift in Sources */,
 				1FA97F0E20843E4F0000487A /* CreateGroupFirstViewController.swift in Sources */,
 				1F49E95B2083CDD5009A6D02 /* AppDelegate.swift in Sources */,
-				1F8C32252085758300B85024 /* ClassSelectionTableViewCell.swift in Sources */,
-				1FA97F1B20847DF90000487A /* ClassTableViewCell.swift in Sources */,
+				1F8C32252085758300B85024 /* CourseSelectionTableViewCell.swift in Sources */,
+				1FA97F1B20847DF90000487A /* CourseTableViewCell.swift in Sources */,
 				1F8C322F2085760A00B85024 /* LocationDescriptionTableViewCell.swift in Sources */,
-				1FA97F1420843E890000487A /* ClassDetailViewController.swift in Sources */,
+				1FA97F1420843E890000487A /* CourseDetailViewController.swift in Sources */,
 				1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */,
 				1F8C3231208577CF00B85024 /* ChangeNameViewController.swift in Sources */,
 				1FA97F0420843E330000487A /* ViewController.swift in Sources */,
 				1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */,
 				1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */,
 				1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */,
-				1FA97F0820843E330000487A /* ClassListViewController.swift in Sources */,
+				1FA97F0820843E330000487A /* CourseListViewController.swift in Sources */,
 				1FCA94E7208439B700463B8C /* School.swift in Sources */,
 				1FA97F0920843E330000487A /* GroupPageViewController.swift in Sources */,
 				1FA97F0720843E330000487A /* LoginViewController.swift in Sources */,

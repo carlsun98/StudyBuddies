@@ -19,6 +19,7 @@ class Group {
     var course: Course
     var category: String
     var description: String
+    var locationDescription: String
     
     init () {
         id = 0
@@ -31,5 +32,6 @@ class Group {
         course = Course()
         category = ""
         description = ""
+        locationDescription = ""
     }
 }

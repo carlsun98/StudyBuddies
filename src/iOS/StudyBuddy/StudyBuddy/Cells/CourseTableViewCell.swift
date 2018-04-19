@@ -1,5 +1,5 @@
 //
-//  ClassSelectionTableViewCell.swift
+//  ClassTableViewCell.swift
 //  StudyBuddy
 //
 //  Created by Ajay Penmatcha on 4/16/18.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ClassSelectionTableViewCell: UITableViewCell {
+class CourseTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var courseTitle: UILabel!
+    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var sideLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

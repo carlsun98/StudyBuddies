@@ -81,6 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="44f-OT-80X" kind="relationship" relationship="viewControllers" id="yoj-X7-qft"/>
@@ -107,7 +108,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseCell" rowHeight="69" id="G8P-T4-ACA" customClass="ClassSelectionTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseCell" rowHeight="69" id="G8P-T4-ACA" customClass="CourseSelectionTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G8P-T4-ACA" id="LfV-L1-SiN">
@@ -129,7 +130,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="courseTitle" destination="3cb-oq-3xx" id="mcp-Wv-K03"/>
+                                            <outlet property="courseTitle" destination="3cb-oq-3xx" id="Ozb-kt-FoK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -606,16 +607,16 @@
             </objects>
             <point key="canvasLocation" x="3786" y="1566"/>
         </scene>
-        <!--Class List View Controller-->
+        <!--Course List View Controller-->
         <scene sceneID="pSZ-oF-mdZ">
             <objects>
-                <tableViewController id="TdA-81-ow5" customClass="ClassListViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TdA-81-ow5" customClass="CourseListViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lIf-JG-Ow2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="courseCell" rowHeight="57" id="p5G-hg-GjS" customClass="ClassTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="courseCell" rowHeight="57" id="p5G-hg-GjS" customClass="CourseTableViewCell" customModule="StudyBuddy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p5G-hg-GjS" id="rfA-Bx-ab2">
@@ -660,8 +661,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="mainLabel" destination="cMl-SX-Zeh" id="xBJ-Ep-vZI"/>
-                                    <outlet property="sideLabel" destination="Tb7-Eu-eLL" id="efP-LA-mFc"/>
+                                    <outlet property="mainLabel" destination="cMl-SX-Zeh" id="K4t-a0-7Qb"/>
+                                    <outlet property="sideLabel" destination="Tb7-Eu-eLL" id="MAl-mA-9pz"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="addCourseCell" id="osJ-dO-DEi">
@@ -701,12 +702,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1N-dA-tK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3046" y="69"/>
+            <point key="canvasLocation" x="3045.5999999999999" y="68.815592203898049"/>
         </scene>
-        <!--Class Detail View Controller-->
+        <!--Course Detail View Controller-->
         <scene sceneID="TgR-eH-OhD">
             <objects>
-                <viewController id="zwZ-Hk-We5" customClass="ClassDetailViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zwZ-Hk-We5" customClass="CourseDetailViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Is-Ex-EsJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -718,10 +719,10 @@
             </objects>
             <point key="canvasLocation" x="3839" y="54"/>
         </scene>
-        <!--Class Search Table View Controller-->
+        <!--Course Search Table View Controller-->
         <scene sceneID="Lmt-Cj-4LK">
             <objects>
-                <tableViewController id="BMY-pX-EfT" customClass="ClassSearchTableViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BMY-pX-EfT" customClass="CourseSearchTableViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0fR-F1-oyU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

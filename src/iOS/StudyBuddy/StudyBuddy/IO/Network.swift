@@ -25,8 +25,10 @@ final class Network2 {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         sharedManager.post(url.absoluteString, parameters: parameters, progress: nil, success: { (_, response) in
             success(response)
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }) { (_, error) in
             failure(error)
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     func getURLForAPI(_ api: String) -> URL {
