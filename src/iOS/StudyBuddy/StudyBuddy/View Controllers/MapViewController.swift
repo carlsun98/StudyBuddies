@@ -25,6 +25,11 @@ class MapViewController: UIViewController {
         
         view.insertSubview(mapView!, at: 0)
     }
+    
+    @IBAction func joinGroupButton(_ sender: Any) {
+        
+    }
+    
 
     @objc func displayMarkers() {
         for aCourse in Data.sharedInstance.courses {

@@ -20,13 +20,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-U0-Y4P">
-                                <rect key="frame" x="229" y="80" width="130" height="34"/>
+                                <rect key="frame" x="263" y="80" width="96" height="30"/>
                                 <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="7V4-et-XC5"/>
-                                    <constraint firstAttribute="width" constant="130" id="DJh-Jq-CoK"/>
+                                    <constraint firstAttribute="height" constant="30" id="KYg-3y-mNT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Create Group">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -39,11 +38,29 @@
                                     <segue destination="KCa-m7-38a" kind="presentation" id="VLg-4E-8Nj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-x5-mnX">
+                                <rect key="frame" x="263" y="120" width="96" height="30"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MvT-9V-DmD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Join Group">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinGroupButton:" destination="Zlt-Te-Bsw" eventType="touchUpInside" id="lQA-U4-HIO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PDw-U0-Y4P" firstAttribute="top" secondItem="my8-6h-Gtx" secondAttribute="top" constant="16" id="4Qe-gb-5Sw"/>
-                            <constraint firstItem="my8-6h-Gtx" firstAttribute="trailing" secondItem="PDw-U0-Y4P" secondAttribute="trailing" constant="16" id="DKP-F5-1nG"/>
+                            <constraint firstItem="my8-6h-Gtx" firstAttribute="trailing" secondItem="PDw-U0-Y4P" secondAttribute="trailing" constant="16" id="03E-r0-48z"/>
+                            <constraint firstItem="my8-6h-Gtx" firstAttribute="trailing" secondItem="9lT-x5-mnX" secondAttribute="trailing" constant="16" id="4UF-fK-0D0"/>
+                            <constraint firstItem="PDw-U0-Y4P" firstAttribute="leading" secondItem="my8-6h-Gtx" secondAttribute="leading" constant="263" id="AB6-rY-K79"/>
+                            <constraint firstItem="9lT-x5-mnX" firstAttribute="leading" secondItem="my8-6h-Gtx" secondAttribute="leading" constant="263" id="SgC-Bg-ts7"/>
+                            <constraint firstItem="PDw-U0-Y4P" firstAttribute="top" secondItem="my8-6h-Gtx" secondAttribute="top" constant="16" id="hxs-g2-KuQ"/>
+                            <constraint firstItem="9lT-x5-mnX" firstAttribute="top" secondItem="PDw-U0-Y4P" secondAttribute="bottom" constant="10" id="jJB-ZI-gJz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="my8-6h-Gtx"/>
                     </view>
