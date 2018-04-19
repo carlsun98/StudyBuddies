@@ -11,8 +11,8 @@ import UIKit
 class CreateGroupSecondViewController: UIViewController {
 
     let categories = ["Homework", "Exam Prep", "General Studying"]
-    var duration: Int = 30
-    var selectedCategory = -1
+    public var childViewController: CreateGroupSecondVCTableViewController? = nil
+    var group: Group? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,16 @@ class CreateGroupSecondViewController: UIViewController {
     }
     
     @IBAction func nextPressed(_ sender: Any) {
+        let duration = childViewController?.getDuration()
+        let description = childViewController?.getGroupDescription()
+        let categoryIndex = childViewController?.getSelectedCategoryIndex()
+        if (categoryIndex == -1) {
+            let alertController = UIAlertController(title: "Please select a category", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
         performSegue(withIdentifier: "NextGroupScreenSegue", sender: self)
     }
     

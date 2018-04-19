@@ -22,9 +22,22 @@ class CreateGroupSecondVCTableViewController: UITableViewController {
     public var duration = 30
     public var groupDescription = ""
     
+    public func getGroupDescription() -> String {
+        return descriptionTextView.text
+    }
+    
+    public func getDuration() -> Int {
+        return Int(stepperControl.value)
+    }
+    
+    public func getSelectedCategoryIndex() -> Int {
+        return selectedCategory
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let myParent = self.parent as! CreateGroupSecondViewController
+        myParent.childViewController = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
