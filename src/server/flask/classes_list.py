@@ -62,4 +62,4 @@ def classes_list(**kwargs):
         }
         final_results.append(result)
 
-    return success_with_data(final_results)
+    return success_with_data({"classes" : final_results})

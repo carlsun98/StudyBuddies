@@ -72,7 +72,11 @@ class CourseListViewController: UITableViewController {
         return false
     }
     // MARK: - Delegate
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "showSearchView", sender: self)
+        }
+    }
     /*
     // MARK: - Navigation
 

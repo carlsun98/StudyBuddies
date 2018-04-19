@@ -8,79 +8,93 @@
 
 import UIKit
 
-class CourseSearchTableViewController: UITableViewController {
+class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
+    var searchResults: Array<Course> = []
+    let searchController = UISearchController(searchResultsController: nil)
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    @IBAction func donePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResults.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseSelectionTableViewCell
+        let abbr = searchResults[indexPath.row].abbrv
+        let num = searchResults[indexPath.row].number
+        cell.courseTitle.text = abbr + " " + num
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - UISearchResultsUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        print("HELLO")
+        let token = Data.sharedInstance.sessionToken
+        let urlAPI = Network.getUrlForAPI(kClassesListApi)
+        let searchText = searchController.searchBar.text
+        if ((searchText?.count)! < 3) {
+            searchResults = []
+            tableView.reloadData()
+            return
+        }
+        let parameters = ["session_token": token, "search_string": searchText]
+        Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
+            if (response.count == 0) {
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            let success = response[0]["success"] as! Int
+            let message = response[0]["message"] as! String
+            if (success == 1) {
+                let courseData = response[1] as! Array<Dictionary<String, Any>>
+                var courses: Array<Course> = []
+                for course in courseData {
+                    let newCourse = Course()
+                    newCourse.abbrv = course["course_abbreviation"] as! String
+                    newCourse.number = course["course_number"] as! String
+                    newCourse.title = course["course_title"] as! String
+                    newCourse.id = course["id"] as! Int
+                    courses.append(newCourse)
+                }
+                self.searchResults = courses
+                self.tableView.reloadData()
+            } else {
+                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }) { (_:Any, error:Error) in
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation
