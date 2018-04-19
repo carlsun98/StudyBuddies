@@ -57,7 +57,7 @@
         <scene sceneID="jsd-Un-U0u">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="44f-OT-80X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="Kqq-vp-6Mt"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="signs.png" id="Kqq-vp-6Mt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rq1-b1-3ji">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1047,7 +1047,7 @@
         <scene sceneID="sg9-vo-fna">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DPe-q1-vBF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classes" id="Xda-IY-mqP"/>
+                    <tabBarItem key="tabBarItem" title="Classes" image="school.png" id="Xda-IY-mqP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lcA-aG-heH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1066,7 +1066,7 @@
         <scene sceneID="4zU-ef-nkr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dwz-dX-uXf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Current Group" id="C5b-Ae-SH3"/>
+                    <tabBarItem key="tabBarItem" title="Current Group" image="people.png" id="C5b-Ae-SH3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Jz-Cf-d9K">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1329,7 +1329,7 @@
         <scene sceneID="NeP-QW-y82">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cng-Vl-BRV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="9vo-Wo-tgG"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="9vo-Wo-tgG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eta-cZ-l9i">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1425,5 +1425,9 @@
     </scenes>
     <resources>
         <image name="group.png" width="512" height="512"/>
+        <image name="people.png" width="25" height="25"/>
+        <image name="school.png" width="25" height="25"/>
+        <image name="settings.png" width="25" height="25"/>
+        <image name="signs.png" width="25" height="25"/>
     </resources>
 </document>

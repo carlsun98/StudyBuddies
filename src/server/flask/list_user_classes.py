@@ -34,6 +34,36 @@ def list_user_classes(**kwargs):
 
     resultsDict = []
     for the_class in classes:
+        groups = []
+        get_group_stmt = """SELECT id, leader_id, start_time, end_time, 
+        category, description, location_lat, location_lon, location_description, 
+        chat_id FROM groups WHERE class_id=%s"""
+        cursor.execute(get_group_stmt, (the_class[0],))
+        group_list = cursor.fetchall()
+        for the_group in group_list:
+            group_id = the_group[0]
+            leader_id = the_group[1]
+            start_time = the_group[2]
+            end_time = the_group[3]
+            category = the_group[4]
+            description = the_group[5]
+            location_lat = the_group[6]
+            location_lon = the_group[7]
+            location_description = the_group[8]
+            chat_id = the_group[9]
+            group_result = {
+                "id": group_id,
+                "leader_id": leader_id,
+                "start_time": start_time,
+                "end_time": end_time,
+                "category": category,
+                "description": description,
+                "location_lat": location_lat,
+                "location_lon": location_lon,
+                "chat_id": chat_id
+            }
+            groups.append(group_result)
+
         id = the_class[0]
         course_title = the_class[1]
         course_abbreviation = the_class[2]
@@ -42,7 +72,8 @@ def list_user_classes(**kwargs):
             "id": id,
             "course_title": course_title,
             "course_abbreviation": course_abbreviation,
-            "course_number": course_number
+            "course_number": course_number,
+            "active_groups": groups
         }
         resultsDict.append(result)
     return success_with_data({"classes" : resultsDict})
