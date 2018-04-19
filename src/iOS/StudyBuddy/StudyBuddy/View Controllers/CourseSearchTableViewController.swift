@@ -47,7 +47,7 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
         let abbr = course.abbrv
         let num = course.number
         cell.courseTitle.text = abbr + " " + num
-        if (!Data.sharedInstance.courses.contains(where: {$0.id == course.id})) {
+        if (Data.sharedInstance.courses.contains(where: {$0.id == course.id})) {
             cell.courseTitle.text = abbr + " " + num + " (Added)"
         }
         return cell
@@ -84,7 +84,13 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
-                Data.sharedInstance.courses.append(course)
+                Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
+                    //
+                }, error: { (message: String) in
+                    //
+                }) { (error: Error) in
+                    //
+                }
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: UIAlertControllerStyle.alert)

@@ -65,7 +65,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="my8-6h-Gtx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9tr-fy-BY2"/>
+                    <navigationItem key="navigationItem" id="9tr-fy-BY2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="dVR-2b-T5u">
+                            <connections>
+                                <action selector="refreshPressed:" destination="Zlt-Te-Bsw" id="cvo-fc-UqV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baa-GL-jih" sceneMemberID="firstResponder"/>
             </objects>

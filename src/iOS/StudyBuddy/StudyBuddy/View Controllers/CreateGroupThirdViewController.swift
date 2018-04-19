@@ -51,6 +51,13 @@ class CreateGroupThirdViewController: UIViewController {
             let success = data[0]["success"] as! Int
             let message = data[0]["message"] as! String
             if (success == 1) {
+                Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
+                    //
+                }, error: { (message: String) in
+                    //
+                }) { (error: Error) in
+                    //
+                }
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)

@@ -42,6 +42,15 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBAction func refreshPressed(_ sender: Any) {
+        Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
+            self.displayMarkers()
+        }, error: { (message: String) in
+            //
+        }) { (error: Error) in
+            //
+        }
+    }
     @IBAction func joinGroupButton(_ sender: Any) {
         let urlAPI = Network.getUrlForAPI(kJoinGroupApi)
         let token = Data.sharedInstance.sessionToken
