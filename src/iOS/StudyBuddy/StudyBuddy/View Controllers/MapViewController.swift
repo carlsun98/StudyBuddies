@@ -11,6 +11,7 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
+    var mapView: GMSMapView? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Study Groups"
@@ -19,22 +20,26 @@ class MapViewController: UIViewController {
         // coordinate -33.86,151.20 at zoom level 6.
         
         let camera = GMSCameraPosition.camera(withLatitude: 40.3440, longitude: -74.6514, zoom: 15.0)
-        let mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
+        mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
+        NotificationCenter.default.addObserver(self, selector: #selector(displayMarkers), name: .dataLoaded, object: nil)
         
-        for aCourse in Data.sharedInstance.courses {
-        for aGroup in aCourse.groups {
-            let courseLat = aGroup.location_lat
-            let courseLong = aGroup.location_lon
-            let position = CLLocationCoordinate2D(latitude: courseLat, longitude: courseLong)
-            let marker = GMSMarker(position: position)
-            marker.title = aGroup.course.title
-            marker.map = mapView
-        }
-        }
-        
-        view.insertSubview(mapView, at: 0)
+        view.insertSubview(mapView!, at: 0)
     }
 
+    @objc func displayMarkers() {
+        for aCourse in Data.sharedInstance.courses {
+            for aGroup in aCourse.groups {
+                let courseLat = aGroup.location_lat
+                let courseLong = aGroup.location_lon
+                let position = CLLocationCoordinate2D(latitude: courseLat, longitude: courseLong)
+                let marker = GMSMarker(position: position)
+                marker.title = aGroup.course.title
+                marker.map = mapView
+                
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
