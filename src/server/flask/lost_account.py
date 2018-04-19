@@ -6,14 +6,11 @@ import random, string
 import smtplib
 
 '''
-Create user API @ /create_user
+Lost account API @ /lost_account
 Input:
-    email
-    password
-    name
-    class_year
+    email ID
 Output:
-    none
+    success/failure
 '''
 
 REQUIRED_KEYS = ["email"]
@@ -22,7 +19,7 @@ lost_account_api = Blueprint('lost_account_api', __name__)
 
 @lost_account_api.route('/lost_account', methods=['POST'])
 @verify_required_keys(REQUIRED_KEYS)
-def create_user():
+def lost_account():
     cursor, conn = connect()
     email = request.form.get("email")
 

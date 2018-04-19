@@ -1,4 +1,4 @@
-    from flask import Blueprint, request
+from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 from verify import verify_required_keys
