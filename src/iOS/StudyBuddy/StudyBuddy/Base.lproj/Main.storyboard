@@ -697,9 +697,7 @@
                             <outlet property="delegate" destination="TdA-81-ow5" id="bkH-f5-l7x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="s1y-6A-ayY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="anS-N4-3lB"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="s1y-6A-ayY"/>
                     <connections>
                         <segue destination="zwZ-Hk-We5" kind="show" id="OGF-nO-kSS"/>
                     </connections>

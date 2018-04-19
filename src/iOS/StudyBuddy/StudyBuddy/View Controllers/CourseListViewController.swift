@@ -10,13 +10,19 @@ import UIKit
 
 class CourseListViewController: UITableViewController {
     
+    @IBAction func onEditClick(_ sender: UIBarButtonItem) {
+        tableView.setEditing(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Classes"
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(dataLoaded), name: .dataLoaded, object: nil)
         // Do any additional setup after loading the view.
     }
-
+    @objc func dataLoaded() {
+        tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,6 +44,9 @@ class CourseListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     // MARK: - Delegate
 
     /*
