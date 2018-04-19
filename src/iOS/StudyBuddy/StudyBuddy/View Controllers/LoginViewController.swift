@@ -57,7 +57,9 @@ class LoginViewController: UIViewController {
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
-                UserDefaults.standard.set(response[1]["token"], forKey: "session_token");
+                let sessionToken = response[1]["token"] as! String
+                UserDefaults.standard.set(sessionToken, forKey: "session_token");
+                Data.sharedInstance.sessionToken = sessionToken
                 self.getData()
                 self.dismiss(animated: true, completion: nil)
             } else {
