@@ -14,6 +14,7 @@ from add_class import add_class_api
 from delete_class import delete_class_api
 from classes_list import classes_list_api
 from create_group import create_group_api
+from join_group import join_group_api
 from update_group import update_group_api
 from delete_group import delete_group_api
 from leave_group import leave_group_api
@@ -35,6 +36,7 @@ app.register_blueprint(delete_class_api)
 app.register_blueprint(classes_list_api)
 app.register_blueprint(create_group_api)
 app.register_blueprint(update_group_api)
+app.register_blueprint(join_group_api)
 app.register_blueprint(delete_group_api)
 app.register_blueprint(leave_group_api)
 app.register_blueprint(change_leader_api)
