@@ -51,6 +51,9 @@ def list_user_classes(**kwargs):
             location_lon = the_group[7]
             location_description = the_group[8]
             chat_id = the_group[9]
+            get_size_stmt = "SELECT COUNT(*) FROM users WHERE group_id=%s"
+            cursor.execute(get_size_stmt, (group_id,))
+            size = cursor.fetchone()[0]
             group_result = {
                 "id": group_id,
                 "leader_id": leader_id,
@@ -60,7 +63,9 @@ def list_user_classes(**kwargs):
                 "description": description,
                 "location_lat": location_lat,
                 "location_lon": location_lon,
-                "chat_id": chat_id
+                "location_description": location_description,
+                "chat_id": chat_id,
+                "size": size
             }
             groups.append(group_result)
 
