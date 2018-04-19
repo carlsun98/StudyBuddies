@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -57,6 +58,7 @@ class LoginViewController: UIViewController {
             let message = response[0]["message"] as! String
             if (success == 1) {
                 UserDefaults.standard.set(response[1]["token"], forKey: "session_token");
+                self.getData()
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
@@ -65,6 +67,22 @@ class LoginViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }) { (_:Any, error:Error) in
+            let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func getData() {
+        Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
+            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+        }, error: { (message: String) in
+            if (message == "msg_invalid_token") {
+                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+            }
+        }) { (error: Error) in
+            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
             let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
             alertController.addAction(okAction)

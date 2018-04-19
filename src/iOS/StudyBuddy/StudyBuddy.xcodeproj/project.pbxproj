@@ -175,6 +175,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F37BF4720882E7C008FC09B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1F49E94E2083CDD5009A6D02 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +207,7 @@
 		1F49E9592083CDD5009A6D02 /* StudyBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				1F37BF4720882E7C008FC09B /* Views */,
 				1FA97F1920847BC90000487A /* Cells */,
 				1FA97EFC20843E330000487A /* View Controllers */,
 				1FCA94E2208439B700463B8C /* Models */,

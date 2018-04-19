@@ -12,8 +12,19 @@ import GoogleMaps
 class CreateGroupThirdVCTableViewController: UITableViewController, GMSMapViewDelegate {
 
     @IBOutlet weak var mapContainerView: UIView!
+    @IBOutlet weak var locationDescriptionTF: UITextView!
+    
     var groupMarker: GMSMarker? = nil
     var mapView: GMSMapView? = nil
+    
+    public func getCoords() -> GMSMarker? {
+        return groupMarker
+    }
+    
+    public func getLocationDescription() -> String {
+        return locationDescriptionTF.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let mapFrame = CGRect(x: 0, y: 0, width: mapContainerView.frame.width, height: mapContainerView.frame.height)

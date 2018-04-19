@@ -36,8 +36,6 @@ class CreateGroupSecondVCTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myParent = self.parent as! CreateGroupSecondViewController
-        myParent.childViewController = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
