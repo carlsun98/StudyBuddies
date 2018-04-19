@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class CreateGroupThirdVCTableViewController: UITableViewController, GMSMapViewDelegate {
+class CreateGroupThirdVCTableViewController: UITableViewController {
 
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var locationDescriptionTF: UITextView!
