@@ -50,8 +50,8 @@ class SettingsViewController: UITableViewController {
     
     // Should change tab header color
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor.white
+        //let header = view as! UITableViewHeaderFooterView
+        //header.textLabel?.textColor = UIColor.white
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

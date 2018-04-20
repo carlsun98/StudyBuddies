@@ -16,7 +16,7 @@ class CourseListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Classes"
+        navigationItem.title = "My Courses"
         NotificationCenter.default.addObserver(self, selector: #selector(dataLoaded), name: .dataLoaded, object: nil)
         // Do any additional setup after loading the view.
         editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonClick))

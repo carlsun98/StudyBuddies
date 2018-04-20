@@ -29,6 +29,7 @@ class MapViewController: UIViewController {
     }
 
     @objc func displayMarkers() {
+        mapView!.clear()
         for aCourse in Data.sharedInstance.courses {
             for aGroup in aCourse.groups {
                 let courseLat = aGroup.location_lat
