@@ -34,7 +34,7 @@ def classes_list(**kwargs):
         return error_with_message("msg_nonexistant_school")
     school_id = results[0][0]
 
-    get_classes_stmt = "SELECT id, course_title, course_abbreviation, course_number FROM classes WHERE school_id=%s"
+    get_classes_stmt = "SELECT id, course_title, course_name FROM classes WHERE school_id=%s"
     cursor.execute(get_classes_stmt, (school_id,))
     results = cursor.fetchall()
 
@@ -46,19 +46,19 @@ def classes_list(**kwargs):
             search_results.append(course)
         elif re.search(search_string, course[2]) is not None:
             search_results.append(course)
-        elif re.search(search_string, course[3]) is not None:
-            search_results.append(course)
-        elif re.search(search_string, course[2] + str(course[3])) is not None:
-            search_results.append(course)
-        elif re.search(search_string, course[2] + " " + str(course[3])) is not None:
-            search_results.append(course)
+        else:
+            listings = course[2].split(",")
+            for listing in listings:
+                if re.search(search_string, listing) is not None:
+                    search_results.append(course)
+                elif re.search(search_string, listing.replace(" ", "")) is not None:
+                    search_results.append(course)
 
     for match in search_results:
         result = {
             "id": match[0],
             "course_title": match[1],
-            "course_abbreviation": match[2],
-            "course_number": match[3]
+            "course_name": match[2]
         }
         final_results.append(result)
 

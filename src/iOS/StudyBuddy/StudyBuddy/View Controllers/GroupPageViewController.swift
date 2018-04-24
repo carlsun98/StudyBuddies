@@ -11,9 +11,11 @@ import QuartzCore
 
 class GroupPageViewController: UITableViewController {
     @IBOutlet weak var getCourseLabel: UILabel!
-    @IBOutlet weak var getLocationLabel: UILabel!
+    @IBOutlet weak var getLocationLabel: UITextView!
     @IBOutlet weak var getSizeLabel: UILabel!
     @IBOutlet weak var getEndTimeLabel: UILabel!
+    
+    var coverUpView: UIView? = nil
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 1 && indexPath.section == 1) {
@@ -22,7 +24,11 @@ class GroupPageViewController: UITableViewController {
     }
     
     func updateGroup() {
-        let currGroup = Data.sharedInstance.currentGroup
+        if Data.sharedInstance.currentGroup == nil {
+            return
+        }
+        
+        let currGroup = Data.sharedInstance.currentGroup!
         getCourseLabel.text = currGroup.course.abbrv + " " + currGroup.course.number
         getLocationLabel.text = currGroup.locationDescription
         getSizeLabel.text = "\(currGroup.size)"
@@ -62,7 +68,15 @@ class GroupPageViewController: UITableViewController {
     }
     
     @objc func groupChanged() {
-        tableView.reloadData()
+        if (Data.sharedInstance.currentGroup == nil) {
+            if (!tableView.subviews.contains(coverUpView!)) {
+                tableView.addSubview(coverUpView!)
+                
+            }
+        } else {
+            coverUpView?.removeFromSuperview()
+            updateGroup()
+        }
     }
     
     override func viewDidLoad() {
@@ -70,14 +84,26 @@ class GroupPageViewController: UITableViewController {
         navigationItem.title = "My Group"
         NotificationCenter.default.addObserver(self, selector: #selector(groupChanged), name: .currentGroupChanged, object: nil)
         // Do any additional setup after loading the view.
-        var coverUp = UIView(frame: self.tableView.frame)
-        let y = self.tableView.center.y - 10
-        let frame = CGRect(x: 0, y: y, width: self.tableView.frame.width, height: 20)
-        let label = UITextView(frame: frame)
-        label.text = "You are not in a group. Please join a group to see its details."
-        coverUp.backgroundColor = UIColor(red: 30/255.0, green: 30/255.0, blue: 70/255.0, alpha: 1.0)
-        coverUp.addSubview(label)
-        self.tableView.addSubview(coverUp)
+        updateGroup()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let height = CGFloat(30.0)
+        coverUpView?.removeFromSuperview()
+        coverUpView = UIView(frame: self.tableView.frame)
+        let y = self.tableView.center.y - height / 2
+        let frame = CGRect(x: 0, y: y, width: self.tableView.frame.width, height: height)
+        let textView = UITextView(frame: frame)
+        textView.text = "Join or create a group to see it here."
+        textView.textColor = UIColor.white
+        textView.backgroundColor = UIColor.clear
+        coverUpView!.backgroundColor = UIColor(red: 30/255.0, green: 30/255.0, blue: 70/255.0, alpha: 1.0)
+        coverUpView!.addSubview(textView)
+        
+        if (Data.sharedInstance.currentGroup == nil) {
+            tableView.addSubview(coverUpView!)
+        }
     }
 
     override func didReceiveMemoryWarning() {

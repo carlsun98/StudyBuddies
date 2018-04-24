@@ -18,7 +18,7 @@ final class Data {
     static let sharedInstance = Data()
     public var courses: Array<Course> = []
     public var school: School = School()
-    public var currentGroup = Group()
+    public var currentGroup: Group? = nil
     
     public func fetchClasses(succeed: @escaping successCallback, error: @escaping errorCallback, failure: @escaping failureCallback) {
         let url = Network2.sharedInstance.getURLForAPI(kUserClasses)
