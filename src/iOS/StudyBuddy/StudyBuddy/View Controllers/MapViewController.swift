@@ -23,7 +23,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: 40.3440, longitude: -74.6514, zoom: 15.0)
         mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
         NotificationCenter.default.addObserver(self, selector: #selector(displayMarkers), name: .dataLoaded, object: nil)
-        
+        mapView?.delegate = self
         view.insertSubview(mapView!, at: 0)
         // self.mapView?.delegate = self as! GMSMapViewDelegate
     }
@@ -75,11 +75,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             }
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
-            print(response)
             if (success == 1) {
                 Data.sharedInstance.currentGroup = self.selectedGroup!
                 NotificationCenter.default.post(name: .currentGroupChanged, object: nil)
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.tabBarController?.selectedIndex = 2
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
@@ -94,10 +93,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.selectedMarker = marker
         selectedGroup = marker.userData as? Group
-        // print ("MarkerTapped Locations: \(marker.position.latitude), \(marker.position.longitude)")
         return true
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
