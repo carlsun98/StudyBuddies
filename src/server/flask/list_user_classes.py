@@ -23,7 +23,7 @@ list_user_classes_api = Blueprint('list_user_classes_api', __name__)
 def list_user_classes(**kwargs):
     user_id = kwargs["user_id"]
     user_classes_stmt = """SELECT
-    classes.id, course_title, course_abbreviation, course_number
+    classes.id, course_title, course_name
     FROM classes LEFT JOIN user_classes ON
     classes.id = user_classes.class_id
     WHERE user_classes.user_id = %s"""
@@ -71,13 +71,11 @@ def list_user_classes(**kwargs):
 
         id = the_class[0]
         course_title = the_class[1]
-        course_abbreviation = the_class[2]
-        course_number = the_class[3]
+        course_name = the_class[2]
         result = {
             "id": id,
             "course_title": course_title,
-            "course_abbreviation": course_abbreviation,
-            "course_number": course_number,
+            "course_name": course_name,
             "active_groups": groups
         }
         resultsDict.append(result)
