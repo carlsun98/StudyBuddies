@@ -77,6 +77,20 @@ class CourseListViewController: UITableViewController {
             performSegue(withIdentifier: "showSearchView", sender: self)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let course = Data.sharedInstance.courses[indexPath.row+1]
+            let urlApi = Network2.sharedInstance.getURLForAPI(kDropCourseApi)
+            let parameters = ["session_token": Data.sharedInstance.sessionToken, "class_id": "\(course.id)"] as [String : String]
+            Network2.sharedInstance.sendRequestToURL(url: urlApi, parameters: parameters, success: { (response: Any?) in
+                Data.sharedInstance.courses.remove(at: indexPath.row+1)
+                tableView.deleteRows(at: [indexPath], with: .left)
+            }) { (error: Error) in
+                
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

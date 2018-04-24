@@ -23,6 +23,7 @@ static NSString *kCreateGroupApi = @"create_group";
 static NSString *kClassesListApi = @"classes_list";
 static NSString *kAddClassApi = @"add_class";
 static NSString *kJoinGroupApi = @"join_group";
+static NSString *kDropCourseApi = @"delete_class";
 NS_ASSUME_NONNULL_END
 
 @interface Network : NSObject
