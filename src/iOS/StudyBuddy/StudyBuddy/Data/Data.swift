@@ -10,6 +10,7 @@ import Foundation
 
 extension Notification.Name {
     static let dataLoaded = Notification.Name("dataLoaded")
+    static let currentGroupChanged = Notification.Name("groupChanged")
 }
 
 final class Data {

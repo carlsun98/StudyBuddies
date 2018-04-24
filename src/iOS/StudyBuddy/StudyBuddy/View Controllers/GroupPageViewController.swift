@@ -9,18 +9,32 @@
 import UIKit
 import QuartzCore
 
-class GroupPageViewController: UIViewController {
-
-    @IBOutlet weak var classNameLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var noMemLabel: UILabel!
-    @IBOutlet weak var endTimeLabel: UILabel!
+class GroupPageViewController: UITableViewController {
+    @IBOutlet weak var getCourseLabel: UILabel!
+    @IBOutlet weak var getLocationLabel: UILabel!
+    @IBOutlet weak var getSizeLabel: UILabel!
+    @IBOutlet weak var getEndTimeLabel: UILabel!
     
-    @IBAction func leaveGroup(_ sender: Any) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 1 && indexPath.section == 1) {
+            leaveGroup()
+        }
+    }
+    
+    func updateGroup() {
+        let currGroup = Data.sharedInstance.currentGroup
+        getCourseLabel.text = currGroup.course.abbrv + " " + currGroup.course.number
+        getLocationLabel.text = currGroup.locationDescription
+        getSizeLabel.text = "\(currGroup.size)"
+        getEndTimeLabel.text = "\(currGroup.endtime)"
+    }
+    func leaveGroup() {
         let token = Data.sharedInstance.sessionToken
         let parameters = ["session_token": token]
         let urlAPI = Network.getUrlForAPI(kLeaveGroupApi)
         
+        NotificationCenter.default.post(name: .currentGroupChanged, object: nil)
+
         Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
             if (response.count == 0) {
                 let alertController = UIAlertController(title: "Network Error", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
@@ -47,20 +61,23 @@ class GroupPageViewController: UIViewController {
         }
     }
     
+    @objc func groupChanged() {
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "My Group"
+        NotificationCenter.default.addObserver(self, selector: #selector(groupChanged), name: .currentGroupChanged, object: nil)
         // Do any additional setup after loading the view.
-        self.showText()
-    }
-    
-    func showText(){
-        let userGroup = Data.sharedInstance.currentGroup
-        self.classNameLabel.text = "Subject: " + userGroup.course.abbrv + userGroup.course.number
-        self.locationLabel.text = "Location: " + String(userGroup.location_lat) + ", " + String(userGroup.location_lon)
-        self.noMemLabel.text = "Number of Members: " + String(userGroup.size)
-        self.endTimeLabel.text = "End Time: " + String(Calendar.current.component(.hour, from: userGroup.endtime)) + ":" + String(Calendar.current.component(.minute, from: userGroup.endtime))
+        var coverUp = UIView(frame: self.tableView.frame)
+        let y = self.tableView.center.y - 10
+        let frame = CGRect(x: 0, y: y, width: self.tableView.frame.width, height: 20)
+        let label = UITextView(frame: frame)
+        label.text = "You are not in a group. Please join a group to see its details."
+        coverUp.backgroundColor = UIColor(red: 30/255.0, green: 30/255.0, blue: 70/255.0, alpha: 1.0)
+        coverUp.addSubview(label)
+        self.tableView.addSubview(coverUp)
     }
 
     override func didReceiveMemoryWarning() {

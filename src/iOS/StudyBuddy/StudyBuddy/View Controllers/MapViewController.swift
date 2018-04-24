@@ -8,10 +8,10 @@
 
 import UIKit
 import GoogleMaps
-var addedGoupId = 1
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
 
+    var selectedGroup: Group? = nil
     var mapView: GMSMapView? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
                 let marker = GMSMarker(position: position)
                 marker.title = aGroup.course.title
                 marker.map = mapView
-                marker.userData = aGroup.id
+                marker.userData = aGroup
             }
         }
     }
@@ -55,8 +55,16 @@ class MapViewController: UIViewController {
     @IBAction func joinGroupButton(_ sender: Any) {
         let urlAPI = Network.getUrlForAPI(kJoinGroupApi)
         let token = Data.sharedInstance.sessionToken
-        let parameters = ["group_id": addedGoupId, "session_token": token] as [String : Any]
         
+        if (selectedGroup == nil) {
+            let alertController = UIAlertController(title: "Please select a group to join", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        let parameters = ["group_id": selectedGroup!.id, "session_token": token] as [String : Any]
         Network.sendRequest(toURL: urlAPI!, parameters: parameters, success: { (_:Any, response:Array<Dictionary>) in
             if (response.count == 0) {
                 let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
@@ -69,6 +77,8 @@ class MapViewController: UIViewController {
             let message = response[0]["message"] as! String
             print(response)
             if (success == 1) {
+                Data.sharedInstance.currentGroup = self.selectedGroup!
+                NotificationCenter.default.post(name: .currentGroupChanged, object: nil)
                 self.dismiss(animated: true, completion: nil)
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
@@ -83,17 +93,13 @@ class MapViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        selectedGroup = marker.userData as? Group
+        // print ("MarkerTapped Locations: \(marker.position.latitude), \(marker.position.longitude)")
+        return true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension UIViewController: GMSMapViewDelegate {
-    public func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        addedGoupId = marker.userData as! Int
-        // print ("MarkerTapped Locations: \(marker.position.latitude), \(marker.position.longitude)")
-        return true
     }
 }
