@@ -29,14 +29,23 @@ def create_user():
     name = request.form.get("name")
     class_year = request.form.get("class_year")
 
+    split_email = email.split("@")
+    school = split_email[1]
+    find_school_stmt = "SELECT id FROM schools where email=%s"
+    cursor.execute(find_school_stmt, (school,))
+    result = cursor.fetchall()
+    if len(result) == 0:
+        return error_with_message("must use school email")
+    school_id = result[0][0]
+
     check_existing_users_stmt = "SELECT COUNT(*) FROM users WHERE email=%s"
     cursor.execute(check_existing_users_stmt, (email,))
     count = cursor.fetchone()[0]
     if count is not 0:
         return error_with_message("user already exists")
 
-    create_user_stmt = "INSERT INTO users (email, password, name, class_year) VALUES (%s, %s, %s, %s)"
-    cursor.execute(create_user_stmt, (email, password, name, class_year))
+    create_user_stmt = "INSERT INTO users (email, password, name, class_year, school_id) VALUES (%s, %s, %s, %s, %s)"
+    cursor.execute(create_user_stmt, (email, password, name, class_year, school_id))
     if cursor.rowcount is not 1:
         return error_with_message("creating user failed")
     conn.commit()
