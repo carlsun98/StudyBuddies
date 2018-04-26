@@ -17,6 +17,7 @@ leave_group_api = Blueprint('leave_group_api', __name__)
 @leave_group_api.route("/leave_group", methods=['POST'])
 @auth_required
 def leave_group(**kwargs):
+    cursor, conn = connect()
     user_id = kwargs["user_id"]
 
     get_group_stmt = "SELECT group_id FROM users WHERE id=%s"
@@ -36,18 +37,26 @@ def leave_group(**kwargs):
 
     if results[0][0] == user_id:
         find_members_stmt = "SELECT id FROM users WHERE group_id=%s"
-        cursor.execute(find_members_stmt, (group_id))
+        cursor.execute(find_members_stmt, (group_id,))
         results = cursor.fetchall()
         if len(results) != 0:
             newlead = results[0][0]
-            change_leader_stmt = "UPDATE groups SET leader_id=%d where leader_id=%s"
+            change_leader_stmt = "UPDATE groups SET leader_id=%s where leader_id=%s"
             cursor.execute(change_leader_stmt, (newlead, user))
         else:
             del_group_stmt = "DELETE from groups where leader_id=%s"
             cursor.execute(del_group_stmt, (user_id))
 
-    leave_group_stmt = "UPDATE users SET group=-1 where id=%s"
-    cursore.execute(leave_group_stmt, (usere_id))
+    leave_group_stmt = "UPDATE users SET group_id=-1 where id=%s"
+    cursor.execute(leave_group_stmt, (user_id,))
+    count_stmt = "SELECT count (*) from users where group_id=%s"
+    cursor.execute(count_stmt, (group_id,))
+    count = cursor.fetchone()[0]
+
+    if count == 0:
+        delete_group_stmt = "DELETE from groups where id=%s"
+        cursor.execute(delete_group_stmt, (group_id,))
+    
 
     conn.commit()
     return success_with_data({})
