@@ -23,7 +23,7 @@ def list_class_groups(**kwargs):
     groups.id, leader_id, start_time,
     end_time, category, groups.description,
     location_lat, location_lon, location_description,
-    classes.id, course_title, course_abbreviation, course_number
+    classes.id, course_title, course_name
     FROM groups
     LEFT JOIN classes ON
     groups.class_id = classes.id
@@ -47,8 +47,7 @@ def list_class_groups(**kwargs):
         location_description = result[8]
         class_id = result[9]
         course_title = result[10]
-        course_abbreviation = result[11]
-        course_number = result[12]
+        course_name = result[11]
 
         result = {
             "group_id": group_id,
@@ -62,8 +61,7 @@ def list_class_groups(**kwargs):
             "location_description": location_description,
             "class_id": class_id,
             "course_title": course_title,
-            "course_abbreviation": course_abbreviation,
-            "course_number": course_number
+            "course_name": course_name
         }
         resultsDict.append(result)
 
