@@ -30,8 +30,7 @@ final class Data {
                 self.courses = []
                 for course in classData {
                     let newCourse = Course()
-                    newCourse.abbrv = course["course_abbreviation"] as! String
-                    newCourse.number = course["course_number"] as! String
+                    newCourse.name = course["course_name"] as! String
                     newCourse.title = course["course_title"] as! String
                     newCourse.id = course["id"] as! Int
                     let activeGroupsData = course["active_groups"] as! Array<Dictionary<String,Any>>

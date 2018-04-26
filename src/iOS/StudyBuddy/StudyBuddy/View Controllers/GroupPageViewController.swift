@@ -29,7 +29,7 @@ class GroupPageViewController: UITableViewController {
         }
         
         let currGroup = Data.sharedInstance.currentGroup!
-        getCourseLabel.text = currGroup.course.abbrv + " " + currGroup.course.number
+        getCourseLabel.text = currGroup.course.name
         getLocationLabel.text = currGroup.locationDescription
         getSizeLabel.text = "\(currGroup.size)"
         getEndTimeLabel.text = "\(currGroup.endtime)"
@@ -52,7 +52,8 @@ class GroupPageViewController: UITableViewController {
             let success = response[0]["success"] as! Int
             let message = response[0]["message"] as! String
             if (success == 1) {
-                self.dismiss(animated: true, completion: nil)
+                Data.sharedInstance.currentGroup = nil
+                self.groupChanged()
             } else {
                 let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)

@@ -21,9 +21,8 @@ class CreateGroupFirstViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseSelectionTableViewCell
-        let abbr = Data.sharedInstance.courses[indexPath.row].abbrv
-        let num = Data.sharedInstance.courses[indexPath.row].number
-        cell.courseTitle.text = abbr + " " + num
+        let course = Data.sharedInstance.courses[indexPath.row]
+        cell.courseTitle.text = course.name
         if (checkedRow == indexPath.row) {
             cell.accessoryType = .checkmark
         } else {

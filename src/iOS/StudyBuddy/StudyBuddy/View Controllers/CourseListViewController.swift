@@ -58,9 +58,7 @@ class CourseListViewController: UITableViewController {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseTableViewCell
         let course = Data.sharedInstance.courses[indexPath.row - 1]
-        let abbr = course.abbrv
-        let num = course.number
-        cell.mainLabel.text = abbr + " " + num
+        cell.mainLabel.text = course.name
         cell.sideLabel.text = "\(course.groups.count)"
         return cell
     }

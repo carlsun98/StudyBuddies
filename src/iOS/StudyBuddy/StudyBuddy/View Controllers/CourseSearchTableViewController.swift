@@ -44,11 +44,9 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! CourseSelectionTableViewCell
         let course = searchResults[indexPath.row]
-        let abbr = course.abbrv
-        let num = course.number
-        cell.courseTitle.text = abbr + " " + num
+        cell.courseTitle.text = course.name
         if (Data.sharedInstance.courses.contains(where: {$0.id == course.id})) {
-            cell.courseTitle.text = abbr + " " + num + " (Added)"
+            cell.courseTitle.text = course.name + " (Added)"
         }
         return cell
     }
@@ -133,9 +131,7 @@ class CourseSearchTableViewController: UIViewController, UISearchResultsUpdating
                 var courses: Array<Course> = []
                 for course in courseData {
                     let newCourse = Course()
-                    newCourse.abbrv = course["course_abbreviation"] as! String
-                    newCourse.number = course["course_number"] as! String
-                    newCourse.title = course["course_title"] as! String
+                    newCourse.name = course["course_name"] as! String
                     newCourse.id = course["id"] as! Int
                     courses.append(newCourse)
                 }
