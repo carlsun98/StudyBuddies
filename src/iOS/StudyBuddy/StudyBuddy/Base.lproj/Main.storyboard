@@ -177,7 +177,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hSR-vc-N26" firstAttribute="bottom" secondItem="XU8-2F-7sz" secondAttribute="bottom" constant="64" id="0uk-ci-Cr8"/>
                             <constraint firstItem="XU8-2F-7sz" firstAttribute="trailing" secondItem="hSR-vc-N26" secondAttribute="trailing" id="3Ei-ZX-Pav"/>
@@ -423,7 +423,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Fbt-u0-1n1" firstAttribute="leading" secondItem="B2R-Q7-nTp" secondAttribute="leading" id="5dL-dC-n6M"/>
                             <constraint firstItem="Fbt-u0-1n1" firstAttribute="top" secondItem="B2R-Q7-nTp" secondAttribute="top" id="Jid-72-6f8"/>
@@ -556,7 +556,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YzV-Jr-HKR" firstAttribute="leading" secondItem="Vcz-aC-caq" secondAttribute="leading" constant="16" id="0Xp-Cc-DKH"/>
                             <constraint firstItem="Vcz-aC-caq" firstAttribute="bottom" secondItem="YzV-Jr-HKR" secondAttribute="bottom" constant="10" id="DOP-R4-DnN"/>

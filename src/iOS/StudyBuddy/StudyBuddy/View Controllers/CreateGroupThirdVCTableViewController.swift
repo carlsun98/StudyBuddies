@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class CreateGroupThirdVCTableViewController: UITableViewController {
+class CreateGroupThirdVCTableViewController: UITableViewController, GMSMapViewDelegate {
 
     @IBOutlet weak var mapContainerView: UIView!
     @IBOutlet weak var locationDescriptionTF: UITextView!
@@ -30,14 +30,8 @@ class CreateGroupThirdVCTableViewController: UITableViewController {
         let mapFrame = CGRect(x: 0, y: 0, width: mapContainerView.frame.width, height: mapContainerView.frame.height)
         let camera = GMSCameraPosition.camera(withLatitude: 40.3440, longitude: -74.6514, zoom: 15.0)
         mapView = GMSMapView.map(withFrame: mapFrame, camera: camera)
-        mapView!.delegate = self as? GMSMapViewDelegate
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        //marker.map = mapView
-        
+        mapView!.delegate = self
+        // Creates a marker in the center of the map.        
         mapContainerView.addSubview(mapView!)
     }
     

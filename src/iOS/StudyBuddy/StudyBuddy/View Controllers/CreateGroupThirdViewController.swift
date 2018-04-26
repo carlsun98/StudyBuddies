@@ -37,7 +37,13 @@ class CreateGroupThirdViewController: UIViewController {
         group?.endtime = Date(timeInterval: Double(duration!) * 60.0, since: (group?.starttime)!)
         group?.size = 1
         
-        let parameters = ["session_token": Data.sharedInstance.sessionToken, "class_id": "\(group!.course.id)", "end_time": "", "category": group!.category, "description": group!.description, "location_lat": "\(group!.location_lat)", "location_lon": "\(group!.location_lon)", "location_description": group!.locationDescription]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let endtime = dateFormatter.string(from: group!.endtime)
+        
+        
+        let parameters = ["session_token": Data.sharedInstance.sessionToken, "class_id": "\(group!.course.id)", "end_time": endtime, "category": group!.category, "description": group!.description, "location_lat": "\(group!.location_lat)", "location_lon": "\(group!.location_lon)", "location_description": group!.locationDescription]
         let apiUrl = Network2.sharedInstance.getURLForAPI(kCreateGroupApi)
         Network2.sharedInstance.sendRequestToURL(url: apiUrl, parameters: parameters, success: { (response: Any?) in
             let data = response as! Array<Dictionary<String, Any>>
