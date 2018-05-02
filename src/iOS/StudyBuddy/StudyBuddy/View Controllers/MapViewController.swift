@@ -51,6 +51,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }) { (error: Error) in
             //
         }
+        Data.sharedInstance.getCurrentGroup(succeed: { (response: Any?) in
+            
+        }, error: { (message: String) in
+            
+        }) { (error: Error) in
+        
+        }
     }
     @IBAction func joinGroupButton(_ sender: Any) {
         let urlAPI = Network.getUrlForAPI(kJoinGroupApi)

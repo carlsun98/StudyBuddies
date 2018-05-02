@@ -35,28 +35,27 @@ def leave_group(**kwargs):
 
     leader_id = results[0][0]
 
-    if results[0][0] == user_id:
+    if leader_id == user_id:
         find_members_stmt = "SELECT id FROM users WHERE group_id=%s"
         cursor.execute(find_members_stmt, (group_id,))
         results = cursor.fetchall()
         if len(results) != 0:
-            newlead = results[0][0]
-            change_leader_stmt = "UPDATE groups SET leader_id=%s where leader_id=%s"
-            cursor.execute(change_leader_stmt, (newlead, user))
+            new_leader_id = results[0][0]
+            change_leader_stmt = "UPDATE groups SET leader_id=%s WHERE id=%s"
+            cursor.execute(change_leader_stmt, (new_leader_id, group_id))
         else:
-            del_group_stmt = "DELETE from groups where leader_id=%s"
-            cursor.execute(del_group_stmt, (user_id))
+            del_group_stmt = "DELETE FROM groups WHERE id=%s"
+            cursor.execute(del_group_stmt, (group_id))
 
-    leave_group_stmt = "UPDATE users SET group_id=-1 where id=%s"
+    leave_group_stmt = "UPDATE users SET group_id=-1 WHERE id=%s"
     cursor.execute(leave_group_stmt, (user_id,))
-    count_stmt = "SELECT count (*) from users where group_id=%s"
+    count_stmt = "SELECT COUNT(*) FROM users WHERE group_id=%s"
     cursor.execute(count_stmt, (group_id,))
     count = cursor.fetchone()[0]
 
     if count == 0:
-        delete_group_stmt = "DELETE from groups where id=%s"
+        delete_group_stmt = "DELETE FROM groups WHERE id=%s"
         cursor.execute(delete_group_stmt, (group_id,))
-    
 
     conn.commit()
     return success_with_data({})

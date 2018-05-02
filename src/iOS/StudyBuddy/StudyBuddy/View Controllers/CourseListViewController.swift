@@ -34,7 +34,6 @@ class CourseListViewController: UITableViewController {
     @objc func editButtonClick() {
         tableView.setEditing(true, animated: true)
         self.navigationItem.rightBarButtonItem = doneButton
-        let addPath = IndexPath(row: 0, section: 0)
         //tableView.insertRows(at: [addPath], with: .top)
     }
     
@@ -78,11 +77,19 @@ class CourseListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            let course = Data.sharedInstance.courses[indexPath.row+1]
+            let course = Data.sharedInstance.courses[indexPath.row-1]
             let urlApi = Network2.sharedInstance.getURLForAPI(kDropCourseApi)
             let parameters = ["session_token": Data.sharedInstance.sessionToken, "class_id": "\(course.id)"] as [String : String]
             Network2.sharedInstance.sendRequestToURL(url: urlApi, parameters: parameters, success: { (response: Any?) in
-                Data.sharedInstance.courses.remove(at: indexPath.row+1)
+                Data.sharedInstance.courses.remove(at: indexPath.row-1)
+                Data.sharedInstance.fetchClasses(succeed: { (response: Any?) in
+                }, error: { (message: String) in
+                }) { (error: Error) in
+                    let alertController = UIAlertController(title: "Uh oh :(", message: "Something went wrong", preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
                 tableView.deleteRows(at: [indexPath], with: .left)
             }) { (error: Error) in
                 

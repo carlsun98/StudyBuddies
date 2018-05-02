@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StudyBuddy/View Controllers/InitialViewController.swift"
+            timestampString = "546921951.959855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Optional&lt;Any&gt;) -&gt; () in StudyBuddy.InitialViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "StudyBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaypenmatcha/Desktop/StudyBuddies333/src/iOS/StudyBuddy/StudyBuddy/View%20Controllers/InitialViewController.swift"
+                  timestampString = "546921615.483109"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (Swift.String) -&gt; () in StudyBuddy.InitialViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "StudyBuddy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajaypenmatcha/Desktop/StudyBuddies333/src/iOS/StudyBuddy/StudyBuddy/View%20Controllers/InitialViewController.swift"
+                  timestampString = "546921615.485624"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

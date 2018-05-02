@@ -37,6 +37,13 @@ class InitialViewController: UITabBarController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
+        Data.sharedInstance.getCurrentGroup(succeed: { (response: Any?) in
+            
+        }, error: { (message: String) in
+            
+        }) { (error: Error) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

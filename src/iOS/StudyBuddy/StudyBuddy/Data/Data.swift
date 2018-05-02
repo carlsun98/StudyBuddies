@@ -20,6 +20,44 @@ final class Data {
     public var school: School = School()
     public var currentGroup: Group? = nil
     
+    public func getCurrentGroup(succeed: @escaping successCallback, error: @escaping errorCallback, failure: @escaping failureCallback) {
+        let url = Network2.sharedInstance.getURLForAPI(kGetCurrentGroupApi)
+        Network2.sharedInstance.sendRequestToURL(url: url, parameters: ["session_token": sessionToken], success: { (response: Any?) in
+            let data = response as! Array<Dictionary<String, Any>>
+            let success = data[0]["success"] as! Int
+            if (success == 1) {
+                let group_data = data[1]["group"] as! Dictionary<String, Any>
+                let group_id = group_data["id"] as! Int
+                if (group_id == -1) {
+                    Data.sharedInstance.currentGroup = nil
+                } else {
+                    let group = Group()
+                    group.id = group_data["id"] as! Int
+                    group.category = group_data["category"] as! String
+                    group.starttime = Date() //groupData["start_time"]
+                    group.endtime = Date()
+                    group.leader_id = group_data["leader_id"] as! Int
+                    group.location_lat = group_data["location_lat"] as! Double
+                    group.location_lon = group_data["location_lon"] as! Double
+                    group.description = group_data["description"] as! String
+                    group.locationDescription = "" //groupData["location_description"] as! String
+                    group.size = 1 //groupData["size"] as! Int
+                    let course_data = group_data["course"] as! Dictionary<String, Any>
+                    let course = Course()
+                    course.name = course_data["course_name"] as! String
+                    course.title = course_data["course_title"] as! String
+                    course.id = course_data["id"] as! Int
+                    group.course = course
+                    Data.sharedInstance.currentGroup = group
+                }
+                NotificationCenter.default.post(name: .currentGroupChanged, object: nil)
+                succeed(nil)
+            }
+        }) { (error: Error) in
+            failure(error)
+        }
+    }
+    
     public func fetchClasses(succeed: @escaping successCallback, error: @escaping errorCallback, failure: @escaping failureCallback) {
         let url = Network2.sharedInstance.getURLForAPI(kUserClasses)
         Network2.sharedInstance.sendRequestToURL(url: url, parameters: ["session_token": sessionToken], success: { (response: Any?) in

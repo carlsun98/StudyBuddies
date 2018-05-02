@@ -111,8 +111,8 @@
                         <segue destination="44f-OT-80X" kind="relationship" relationship="viewControllers" id="yoj-X7-qft"/>
                         <segue destination="DPe-q1-vBF" kind="relationship" relationship="viewControllers" id="YmI-2J-Dt9"/>
                         <segue destination="Zp8-KO-u6b" kind="presentation" identifier="kShowLoginSegue" id="n5K-3p-vOw"/>
-                        <segue destination="i9Q-42-bco" kind="relationship" relationship="viewControllers" id="SBJ-Ja-rla"/>
-                        <segue destination="cng-Vl-BRV" kind="relationship" relationship="viewControllers" id="tSd-wU-w3S"/>
+                        <segue destination="dWR-rF-otx" kind="relationship" relationship="viewControllers" id="1L2-8M-LSH"/>
+                        <segue destination="cng-Vl-BRV" kind="relationship" relationship="viewControllers" id="taj-yf-XFf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMN-Sp-hG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,7 +580,7 @@
             <objects>
                 <tableViewController id="VfP-7W-klh" customClass="GroupPageViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8nc-eV-gnR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -781,7 +781,58 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJ0-FO-ejy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304.8000000000002" y="1532.3838080959522"/>
+            <point key="canvasLocation" x="4489" y="1553"/>
+        </scene>
+        <!--Group Page Container View Controller-->
+        <scene sceneID="Ir9-4z-LM4">
+            <objects>
+                <viewController id="X3I-6X-GDV" customClass="GroupPageContainerViewController" customModule="StudyBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="18V-BB-k12">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XT6-b2-IXP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="VfP-7W-klh" kind="embed" identifier="showChildViewController" id="vLl-jw-Qe1"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaX-Qc-7Zb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join or create a group to see it here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnQ-oN-Cy1">
+                                        <rect key="frame" x="49" y="267" width="277" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gaX-Qc-7Zb" firstAttribute="trailing" secondItem="GrV-uv-3ml" secondAttribute="trailing" id="12W-Ge-dpd"/>
+                            <constraint firstAttribute="bottom" secondItem="XT6-b2-IXP" secondAttribute="bottom" id="4CE-yk-kDD"/>
+                            <constraint firstItem="gaX-Qc-7Zb" firstAttribute="top" secondItem="GrV-uv-3ml" secondAttribute="top" id="6YR-tg-WN0"/>
+                            <constraint firstItem="XT6-b2-IXP" firstAttribute="top" secondItem="GrV-uv-3ml" secondAttribute="top" id="HJX-cY-rAH"/>
+                            <constraint firstItem="XT6-b2-IXP" firstAttribute="leading" secondItem="GrV-uv-3ml" secondAttribute="leading" id="Hgb-AJ-Nee"/>
+                            <constraint firstItem="gaX-Qc-7Zb" firstAttribute="leading" secondItem="GrV-uv-3ml" secondAttribute="leading" id="MQi-Vf-mph"/>
+                            <constraint firstItem="gaX-Qc-7Zb" firstAttribute="bottom" secondItem="GrV-uv-3ml" secondAttribute="bottom" id="UU6-y2-lAe"/>
+                            <constraint firstItem="XT6-b2-IXP" firstAttribute="trailing" secondItem="GrV-uv-3ml" secondAttribute="trailing" id="zDV-2H-ofd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GrV-uv-3ml"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6tg-xv-sjC"/>
+                    <connections>
+                        <outlet property="coverUpView" destination="gaX-Qc-7Zb" id="Vjg-M8-MvL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZiL-UG-NEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3724" y="1559.3703148425789"/>
         </scene>
         <!--Course Search Table View Controller-->
         <scene sceneID="kLY-X3-l4p">
@@ -1594,29 +1645,24 @@
             </objects>
             <point key="canvasLocation" x="2105" y="-618"/>
         </scene>
-        <!--My Group-->
-        <scene sceneID="k0j-fL-CQg">
+        <!--Item-->
+        <scene sceneID="u1r-RD-Mnj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i9Q-42-bco" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Group" image="people.png" id="aRV-Ip-fUo"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dWR-rF-otx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XFf-7T-1Sy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rbl-26-ubp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eOx-GQ-j3d">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.1176470588" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VfP-7W-klh" kind="relationship" relationship="rootViewController" id="uvY-WZ-BLQ"/>
+                        <segue destination="X3I-6X-GDV" kind="relationship" relationship="rootViewController" id="p0p-Pc-tuo"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="61Y-4k-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSV-h8-PgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="1534"/>
+            <point key="canvasLocation" x="2886" y="1561"/>
         </scene>
     </scenes>
     <resources>

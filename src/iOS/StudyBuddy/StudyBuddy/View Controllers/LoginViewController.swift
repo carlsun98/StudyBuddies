@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
                 self.getData()
                 self.dismiss(animated: true, completion: nil)
             } else {
-                let alertController = UIAlertController(title: "Uh oh :(", message: message, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Uh oh :(", message: "Invalid username or password", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)

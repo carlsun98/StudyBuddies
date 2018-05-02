@@ -30,7 +30,6 @@
 		1FA97F0820843E330000487A /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0120843E330000487A /* CourseListViewController.swift */; };
 		1FA97F0920843E330000487A /* GroupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0220843E330000487A /* GroupPageViewController.swift */; };
 		1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0320843E330000487A /* SettingsViewController.swift */; };
-		1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0B20843E470000487A /* GroupViewController.swift */; };
 		1FA97F0E20843E4F0000487A /* CreateGroupFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */; };
 		1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */; };
 		1FA97F1220843E750000487A /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97F1120843E750000487A /* PasswordResetViewController.swift */; };
@@ -48,6 +47,7 @@
 		1FCA94E9208439B700463B8C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E5208439B700463B8C /* Course.swift */; };
 		1FCA94EA208439B700463B8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E6208439B700463B8C /* Group.swift */; };
 		1FCBD9A32088129F004C2DBE /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCBD9A22088129F004C2DBE /* MBProgressHUD.framework */; };
+		1FD42FB62099443000792EC0 /* GroupPageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
 		CD4CD7D52088163F00F1BEFC /* signs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D12088163B00F1BEFC /* signs@3x.png */; };
 		CD4CD7D62088163F00F1BEFC /* school@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D22088163D00F1BEFC /* school@3x.png */; };
@@ -110,7 +110,6 @@
 		1FA97F0120843E330000487A /* CourseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		1FA97F0220843E330000487A /* GroupPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPageViewController.swift; sourceTree = "<group>"; };
 		1FA97F0320843E330000487A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		1FA97F0B20843E470000487A /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupFirstViewController.swift; sourceTree = "<group>"; };
 		1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupSecondViewController.swift; sourceTree = "<group>"; };
 		1FA97F1120843E750000487A /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +129,7 @@
 		1FCA94E5208439B700463B8C /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		1FCA94E6208439B700463B8C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		1FCBD9A22088129F004C2DBE /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageContainerViewController.swift; sourceTree = "<group>"; };
 		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,8 +270,8 @@
 				1FA97F0020843E330000487A /* LoginViewController.swift */,
 				1FA97F0120843E330000487A /* CourseListViewController.swift */,
 				1FA97F0220843E330000487A /* GroupPageViewController.swift */,
+				1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */,
 				1FA97F0320843E330000487A /* SettingsViewController.swift */,
-				1FA97F0B20843E470000487A /* GroupViewController.swift */,
 				1FA97F0D20843E4F0000487A /* CreateGroupFirstViewController.swift */,
 				1FA97F0F20843E580000487A /* CreateGroupSecondViewController.swift */,
 				1FA97F1120843E750000487A /* PasswordResetViewController.swift */,
@@ -572,6 +572,7 @@
 				1F7B26182085A09F0074417B /* CreateGroupSecondVCTableViewController.swift in Sources */,
 				1FA97F1620843F480000487A /* CreateGroupThirdViewController.swift in Sources */,
 				1FA97F0620843E330000487A /* CreateUserViewController.swift in Sources */,
+				1FD42FB62099443000792EC0 /* GroupPageContainerViewController.swift in Sources */,
 				1F97E1572085A95600E569B7 /* CreateGroupThirdVCTableViewController.swift in Sources */,
 				1FCA94D82084291E00463B8C /* Data.swift in Sources */,
 				1F8C322D208575EB00B85024 /* MapSelectionTableViewCell.swift in Sources */,
@@ -591,7 +592,6 @@
 				1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */,
 				1F8C3231208577CF00B85024 /* ChangeNameViewController.swift in Sources */,
 				1FA97F0420843E330000487A /* ViewController.swift in Sources */,
-				1FA97F0C20843E470000487A /* GroupViewController.swift in Sources */,
 				1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */,
 				1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */,
 				1FA97F0820843E330000487A /* CourseListViewController.swift in Sources */,
