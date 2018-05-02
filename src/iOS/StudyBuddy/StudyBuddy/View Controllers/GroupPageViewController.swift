@@ -23,6 +23,10 @@ class GroupPageViewController: UITableViewController {
     
     func updateGroup() {
         if Data.sharedInstance.currentGroup == nil {
+            getCourseLabel.text = "NONE"
+            getLocationLabel.text = "NONE"
+            getSizeLabel.text = "NONE"
+            getEndTimeLabel.text = "NONE"
             return
         }
         

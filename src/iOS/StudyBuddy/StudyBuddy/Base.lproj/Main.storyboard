@@ -1645,11 +1645,11 @@
             </objects>
             <point key="canvasLocation" x="2105" y="-618"/>
         </scene>
-        <!--Item-->
+        <!--Group-->
         <scene sceneID="u1r-RD-Mnj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dWR-rF-otx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XFf-7T-1Sy"/>
+                    <tabBarItem key="tabBarItem" title="Group" image="people.png" id="XFf-7T-1Sy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eOx-GQ-j3d">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
