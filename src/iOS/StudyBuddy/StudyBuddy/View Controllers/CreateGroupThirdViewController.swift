@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class CreateGroupThirdViewController: UIViewController {
 
@@ -18,7 +19,6 @@ class CreateGroupThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Create Study Group"
-        // Do any additional setup after loading the view.
     }
     
     func createGroup() {
@@ -114,7 +114,16 @@ class CreateGroupThirdViewController: UIViewController {
          let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
          print (jsonData)
             let resultData = jsonData["results"] as? [[String:Any]]
-            let name: String = (resultData![0]["name"] as? String)!
+            if resultData!.count <= 1 {
+                return
+            }
+            let name: String = (resultData![1]["name"] as? String)!
+            let geometry = resultData![1]["geometry"] as! Dictionary<String, Any>
+            print(geometry)
+            let location = geometry["location"] as! Dictionary<String, Any>
+            print(location)
+            closest_lat = location["lat"] as! Double
+            closest_lon = location["lng"] as! Double
                 print ("----------------------NAMES---------------------")
                 closest_building = name
                 print(name)
@@ -123,12 +132,16 @@ class CreateGroupThirdViewController: UIViewController {
             
             refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
                 print("Location Changed")
+                let marker = self.childViewController?.getCoords()
+                marker?.position = CLLocationCoordinate2D(latitude: closest_lat, longitude: closest_lon)
+                self.createGroup()
             }))
             
             refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
                 print("Location Not Changed")
                 closest_lat = self.group!.location_lat
                 closest_lon = self.group!.location_lon
+                self.createGroup()
             }))
             
             self.present(refreshAlert, animated: true, completion: nil)

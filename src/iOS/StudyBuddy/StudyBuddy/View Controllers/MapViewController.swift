@@ -135,7 +135,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        overlayMarker!.map = nil
+        overlayMarker?.map = nil
     }
     
     override func didReceiveMemoryWarning() {

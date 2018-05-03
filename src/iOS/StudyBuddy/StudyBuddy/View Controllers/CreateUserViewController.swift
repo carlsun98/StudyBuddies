@@ -40,7 +40,7 @@ class CreateUserViewController: UIViewController {
             let success = response[0]["success"] as! Int
             if (success == 1) {
                 let alertController = UIAlertController(title: "Creating Your Account", message: "A confirmation email has been sent to you. Please follow the link in the email!", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "Cancel", style: .default)
+                let okAction = UIAlertAction(title: "Close", style: .default)
                 if let gmailUrl = URL(string: "googlegmail://") {
                     if UIApplication.shared.canOpenURL(gmailUrl) {
                         let openEmailAction = UIAlertAction(title: "Open Gmail", style: .default, handler: { (action) in

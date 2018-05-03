@@ -53,6 +53,9 @@ class CreateGroupSecondViewController: UIViewController {
             }
         }
         if segue.identifier == "NextGroupScreenSegue" {
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
             if let destination = segue.destination as? CreateGroupThirdViewController {
                 destination.group = group
                 destination.duration = childViewController?.getDuration()
