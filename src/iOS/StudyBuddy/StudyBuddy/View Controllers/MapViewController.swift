@@ -13,6 +13,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
     var selectedGroup: Group? = nil
     var mapView: GMSMapView? = nil
+    //let popupView: GroupPopupView = 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Study Groups"
@@ -27,11 +28,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         view.insertSubview(mapView!, at: 0)
         // self.mapView?.delegate = self as! GMSMapViewDelegate
         
-        /*
+        
         let theView = GroupPopupView.instanceFromNib() as! GroupPopupView
         theView.frame = CGRect(x: 0, y: 0, width: 200, height: 250)
-        theView.scrollView.contentSize = theView.contentView.frame.size
-        view.addSubview(theView)*/
+        view.addSubview(theView)
     }
 
     @objc func displayMarkers() {
@@ -42,13 +42,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 let courseLong = aGroup.location_lon
                 let position = CLLocationCoordinate2D(latitude: courseLat, longitude: courseLong)
                 let marker = GMSMarker(position: position)
-                let title = """
-                    \(aGroup.course.name)\n
-                    Category: \(aGroup.category)\n
-                    Ends in: 30 mins\n
-                    Description: \(aGroup.description)\n
-                    Location: \(aGroup.locationDescription)\n
-                    """
+                let title = "\(aGroup.course.name)\n Category: \(aGroup.category)"
                 marker.title = title
                 marker.map = mapView
                 marker.userData = aGroup

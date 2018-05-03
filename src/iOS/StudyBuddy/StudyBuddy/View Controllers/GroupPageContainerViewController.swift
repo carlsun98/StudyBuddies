@@ -27,6 +27,7 @@ class GroupPageContainerViewController: UIViewController {
         } else {
             coverUpView.isHidden = true
         }
+        child?.updateGroup()
     }
 
     override func didReceiveMemoryWarning() {
