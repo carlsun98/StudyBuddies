@@ -34,6 +34,13 @@ def get_current_group(**kwargs):
     if group_id == -1:
         return success_with_data({"group": {"id" : -1}})
 
+    group_exists_stmt = "SELECT COUNT(*) FROM groups WHERE id=%s"
+    cursor.execute(group_exists_stmt, (group_id,))
+    size = cursor.fetchone()[0]
+    if size == 0:
+        return success_with_data({"group": {"id" : -1}})
+
+
     get_group_stmt = """SELECT id, leader_id, start_time, end_time,
     category, description, location_lat, location_lon, location_description,
     chat_id, class_id FROM groups WHERE id = %s"""
