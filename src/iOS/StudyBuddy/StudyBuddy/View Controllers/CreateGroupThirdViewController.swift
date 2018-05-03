@@ -20,8 +20,9 @@ class CreateGroupThirdViewController: UIViewController {
         navigationItem.title = "Create Study Group"
         // Do any additional setup after loading the view.
     }
+    
+    func createGroup() {
 
-    @IBAction func donePressed(_ sender: Any) {
         let marker = childViewController?.getCoords()
         if (marker == nil) {
             let alertController = UIAlertController(title: "Please select a location", message: nil, preferredStyle: .alert)
@@ -30,6 +31,7 @@ class CreateGroupThirdViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        
         group?.location_lat = (marker?.position.latitude)!
         group?.location_lon = (marker?.position.longitude)!
         group?.starttime = Date()
@@ -41,8 +43,9 @@ class CreateGroupThirdViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         let endtime = dateFormatter.string(from: group!.endtime)
-
         
+        let latitudeText:String = "\(marker!.position.latitude)"
+        let longitudeText:String = "\(marker!.position.longitude)"
         
         let parameters = ["session_token": Data.sharedInstance.sessionToken, "class_id": "\(group!.course.id)", "end_time": endtime, "category": group!.category, "description": group!.description, "location_lat": "\(group!.location_lat)", "location_lon": "\(group!.location_lon)", "location_description": group!.locationDescription]
         let apiUrl = Network2.sharedInstance.getURLForAPI(kCreateGroupApi)
@@ -84,16 +87,67 @@ class CreateGroupThirdViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func donePressed(_ sender: Any) {
+        let marker = childViewController?.getCoords()
+        if (marker == nil) {
+            let alertController = UIAlertController(title: "Please select a location", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        let latitudeText:String = "\(marker!.position.latitude)"
+        let longitudeText:String = "\(marker!.position.longitude)"
+        
+         let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitudeText),\(longitudeText)&radius=100&key=AIzaSyBG4O6fDW2ujIozTp0fQNxfRP9juIMLmKc&?rankby=disance&?type=point_of_interest")
+         
+         var closest_building = "Hello"
+        var closest_lat = 0.0
+        var closest_lon = 0.0
+        
+         URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
+         guard let data = data, error == nil else { return }
+         
+         do {
+         let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+         print (jsonData)
+            let resultData = jsonData["results"] as? [[String:Any]]
+            let name: String = (resultData![0]["name"] as? String)!
+                print ("----------------------NAMES---------------------")
+                closest_building = name
+                print(name)
+                print(closest_building)
+            let refreshAlert = UIAlertController(title: "Closest Location", message: "Did you mean \(closest_building)", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+                print("Location Changed")
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Location Not Changed")
+                closest_lat = self.group!.location_lat
+                closest_lon = self.group!.location_lon
+            }))
+            
+            self.present(refreshAlert, animated: true, completion: nil)
+            
+         } catch let error as NSError {
+         print(error)
+         }
+         }).resume()
+        
+        print (closest_building)
+
+        
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -110,32 +164,7 @@ class CreateGroupThirdViewController: UIViewController {
 
 
 
-
-
-
-/* var latitudeText:String = "\(marker!.position.latitude)"
- var longitudeText:String = "\(marker!.position.longitude)"
- 
- let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitudeText),\(longitudeText)&radius=100&key=AIzaSyBG4O6fDW2ujIozTp0fQNxfRP9juIMLmKc&?rankby=disance&?type=point_of_interest")
- 
- var closest_building = ""
- 
- URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
- guard let data = data, error == nil else { return }
- 
- do {
- let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
- print (json)
- let posts = json["results"] as? [Int: [String]]
- let firstOne = posts![0]
- print ("----------------------NAMES---------------------")
- print(posts)
- } catch let error as NSError {
- print(error)
- }
- }).resume() */
-
-/*  if let url = urlString {
+/* if let url = urlString {
  let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
  let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary
  print (jsonObj!!)
@@ -143,16 +172,29 @@ class CreateGroupThirdViewController: UIViewController {
  // let closest_building = jsonObj!![0]!["name"]
  
  
- /* if error != nil {
+ if error != nil {
  print(error!)
  } else {
  if let usableData = data {
  // let json = try JSONSerialization.jsonObject(with: usableData) as? [String: Any]
  print(usableData) //JSONSerialization
  }
- }*/
+ }
  
  task.resume() } */
+
+
+/* let location = resultData![0]["geometry"] as? [[String:Any]]
+ let lat: Double = (location![0]["lat"] as? Double)!
+ closest_lat = lat
+ print(closest_lat)
+ let lon: Double = (location![0]["lng"] as? Double)!
+ closest_lon = lon
+ print(closest_lon) */
+
+
+/* let posts = json["results"]
+ print(posts![0]) */
 
 /* let refreshAlert = UIAlertController(title: "Closest Location", message: "Did you mean \(closest_building)", preferredStyle: UIAlertControllerStyle.alert)
  
