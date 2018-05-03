@@ -4,6 +4,7 @@ from server_response import success_with_data, error_with_message
 from verify import verify_required_keys
 import random, string
 import smtplib
+from passlib.hash import bcrypt_sha256
 
 '''
 Create user API @ /create_user
@@ -44,8 +45,12 @@ def create_user():
     if count is not 0:
         return error_with_message("user already exists")
 
-    create_user_stmt = "INSERT INTO users (email, password, name, class_year, school_id) VALUES (%s, %s, %s, %s, %s)"
-    cursor.execute(create_user_stmt, (email, password, name, class_year, school_id))
+    salt = ''.join(random.choice(string.ascii_letters +
+                                          string.digits) for _ in range(32))
+    h = bcrypt_sha256.hash(password + salt)
+
+    create_user_stmt = "INSERT INTO users (email, password, name, class_year, school_id, salt) VALUES (%s, %s, %s, %s, %s)"
+    cursor.execute(create_user_stmt, (email, h, name, class_year, school_id, salt))
     if cursor.rowcount is not 1:
         return error_with_message("creating user failed")
     conn.commit()

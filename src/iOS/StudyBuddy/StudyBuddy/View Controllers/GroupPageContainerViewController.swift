@@ -16,6 +16,7 @@ class GroupPageContainerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationItem.title = "My Group"
         Data.sharedInstance.getCurrentGroup(succeed: { (response: Any?) in
             //
         }, error: { (message: String) in

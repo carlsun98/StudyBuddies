@@ -10,33 +10,35 @@ import UIKit
 import QuartzCore
 
 class GroupPageViewController: UITableViewController {
-    @IBOutlet weak var getCourseLabel: UILabel!
-    @IBOutlet weak var getLocationLabel: UITextView!
-    @IBOutlet weak var getSizeLabel: UILabel!
-    @IBOutlet weak var getEndTimeLabel: UILabel!
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var locationLabel: UITextView!
+    @IBOutlet weak var descriptionLabel: UITextView!
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 1 && indexPath.section == 1) {
+        if (indexPath.row == 0 && indexPath.section == 1) {
             leaveGroup()
         }
     }
     
     func updateGroup() {
         if Data.sharedInstance.currentGroup == nil {
-            getCourseLabel.text = "NONE"
-            getLocationLabel.text = "NONE"
-            getSizeLabel.text = "NONE"
-            getEndTimeLabel.text = "NONE"
+            courseLabel.text = "NONE"
+            locationLabel.text = "NONE"
+            sizeLabel.text = "NONE"
+            endTimeLabel.text = "NONE"
             return
         }
         
         let currGroup = Data.sharedInstance.currentGroup!
-        getCourseLabel.text = currGroup.course.name
-        getLocationLabel.text = currGroup.locationDescription
-        getSizeLabel.text = "\(currGroup.size)"
+        courseLabel.text = currGroup.course.name
+        locationLabel.text = currGroup.locationDescription
+        sizeLabel.text = "\(currGroup.size)"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        getEndTimeLabel.text = "\(dateFormatter.string(from: currGroup.endtime))"
+        endTimeLabel.text = "\(dateFormatter.string(from: currGroup.endtime))"
+        descriptionLabel.text = currGroup.description
     }
     
     func leaveGroup() {

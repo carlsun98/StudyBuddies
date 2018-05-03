@@ -23,23 +23,23 @@ def login():
     cursor, conn = connect()
     email = request.form.get("email")
     passwd = request.form.get("password")
-    login_stmt = "SELECT id, email, name, class_year FROM users WHERE email=%s AND password=%s"
-    cursor.execute(login_stmt, (email, passwd))
+
+    login_stmt = "SELECT id, email, name, class_year, salt, password, account_confirmed FROM users WHERE email=%s"
+    cursor.execute(login_stmt, (email,))
     results = cursor.fetchall()
     if len(results) == 0:
-        return error_with_message("bad_login")
-    check_email_stmt = "SELECT account_confirmed FROM users WHERE email=%s"
-    cursor.execute(check_email_stmt, (email,))
-    confirmed = cursor.fetchall()
-    if confirmed[0][0] == 0:
+        return error_with_message("account_not_created")
+    if results[0][6] == 0:
         return error_with_message("email_not_confirmed")
-
+    salted_password = passwd + results[0][4]
+    if not bcrypt_sha256.verify(salted_password, results[0][5]):
+        return error_with_message("bad_login")
     user = results[0]
     user_id = user[0]
 
     delete_duplicates_stmt = "DELETE FROM sessions WHERE user_id=%s"
     cursor.execute(delete_duplicates_stmt, (user_id,))
-    
+
     session_token = ''.join(random.choice(string.ascii_letters +
                                           string.digits) for _ in range(32))
     session_create_stmt = "INSERT INTO sessions (user_id, token) VALUES (%s, %s)"
