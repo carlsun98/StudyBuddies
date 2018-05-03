@@ -49,13 +49,13 @@ def create_group(**kwargs):
     if results[0][0] == 1:
         return error_with_message("User already in group")
     
-    create_group_stmt = "INSERT INTO groups (class_id, leader_id, category, description, location_lat, location_lon, location_description) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    cursor.execute(create_group_stmt, (class_id, userID, category, description, location_lat, location_lon, location_des))
+    create_group_stmt = "INSERT INTO groups (class_id, leader_id, end_time, category, description, location_lat, location_lon, location_description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(create_group_stmt, (class_id, userID, end_time, category, description, location_lat, location_lon, location_des))
     if cursor.rowcount is not 1:
         return error_with_message("msg_creating_group_failed")
     group_id = cursor.lastrowid
 
     update_user_group_id_stmt = "UPDATE users SET group_id=%s WHERE id=%s"
-    cursor.execute(update_user_group_id_stmt, ('1', userID))
+    cursor.execute(update_user_group_id_stmt, (group_id, userID))
     conn.commit()
     return success_with_data({"group_id": group_id})

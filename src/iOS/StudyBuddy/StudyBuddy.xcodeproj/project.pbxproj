@@ -48,6 +48,8 @@
 		1FCA94EA208439B700463B8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA94E6208439B700463B8C /* Group.swift */; };
 		1FCBD9A32088129F004C2DBE /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCBD9A22088129F004C2DBE /* MBProgressHUD.framework */; };
 		1FD42FB62099443000792EC0 /* GroupPageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */; };
+		1FDE6B18209A7D49001A76FD /* GroupPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDE6B17209A7D48001A76FD /* GroupPopupView.xib */; };
+		1FDE6B1A209A850B001A76FD /* GroupPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDE6B19209A850B001A76FD /* GroupPopupView.swift */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
 		CD4CD7D52088163F00F1BEFC /* signs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D12088163B00F1BEFC /* signs@3x.png */; };
 		CD4CD7D62088163F00F1BEFC /* school@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D22088163D00F1BEFC /* school@3x.png */; };
@@ -130,6 +132,8 @@
 		1FCA94E6208439B700463B8C /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		1FCBD9A22088129F004C2DBE /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageContainerViewController.swift; sourceTree = "<group>"; };
+		1FDE6B17209A7D48001A76FD /* GroupPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupPopupView.xib; sourceTree = "<group>"; };
+		1FDE6B19209A850B001A76FD /* GroupPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPopupView.swift; sourceTree = "<group>"; };
 		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +182,8 @@
 		1F37BF4720882E7C008FC09B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1FDE6B17209A7D48001A76FD /* GroupPopupView.xib */,
+				1FDE6B19209A850B001A76FD /* GroupPopupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 			files = (
 				CD4CD7DD2088165000F1BEFC /* school@2x.png in Resources */,
 				CD4CD7E02088165000F1BEFC /* settings@2x.png in Resources */,
+				1FDE6B18209A7D49001A76FD /* GroupPopupView.xib in Resources */,
 				1F49E9652083CDD6009A6D02 /* LaunchScreen.storyboard in Resources */,
 				CD4CD7D62088163F00F1BEFC /* school@3x.png in Resources */,
 				CD4CD7DF2088165000F1BEFC /* signs@2x.png in Resources */,
@@ -592,6 +599,7 @@
 				1FA97F1F208491AD0000487A /* InitialViewController.swift in Sources */,
 				1F8C3231208577CF00B85024 /* ChangeNameViewController.swift in Sources */,
 				1FA97F0420843E330000487A /* ViewController.swift in Sources */,
+				1FDE6B1A209A850B001A76FD /* GroupPopupView.swift in Sources */,
 				1FA97F0A20843E330000487A /* SettingsViewController.swift in Sources */,
 				1FA97F1020843E580000487A /* CreateGroupSecondViewController.swift in Sources */,
 				1FA97F0820843E330000487A /* CourseListViewController.swift in Sources */,
