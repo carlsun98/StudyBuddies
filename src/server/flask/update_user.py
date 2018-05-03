@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from dbconnect import connect
 from server_response import success_with_data, error_with_message
 import random, string
+from auth import auth_required
 
 '''
 Update user API @ /update_user
@@ -20,17 +21,10 @@ Output:
 update_user_api = Blueprint('update_user_api', __name__)
 
 @update_user_api.route("/update_user", methods=['POST'])
-def update_user():
+@auth_required
+def update_user(**kwargs):
     cursor, conn = connect()
-    session_token = request.form.get("session_token")
-    old_password = request.form.get("old_password")
-
-    choose_user_id_stmt = "SELECT user_id FROM sessions WHERE token=%s"
-    cursor.execute(choose_user_id_stmt, (session_token,))
-    user_id = cursor.fetchall()
-    if len(user_id) == 0:
-        return error_with_message("invalid_session_token")
-    userID = user_id[0][0]
+    userID = kwargs["user_id"]
 
     check_user_id_stmt = "SELECT id FROM users WHERE id=%s"
     cursor.execute(check_user_id_stmt, (userID,))
@@ -63,7 +57,11 @@ def update_user():
     group_id = request.form.get("group_id", default_group_id)
     name = request.form.get("name", default_name)
     class_year = request.form.get("class_year", default_class_year)
-    password = request.form.get("password", default_Password)
+    password = request.form.get("password", default_password)
+    if int(push_notif_enable) != 0 and int(push_notif_enable) != 1:
+        return error_with_message("Push notifications is not 0 or 1.")
+    if int(group_id) < -1:
+        return error_with_message("Group id too negative")
 
     update_user_stmt = "UPDATE users SET push_notifications_enabled=%s, Apple_APN_Key=%s, Android_APN_Key=%s, group_id=%s, name=%s, class_year=%s, password=%s WHERE id=%s"
     cursor.execute(update_user_stmt, (push_notif_enable, Apple_APN_Key, Android_APN_Key, group_id, name, class_year, password, userID))
