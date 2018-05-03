@@ -34,7 +34,9 @@ class GroupPageViewController: UITableViewController {
         getCourseLabel.text = currGroup.course.name
         getLocationLabel.text = currGroup.locationDescription
         getSizeLabel.text = "\(currGroup.size)"
-        getEndTimeLabel.text = "\(currGroup.endtime)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        getEndTimeLabel.text = "\(dateFormatter.string(from: currGroup.endtime))"
     }
     
     func leaveGroup() {
