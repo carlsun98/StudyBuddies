@@ -22,7 +22,6 @@ class CreateGroupThirdViewController: UIViewController {
     }
 
     @IBAction func donePressed(_ sender: Any) {
-        let locationDescription = childViewController?.getLocationDescription()
         let marker = childViewController?.getCoords()
         if (marker == nil) {
             let alertController = UIAlertController(title: "Please select a location", message: nil, preferredStyle: .alert)
@@ -36,6 +35,7 @@ class CreateGroupThirdViewController: UIViewController {
         group?.starttime = Date()
         group?.endtime = Date(timeInterval: Double(duration!) * 60.0, since: (group?.starttime)!)
         group?.size = 1
+        group?.locationDescription = (childViewController?.getLocationDescription())!
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"

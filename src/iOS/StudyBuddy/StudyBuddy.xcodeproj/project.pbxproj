@@ -50,6 +50,7 @@
 		1FD42FB62099443000792EC0 /* GroupPageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */; };
 		1FDE6B18209A7D49001A76FD /* GroupPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FDE6B17209A7D48001A76FD /* GroupPopupView.xib */; };
 		1FDE6B1A209A850B001A76FD /* GroupPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDE6B19209A850B001A76FD /* GroupPopupView.swift */; };
+		1FDE6B1E209AB53C001A76FD /* divet.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FDE6B1D209AB53B001A76FD /* divet.png */; };
 		7EC63D76298641DC106B09FB /* Pods_StudyBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */; };
 		CD4CD7D52088163F00F1BEFC /* signs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D12088163B00F1BEFC /* signs@3x.png */; };
 		CD4CD7D62088163F00F1BEFC /* school@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4CD7D22088163D00F1BEFC /* school@3x.png */; };
@@ -134,6 +135,7 @@
 		1FD42FB52099443000792EC0 /* GroupPageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPageContainerViewController.swift; sourceTree = "<group>"; };
 		1FDE6B17209A7D48001A76FD /* GroupPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupPopupView.xib; sourceTree = "<group>"; };
 		1FDE6B19209A850B001A76FD /* GroupPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPopupView.swift; sourceTree = "<group>"; };
+		1FDE6B1D209AB53B001A76FD /* divet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divet.png; sourceTree = "<group>"; };
 		21325D39BA74263C0F160C0A /* Pods-StudyBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		348A2285918B896F5CB94486 /* Pods-StudyBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyBuddy/Pods-StudyBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		5C9502936E9F8B5C86575ABC /* Pods_StudyBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +311,7 @@
 		1FCA94C52084029600463B8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1FDE6B1D209AB53B001A76FD /* divet.png */,
 				1F97E1582085B5F300E569B7 /* tab-icons */,
 				1FCA94C62084029600463B8C /* launchscreen.png */,
 			);
@@ -486,6 +489,7 @@
 				CD4CD7E52088165C00F1BEFC /* school.png in Resources */,
 				1F49E9602083CDD5009A6D02 /* Main.storyboard in Resources */,
 				CD4CD7E72088165C00F1BEFC /* signs.png in Resources */,
+				1FDE6B1E209AB53C001A76FD /* divet.png in Resources */,
 				CD4CD7DE2088165000F1BEFC /* people@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

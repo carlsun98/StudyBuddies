@@ -37,7 +37,7 @@ def list_user_classes(**kwargs):
         groups = []
         get_group_stmt = """SELECT id, leader_id, start_time, end_time, 
         category, description, location_lat, location_lon, location_description, 
-        chat_id FROM groups WHERE class_id=%s"""
+        chat_id FROM groups WHERE class_id=%s AND end_time > CURRENT_TIMESTAMP"""
         cursor.execute(get_group_stmt, (the_class[0],))
         group_list = cursor.fetchall()
         for the_group in group_list:
@@ -57,8 +57,8 @@ def list_user_classes(**kwargs):
             group_result = {
                 "id": group_id,
                 "leader_id": leader_id,
-                "start_time": start_time,
-                "end_time": end_time,
+                "start_time": str(start_time),
+                "end_time": str(end_time),
                 "category": category,
                 "description": description,
                 "location_lat": location_lat,

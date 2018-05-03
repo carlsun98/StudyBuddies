@@ -71,8 +71,8 @@ def get_current_group(**kwargs):
     group_result = {
         "id": group_id,
         "leader_id": leader_id,
-        "start_time": start_time,
-        "end_time": end_time,
+        "start_time": str(start_time),
+        "end_time": str(end_time),
         "category": category,
         "description": description,
         "location_lat": location_lat,

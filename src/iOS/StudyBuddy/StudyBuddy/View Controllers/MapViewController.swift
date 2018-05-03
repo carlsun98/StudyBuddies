@@ -13,7 +13,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
     var selectedGroup: Group? = nil
     var mapView: GMSMapView? = nil
-    //let popupView: GroupPopupView = 
+    var overlayMarker: GMSMarker? = nil
+    
+    //let popupView: GroupPopupView =
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Study Groups"
@@ -26,12 +28,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(displayMarkers), name: .dataLoaded, object: nil)
         mapView?.delegate = self
         view.insertSubview(mapView!, at: 0)
-        // self.mapView?.delegate = self as! GMSMapViewDelegate
-        
-        
-        let theView = GroupPopupView.instanceFromNib() as! GroupPopupView
-        theView.frame = CGRect(x: 0, y: 0, width: 200, height: 250)
-        view.addSubview(theView)
     }
 
     @objc func displayMarkers() {
@@ -42,8 +38,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 let courseLong = aGroup.location_lon
                 let position = CLLocationCoordinate2D(latitude: courseLat, longitude: courseLong)
                 let marker = GMSMarker(position: position)
-                let title = "\(aGroup.course.name)\n Category: \(aGroup.category)"
-                marker.title = title
                 marker.map = mapView
                 marker.userData = aGroup
             }
@@ -108,8 +102,40 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         mapView.selectedMarker = marker
+        let y = marker.position.latitude + 0.001
+        let coord = CLLocationCoordinate2D(latitude: y, longitude: marker.position.longitude)
+        mapView.animate(toLocation: coord)
+        mapView.animate(toZoom: 17.0)
         selectedGroup = marker.userData as? Group
+        
+        overlayMarker?.map = nil
+        overlayMarker = GMSMarker(position: marker.position)
+        
+        let now = Date(timeIntervalSinceNow: 0)
+        let timeTillEnd = -now.timeIntervalSince(selectedGroup!.endtime)
+        let hours = Int(timeTillEnd / 3600)
+        let minutes = Int(timeTillEnd/60.0 - 3600.0 * Double(hours))
+        var durationText = "Ends in: "
+        if hours != 0 {
+            durationText = durationText + "\(hours) hrs "
+        }
+        durationText = durationText + "\(minutes) mins "
+        
+        let theView = GroupPopupView.instanceFromNib() as! GroupPopupView
+        theView.frame = CGRect(x: 0, y: 0, width: 200, height: 220)
+        theView.classNameLabel.text = selectedGroup!.course.name
+        theView.categoryLabel.text = "Category: \(selectedGroup!.category)"
+        theView.durationLabel.text = durationText
+        theView.descriptionLabel.text = "Description: \(selectedGroup!.description)"
+        theView.locationLabel.text = "Location: \(selectedGroup!.locationDescription)"
+        overlayMarker!.iconView = theView
+        overlayMarker!.map = mapView
+        overlayMarker!.isTappable = false
         return true
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        overlayMarker!.map = nil
     }
     
     override func didReceiveMemoryWarning() {

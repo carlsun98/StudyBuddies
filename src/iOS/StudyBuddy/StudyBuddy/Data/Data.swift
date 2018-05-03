@@ -31,17 +31,20 @@ final class Data {
                 if (group_id == -1) {
                     Data.sharedInstance.currentGroup = nil
                 } else {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
                     let group = Group()
                     group.id = group_data["id"] as! Int
                     group.category = group_data["category"] as! String
-                    group.starttime = Date() //groupData["start_time"]
-                    group.endtime = Date()
+                    group.starttime = dateFormatter.date(from: group_data["start_time"] as! String)!
+                    group.endtime = dateFormatter.date(from: group_data["end_time"] as! String)!
                     group.leader_id = group_data["leader_id"] as! Int
                     group.location_lat = group_data["location_lat"] as! Double
                     group.location_lon = group_data["location_lon"] as! Double
                     group.description = group_data["description"] as! String
-                    group.locationDescription = "" //groupData["location_description"] as! String
-                    group.size = 1 //groupData["size"] as! Int
+                    group.locationDescription = group_data["location_description"] as! String
+                    group.size = group_data["size"] as! Int
                     let course_data = group_data["course"] as! Dictionary<String, Any>
                     let course = Course()
                     course.name = course_data["course_name"] as! String
@@ -66,6 +69,9 @@ final class Data {
             if (success == 1) {
                 let classData = data[1]["classes"] as! Array<Dictionary<String, Any>>
                 self.courses = []
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
                 for course in classData {
                     let newCourse = Course()
                     newCourse.name = course["course_name"] as! String
@@ -77,14 +83,14 @@ final class Data {
                         let group = Group()
                         group.id = groupData["id"] as! Int
                         group.category = groupData["category"] as! String
-                        group.starttime = Date() //groupData["start_time"]
-                        group.endtime = Date()
+                        group.starttime = dateFormatter.date(from: groupData["start_time"] as! String)!
+                        group.endtime = dateFormatter.date(from: groupData["end_time"] as! String)!
                         group.leader_id = groupData["leader_id"] as! Int
                         group.location_lat = groupData["location_lat"] as! Double
                         group.location_lon = groupData["location_lon"] as! Double
                         group.description = groupData["description"] as! String
-                        group.locationDescription = "" //groupData["location_description"] as! String
-                        group.size = 1 //groupData["size"] as! Int
+                        group.locationDescription = groupData["location_description"] as! String
+                        group.size = groupData["size"] as! Int
                         group.course = newCourse
                         groups.append(group)
                     }
