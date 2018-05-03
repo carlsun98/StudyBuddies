@@ -23,6 +23,7 @@ from lost_account import lost_account_api
 from confirm_email import confirm_email_api
 from account_recovery import account_recovery_api
 from get_current_group import get_current_group_api
+from logout import logout_api
 
 app = Flask(__name__)
 
@@ -45,6 +46,7 @@ app.register_blueprint(lost_account_api)
 app.register_blueprint(confirm_email_api)
 app.register_blueprint(account_recovery_api)
 app.register_blueprint(get_current_group_api)
+app.register_blueprint(logout_api)
 
 # test page
 @app.route('/')
