@@ -14,6 +14,16 @@ class GroupPageContainerViewController: UIViewController {
 
     @IBOutlet weak var coverUpView: UIView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Data.sharedInstance.getCurrentGroup(succeed: { (response: Any?) in
+            //
+        }, error: { (message: String) in
+            //
+        }) { (error: Error) in
+            //
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(groupChanged), name: .currentGroupChanged, object: nil)
