@@ -42,16 +42,16 @@ def classes_list(**kwargs):
     final_results = []
 
     for course in results:
-        if re.search(search_string, course[1]) is not None:
+        if re.search(search_string.lower(), course[1].lower()) is not None:
             search_results.append(course)
-        elif re.search(search_string, course[2]) is not None:
+        elif re.search(search_string.lower(), course[2].lower()) is not None:
             search_results.append(course)
         else:
             listings = course[2].split(",")
             for listing in listings:
-                if re.search(search_string, listing) is not None:
+                if re.search(search_string.lower(), listing.lower()) is not None:
                     search_results.append(course)
-                elif re.search(search_string, listing.replace(" ", "")) is not None:
+                elif re.search(search_string.lower(), listing.replace(" ", "").lower()) is not None:
                     search_results.append(course)
 
     for match in search_results:
