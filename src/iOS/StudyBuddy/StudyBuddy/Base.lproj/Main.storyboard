@@ -1353,7 +1353,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-Jq-LQi">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-Jq-LQi">
                                 <rect key="frame" x="80" y="302" width="215" height="36"/>
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.84313725490000002" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1382,24 +1382,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ed7-NE-4rE">
-                                <rect key="frame" x="80" y="208" width="215" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="Xe6-VN-7Gb"/>
-                                    <constraint firstAttribute="width" constant="215" id="kr1-bv-ggL"/>
-                                </constraints>
-                                <color key="tintColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Forgot Password">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Arial-ItalicMT"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-Bw-r0L">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-Bw-r0L">
                                 <rect key="frame" x="80" y="258" width="215" height="36"/>
                                 <color key="backgroundColor" red="0.60392156862745094" green="0.84313725490196079" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1425,16 +1408,12 @@
                             <constraint firstItem="AR9-Jq-LQi" firstAttribute="centerX" secondItem="0Bh-Bw-r0L" secondAttribute="centerX" id="8Ya-0x-ig0"/>
                             <constraint firstItem="0Bh-Bw-r0L" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="MKt-2V-QCk"/>
                             <constraint firstItem="MOZ-OA-7S2" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="SVz-pf-wsb"/>
-                            <constraint firstItem="ed7-NE-4rE" firstAttribute="centerX" secondItem="8ZL-Yk-Qx2" secondAttribute="centerX" id="StJ-DD-qHH"/>
                             <constraint firstItem="Uej-5x-ufW" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="bB5-gR-VMz"/>
                             <constraint firstItem="Uej-5x-ufW" firstAttribute="top" secondItem="MOZ-OA-7S2" secondAttribute="bottom" constant="21.5" id="bva-n7-7Lq"/>
-                            <constraint firstItem="ed7-NE-4rE" firstAttribute="top" secondItem="8ZL-Yk-Qx2" secondAttribute="bottom" constant="8" id="eP4-kD-SE3"/>
                             <constraint firstItem="8ZL-Yk-Qx2" firstAttribute="top" secondItem="Uej-5x-ufW" secondAttribute="bottom" constant="8" id="eu0-Mb-ewS"/>
                             <constraint firstItem="8ZL-Yk-Qx2" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="faF-4z-uEQ"/>
                             <constraint firstItem="MOZ-OA-7S2" firstAttribute="top" secondItem="sAq-g1-1s0" secondAttribute="top" constant="25" id="tTr-l0-C4m"/>
-                            <constraint firstItem="0Bh-Bw-r0L" firstAttribute="top" secondItem="ed7-NE-4rE" secondAttribute="bottom" constant="32" id="toi-wX-PZV"/>
                             <constraint firstItem="AR9-Jq-LQi" firstAttribute="top" secondItem="0Bh-Bw-r0L" secondAttribute="bottom" constant="8" id="uxr-CV-Ijs"/>
-                            <constraint firstItem="ed7-NE-4rE" firstAttribute="top" secondItem="8ZL-Yk-Qx2" secondAttribute="bottom" constant="8" id="ykb-6E-Bca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sAq-g1-1s0"/>
                     </view>
