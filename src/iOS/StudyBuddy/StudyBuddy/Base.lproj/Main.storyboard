@@ -1353,12 +1353,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-Jq-LQi">
-                                <rect key="frame" x="80" y="302" width="215" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-Jq-LQi">
+                                <rect key="frame" x="80" y="295" width="215" height="29"/>
                                 <color key="backgroundColor" red="0.60392156860000001" green="0.84313725490000002" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="Cyy-IT-6uF"/>
-                                    <constraint firstAttribute="width" constant="215" id="qcl-Qk-5st"/>
+                                    <constraint firstAttribute="height" constant="29" id="4fY-Ff-huf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <state key="normal" title="Create Account">
@@ -1382,12 +1381,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-Bw-r0L">
-                                <rect key="frame" x="80" y="258" width="215" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bh-Bw-r0L">
+                                <rect key="frame" x="80" y="258" width="215" height="29"/>
                                 <color key="backgroundColor" red="0.60392156862745094" green="0.84313725490196079" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="215" id="35L-uQ-Jsl"/>
-                                    <constraint firstAttribute="height" constant="36" id="MxS-lC-Lqw"/>
+                                    <constraint firstAttribute="height" constant="29" id="AN0-Iv-ew1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -1405,15 +1403,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AR9-Jq-LQi" firstAttribute="centerX" secondItem="0Bh-Bw-r0L" secondAttribute="centerX" id="8Ya-0x-ig0"/>
-                            <constraint firstItem="0Bh-Bw-r0L" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="MKt-2V-QCk"/>
+                            <constraint firstItem="AR9-Jq-LQi" firstAttribute="leading" secondItem="sAq-g1-1s0" secondAttribute="leading" constant="80" id="2A5-Dy-NqH"/>
+                            <constraint firstItem="AR9-Jq-LQi" firstAttribute="top" secondItem="0Bh-Bw-r0L" secondAttribute="bottom" constant="8" id="7X7-q2-aUh"/>
+                            <constraint firstItem="0Bh-Bw-r0L" firstAttribute="leading" secondItem="sAq-g1-1s0" secondAttribute="leading" constant="80" id="MGV-Zi-7Kn"/>
+                            <constraint firstItem="sAq-g1-1s0" firstAttribute="trailing" secondItem="AR9-Jq-LQi" secondAttribute="trailing" constant="80" id="MMa-9N-leB"/>
+                            <constraint firstItem="sAq-g1-1s0" firstAttribute="trailing" secondItem="0Bh-Bw-r0L" secondAttribute="trailing" constant="80" id="SRX-9Y-TYO"/>
                             <constraint firstItem="MOZ-OA-7S2" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="SVz-pf-wsb"/>
                             <constraint firstItem="Uej-5x-ufW" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="bB5-gR-VMz"/>
                             <constraint firstItem="Uej-5x-ufW" firstAttribute="top" secondItem="MOZ-OA-7S2" secondAttribute="bottom" constant="21.5" id="bva-n7-7Lq"/>
                             <constraint firstItem="8ZL-Yk-Qx2" firstAttribute="top" secondItem="Uej-5x-ufW" secondAttribute="bottom" constant="8" id="eu0-Mb-ewS"/>
                             <constraint firstItem="8ZL-Yk-Qx2" firstAttribute="centerX" secondItem="IwN-ur-2LC" secondAttribute="centerX" id="faF-4z-uEQ"/>
+                            <constraint firstItem="AR9-Jq-LQi" firstAttribute="top" secondItem="0Bh-Bw-r0L" secondAttribute="bottom" constant="8" id="lgw-Ej-eFe"/>
+                            <constraint firstItem="0Bh-Bw-r0L" firstAttribute="top" secondItem="8ZL-Yk-Qx2" secondAttribute="bottom" constant="58" id="nln-QT-rqq"/>
                             <constraint firstItem="MOZ-OA-7S2" firstAttribute="top" secondItem="sAq-g1-1s0" secondAttribute="top" constant="25" id="tTr-l0-C4m"/>
-                            <constraint firstItem="AR9-Jq-LQi" firstAttribute="top" secondItem="0Bh-Bw-r0L" secondAttribute="bottom" constant="8" id="uxr-CV-Ijs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sAq-g1-1s0"/>
                     </view>
